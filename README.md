@@ -18,7 +18,7 @@
 
 ## 📖 Sobre o Projeto
 
-O objetivo desse projeto é criar um site informativo que conscientize a população sobre o sofrimento que os pais passam para poder garantir um tratamento de qualidade para suas crianças com Insuficiência Renal Crônica (IRC), além de ajudar estes pais a procurarem por hospitais que cuidem de crianças com IRC, o que é relativamente raro.
+O objetivo desse projeto é criar um site informativo que conscientize a população sobre o sofrimento que os pais passam para poder garantir um tratamento de qualidade para suas crianças com Insuficiência Renal Crônica (IRC), além de ajudar estes pais a procurarem por hospitais que cuidem de crianças com IRC, o que é raro.
 
 <br>
 
@@ -37,7 +37,7 @@ O objetivo desse projeto é criar um site informativo que conscientize a popula�
 
 ## 🔎 Visão do Produto
 
-O site necessita das seguintes principais páginas:
+Criação de um site com função de conscientizar a população sobre o sofrimento das crianças com Insuficiência Renal Crônica (IRC). É possível adicionar histórias de pais na aba Blog e também visualizar dados sobre o assunto. O site apresenta as seguintes principais páginas:
 
 <strong>Home: </strong> Introduz o assunto ao usuário e o encoraja a explorar o resto do site
 
@@ -49,7 +49,7 @@ O site necessita das seguintes principais páginas:
 
 ## 📋 Metodologia
 
-O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método ágil adaptativo, iterativo, flexível e eficaz. No Scrum, divide-se a tarefa em Sprints, no qual defini-se as seguintes coisas:
+O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método ágil adaptativo, iterativo, flexível e eficaz. No Scrum, divide-se a tarefa em Sprints, no qual define-se as seguintes coisas:
 
 <strong>1) MVPs: </strong> É a principal entrega de cada sprint. Prioriza-se as tarefas que trazem entrega de maior valor para o cliente.
 
