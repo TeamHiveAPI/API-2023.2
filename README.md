@@ -62,7 +62,7 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 ## 🏆 MVPs
 
 <div align="center">
-<img src="card_sprints.png" alt="Card das sprints" width=750px>
+<img src="prototiponavegavel.gif" alt="Prototipo Navegavel" width=750px>
 </div>
 
 <br>
@@ -92,6 +92,8 @@ O tutorial será publicado na última sprint.
 <br>
 
 ## 📅 Sprints
+
+<img src="card_sprints.png" alt="Card das sprints" width=750px>
 
 | Sprint | Relatório | Status | 
 | :----: | :--------: | :----------: |
