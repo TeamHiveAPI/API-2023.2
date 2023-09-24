@@ -117,7 +117,7 @@ O tutorial será publicado na última sprint.
 | 1️ | 01 | Protótipo Navegável | 90 | Eu,  como visitante, quero poder acessar a página a página “Blog” onde poderei conferir os relatos de pais e filhos com IRC. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 85 | Eu, como visitante, quero poder mandar os meus relatos pessoais na página “Blog” com direito a anexar imagens. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 80 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas clínicas existem na minha região. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 75 | Eu, como cliente, quero poder acessar a página de dados e verificar quantas crianças estão na fila esperando transplante na minha região. | 5 horas | ✅ | 24/09
+| 1️ | 01 | Protótipo Navegável | 75 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas crianças estão na fila esperando transplante na minha região. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 70 | Eu, como visitante com conta cadastrada, quero poder acessar a página de login para acessar minha conta. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 65 | Eu, como visitante, quero poder acessar a página de cadastro para criar uma conta. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 60 | Eu, como visitante com conta cadastrada, quero poder acessar os dados sobre o projeto Proadi SUS Hospital Samaritano. | 5 horas | ✅ | 24/09
