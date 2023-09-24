@@ -24,7 +24,7 @@ O objetivo desse projeto é criar um site informativo que conscientize a popula�
 
 ## 💻 Tecnologias que serão utilizadas:
 
-<div float=right>
+<div float=left>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=F2A630"/>
@@ -61,9 +61,9 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 
 ## 🏆 MVPs
 
-<div align="center">
+<br>
+
 <img src="prototiponavegavel.gif" alt="Prototipo Navegavel" width=750px>
-</div>
 
 <br>
 
@@ -93,7 +93,11 @@ O tutorial será publicado na última sprint.
 
 ## 📅 Sprints
 
-<img src="card_sprints.png" alt="Card das sprints" width=750px>
+<br>
+
+<img src="card_sprints.png" alt="Card das sprints" width=500px>
+
+<br>
 
 | Sprint | Relatório | Status | 
 | :----: | :--------: | :----------: |
