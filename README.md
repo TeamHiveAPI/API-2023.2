@@ -121,14 +121,14 @@ O tutorial será publicado na última sprint.
 | 1️ | 01 | Protótipo Navegável | 70 | Eu, como visitante com conta cadastrada, quero poder acessar a página de login para acessar minha conta. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 65 | Eu, como visitante, quero poder acessar a página de cadastro para criar uma conta. | 5 horas | ✅ | 24/09
 | 1️ | 01 | Protótipo Navegável | 60 | Eu, como visitante com conta cadastrada, quero poder acessar os dados sobre o projeto Proadi SUS Hospital Samaritano. | 5 horas | ✅ | 24/09
-| 2 | 02 | Página "Home" | 55 | Eu, como visitante, quero acessar uma página “Home” para ser apresentado ao contexto e visão geral do site. | 4 horas | ✅ | 15/10
-| 2 | 02 | Página "Home" | 50 | Eu, como visitante, quero acessar um espaço de navegação entre páginas para os explorar o site por completo. | 4 horas | ✅ | 15/10
-| 3 | 03 | Página "Blog" | 45 | Eu, como visitante com conta cadastrada, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 4 horas | ✅ | 15/10
-| 3 | 03 | Página "Blog" | 40 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ✅ | 15/10
-| 3 | 04 | Página "Dados" | 35 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ✅ | 05/11
-| 3 | 04 | Página "Dados" | 30 | Eu, como visitante com conta cadastrada, quero poder visualizar os dados do projeto Proadi SUS. | 5 horas | ✅ | 05/11
-| 3 | 05 | Página "Login" | 25 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ✅ | 05/11
-| 3 | 06 | Página "Minha Conta" | 20 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ✅ | 05/11
+| 2 | 02 | Página "Home" | 55 | Eu, como visitante, quero acessar uma página “Home” para ser apresentado ao contexto e visão geral do site. | 4 horas | ⌛ | 15/10
+| 2 | 02 | Página "Home" | 50 | Eu, como visitante, quero acessar um espaço de navegação entre páginas para os explorar o site por completo. | 4 horas | ⌛ | 15/10
+| 3 | 03 | Página "Blog" | 45 | Eu, como visitante com conta cadastrada, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 4 horas | ⌛ | 15/10
+| 3 | 03 | Página "Blog" | 40 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ⌛ | 15/10
+| 3 | 04 | Página "Dados" | 35 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ⌛ | 05/11
+| 3 | 04 | Página "Dados" | 30 | Eu, como visitante com conta cadastrada, quero poder visualizar os dados do projeto Proadi SUS. | 5 horas | ⌛ | 05/11
+| 3 | 05 | Página "Login" | 25 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ⌛ | 05/11
+| 3 | 06 | Página "Minha Conta" | 20 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ⌛ | 05/11
 
 <br>
 
