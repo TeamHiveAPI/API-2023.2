@@ -127,8 +127,8 @@ O tutorial será publicado na última sprint.
 | 3 | 03 | Página "Blog" | 40 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ✅ | 15/10
 | 3 | 04 | Página "Dados" | 35 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ✅ | 05/11
 | 3 | 04 | Página "Dados" | 30 | Eu, como visitante com conta cadastrada, quero poder visualizar os dados do projeto Proadi SUS. | 5 horas | ✅ | 05/11
-| 3 | 04 | Página "Login" | 25 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ✅ | 05/11
-| 3 | 04 | Página "Minha Conta" | 20 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ✅ | 05/11
+| 3 | 05 | Página "Login" | 25 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ✅ | 05/11
+| 3 | 06 | Página "Minha Conta" | 20 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ✅ | 05/11
 
 <br>
 
