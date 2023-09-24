@@ -112,42 +112,23 @@ O tutorial será publicado na última sprint.
 
 | Sprint | ID | Item | Prioridade | Descrição | Estimativa | Status | Data Entrega |
 | :----: | :---: | :-----: | :-----: | :-------: | :---------------------: | :-----------: | :------------: |
-| 1️⃣ | 01 | Protótipo Navegável | 100 | Eu, como cliente, quero poder ter uma visão geral da ideia do projeto a partir de um protótipo navegável. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 95 | Eu, como cliente, quero poder visualizar a introdução dos assuntos e dados que serão abordados na página inicial. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 80 | Eu, como cliente, quero poder ter acesso as demais páginas a partir de uma ferramenta de navegação. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 75 | Eu,  como cliente, quero poder acessar a página a página “Blog” onde poderei conferir os relatos de pais e filhos com IRC. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 65 | Eu, como cliente, quero poder acessar a página de dados e verificar quantas clínicas existem na minha região. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 60 | Eu, como cliente, quero poder acessar a página de dados e verificar quantas crianças estão na fila esperando transplante na minha região. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 55 | Eu, como cliente, quero poder acessar a página de login para acessar minha conta. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 50 | Eu, como cliente, quero poder acessar a página de cadastro para criar uma conta. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 50 | Eu,  como cliente, quero poder acessar a página a página “Blog” onde poderei conferir os relatos de pais e filhos com IRC. | 8h | ✅ | 24/09
-| 1️⃣ | 01 | Protótipo Navegável | 45 | Eu, como cliente com conta cadastrada, quero poder acessar os dados sobre o projeto Proadi SUS Hospital Samaritano. | 8h | ✅ | 24/09
-| 1️⃣ | 02 | Product Backlog | 40 | Eu, como cliente com conta cadastrada, quero poder acessar os dados sobre o projeto Proadi SUS Hospital Samaritano. | 6h | ✅ | 24/09
-| 2️⃣ | 03 | Criação do Site Inicial | 30 | Eu, como desenvolvedor, quero criar um site idêntico ao protótipo, que atenda as expectativas do cliente. | 10h | ⌛ | 15/10
-| 2️⃣ | 03 | Criação do Site Inicial | 25 | Eu, como desenvolvedor, quero criar o site usando as ferramentas HTML, CSS e Flask para configurar os elementos iniciais e focando na funcionalidade. | 4h | ⌛ | 15/10
-| 2️⃣ | 03 | Criação do Site Inicial | 20 | Eu, como cliente, quero ter acesso a esse site inicial e compará-lo as minhas expectativas. | 1h | ⌛ | 15/10
-| 2️⃣ | 04 | Página Home | 35 | Eu, como desenvolvedor, quero criar uma página “Home” para apresentar o contexto e visão geral do site para os visitantes se situarem. | 4h | ⌛ | 15/10
-| 2️⃣ | 04 | Página Home | 15 | Eu, como desenvolvedor, quero adicionar um espaço de navegação entre páginas para os visitantes explorarem o site por completo. | 4h | ⌛ | 15/10
-| 3️⃣ | 05 | Página Blog | 14 | Eu, como cliente, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 1h | ⌛ | 05/11
-| 3️⃣ | 05 | Página Blog | 20 | Eu, como desenvolvedor, quero criar uma página para os pais poderem compartilhar sua história podendo utilizar texto e imagens. | 4h | ⌛ | 05/11
-| 3️⃣ | 06 | Página Dados | 12 | Eu, como cliente, quero poder visualizar os dados apresentados na página. | 1h | ⌛ | 05/11
-| 3️⃣ | 06 | Página Dados | 9 | Eu, como cliente com conta cadastrada, quero poder visualizar os dados do projeto Proadi SUS. | 1h | ⌛ | 05/11
-| 3️⃣ | 06 | Página Dados | 8 | Eu, como desenvolvedor, quero apresentar os dados de forma intuitiva e de fácil compreendimento. | 4h | ⌛ | 05/11
-| 3️⃣ | 06 | Página Dados | 7 | Eu, como desenvolvedor, quero restringir o acesso dos dados do projeto Proadi SUS apenas para usuários com conta logada. | 4h | ⌛ | 05/11
-| 3️⃣ | 07 | Página Login | 11 | Eu, como cliente, queropoder fazer login ou efetuar meu cadastro no site. | 4h | ⌛ | 05/11
-| 3️⃣ | 07 | Página Login | 10 | Eu, como desenvolvedor, quero poder fazer um sistema de cadastro e login para armazenar as contas dos visitantes. | 4h | ⌛ | 05/11
-| 3️⃣ | 08 | Página Minha Conta | 6 | Eu, como cliente cadastrado, quero poder visualizar as informações da minha própria conta. | 1h | ⌛ | 05/11
-| 3️⃣ | 09 | Raspagem de Dados | 5 | Eu, como desenvolvedor, quero ter acesso aos dados de visitantes cadastrados. | 4h | ⌛ | 05/11
-| 4️⃣ | 10 | Formatação e Estilização | 4 | Eu, como desenvolvedor, quero desenvolver a estética do site para otimizar a visualização, utilização e funcionalidades. | 4h | ⌛ | 26/11
-| 4️⃣ | 10 | Formatação e Estilização | 3 | Eu, como desenvolvedor, quero corrigir erros e bugs na estrutura e fazer os últimos ajustes. | 2h | ⌛ | 26/11
-| 4️⃣ | 11 | Testes | 2 | Eu, como desenvolvedor, quero fazer um período de testes para certificar que o site está funcionando da melhor forma possível. | 2h | ⌛ | 26/11
-| 4️⃣ | 12 | README | 1 |Eu, como desenvolvedor, quero disponibilizar no arquivo README como instruir o usuário de como utilizar o sistema, e sobre os processos necessários para a aplicação. | 2h | ⌛ | 26/11
-
-
-
-
-
-
+| 1️⃣ | 01 | Protótipo Navegável | 100 | Eu, como visitante, quero poder visualizar a introdução dos assuntos e dados que serão abordados na página home. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 95 | Eu, como visitante, quero poder ter acesso as demais páginas a partir de uma ferramenta de navegação. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 90 | Eu,  como visitante, quero poder acessar a página a página “Blog” onde poderei conferir os relatos de pais e filhos com IRC. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 85 | Eu, como visitante, quero poder mandar os meus relatos pessoais na página “Blog” com direito a anexar imagens. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 80 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas clínicas existem na minha região. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 75 | Eu, como cliente, quero poder acessar a página de dados e verificar quantas crianças estão na fila esperando transplante na minha região. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 70 | Eu, como visitante com conta cadastrada, quero poder acessar a página de login para acessar minha conta. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 65 | Eu, como visitante, quero poder acessar a página de cadastro para criar uma conta. | 5 horas | ✅ | 24/09
+| 1️⃣ | 01 | Protótipo Navegável | 60 | Eu, como visitante com conta cadastrada, quero poder acessar os dados sobre o projeto Proadi SUS Hospital Samaritano. | 5 horas | ✅ | 24/09
+| 1️⃣ | 02 | Página "Home" | 55 | Eu, como visitante, quero acessar uma página “Home” para ser apresentado ao contexto e visão geral do site. | 4 horas | ✅ | 15/10
+| 1️⃣ | 02 | Página "Home" | 50 | Eu, como visitante, quero acessar um espaço de navegação entre páginas para os explorar o site por completo. | 4 horas | ✅ | 15/10
+| 1️⃣ | 03 | Página "Blog" | 45 | Eu, como visitante com conta cadastrada, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 4 horas | ✅ | 15/10
+| 1️⃣ | 03 | Página "Blog" | 40 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ✅ | 15/10
+| 1️⃣ | 04 | Página "Dados" | 35 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ✅ | 05/11
+| 1️⃣ | 04 | Página "Dados" | 30 | Eu, como visitante com conta cadastrada, quero poder visualizar os dados do projeto Proadi SUS. | 5 horas | ✅ | 05/11
+| 1️⃣ | 04 | Página "Login" | 25 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ✅ | 05/11
+| 1️⃣ | 04 | Página "Minha Conta" | 20 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ✅ | 05/11
 
 <br>
 
