@@ -171,6 +171,7 @@ hr {
 .card_tratamento, .card_dialise, .card_transplante {
     width: 350px;
     height: 300px;
+    margin: 32px 16px 0px 0px;
     border-radius: 50px;
     padding: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -251,6 +252,7 @@ hr {
 .card_blog, .card_dados, .card_login {
     width: 350px;
     height: 300px;
+    margin: 32px 16px 0px 0px;
     border-radius: 50px;
     padding: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -285,3 +287,37 @@ hr {
     background-color: #000350;
 }
 
+footer {
+    padding: 64px 0;
+    margin: 0 -12.5%;
+    margin-top: 64px;
+    background-color: #00022C;
+    color:white;
+}
+
+.footer_principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10%;
+}
+
+.footer_parte_esquerdo {
+    max-width: 500px;
+}
+
+.footer_logo_time {
+    margin-top: 32px;
+    width: 200px;
+}
+
+.footer_logo_github {
+    margin-top: 32px;
+    width: 48px;
+    cursor: pointer;
+}
+
+.footer_direitos_autorais {
+    margin-top: 64px;
+    text-align: center;
+}
