@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+body {
+    margin: 0 10%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0px 24px 0px;
+}
+
+.navbar_imagem {
+    width: 125px;
+}
+
+.navbar_menu {
+    display: flex;
+    font-weight: 600;
+    gap: 32px;
+}
+
+.navbar_menu_item {
+    color: #000350;
+    padding: 8px 28px 8px 28px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.active {
+    color: white;
+    background-color: #000350;
+}
+
+.hero_banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: radial-gradient(150% 64% at 80% 40%, rgba(0, 3, 80, 0.7) 0%, #000350 100%);
+    margin: 0 -12.5%;
+}
+
+.conteudo_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 10%;
+}
+
+.conteudo_escrito_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: white;
+    margin-top: 128px;
+}
+
+.conteudo_escrito_subtitulo {
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 128px;
+}
+
+.hero_banner_imagem {
+    width: 450px;
+    margin: 0 10%;
+}
+
+.problematica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.problematica_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.problematica_escrito_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000350;
+    margin-top: 80px;
+}
+
+.problematica_escrito_paragrafo {
+    margin: 0;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    margin-top: 32px;
+    text-align: center;
+}
+
+.card_familia, .card_sem_nefro, .card_carro, .card_morreu {
+    width: 200px;
+    height: 300px;
+    border-radius: 50px;
+    padding: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    color: white;
+}
+
+.card_familia p, .card_sem_nefro p, .card_carro p, .card_morreu p {
+    margin-top: 24px;
+}
+
+.card_familia {
+    background-color: #FFD337;
+}
+
+.card_sem_nefro {
+    background-color: #FFB240;
+}
+
+.card_carro {
+    background-color: #F58A3C;
+}
+
+.card_morreu {
+    background-color: #241303;
+}
+
+hr {
+    border: 1px solid #303030;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.insuficiencia {
+    display: flex;
+    flex-direction: column;
+}
+
+.insuficiencia_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.insuficiencia_escrito_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000350;
+}
+
+.cards_info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 32px;
+    justify-content: space-between;
+}
+
+.card_tratamento, .card_dialise, .card_transplante {
+    width: 350px;
+    height: 300px;
+    border-radius: 50px;
+    padding: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    color: white;
+}
+
+.card_tratamento h3, .card_dialise h3, .card_transplante h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.card_tratamento p, .card_dialise p, .card_transplante p {
+    text-align: left;
+}
+
+.card_tratamento {
+    background-color: #0F9635;
+}
+
+.card_dialise {
+    background-color: #19B344;
+}
+
+.card_transplante {
+    background-color: #2ECD5B;
+}
+
+.insuficiencia_embaixo {
+    display: flex;
+    flex-direction: column;
+}
+
+.insuficiencia_embaixo_escrito {
+    display: flex;
+    flex-direction: column;
+    margin-top: 64px;
+    gap: 32px;
+}
+
+.insuficiencia_embaixo_escrito_titulo {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000350;
+}
+
+.conclusao {
+    display: flex;
+    flex-direction: column;
+}
+
+.conclusao_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.conclusao_escrito_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000350;
+}
+
+.conclusao_escrito_subtitulo {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000350;
+}
+
+.cards_call_to_action {
+    display: flex;
+    flex-direction: row;
+    margin-top: 32px;
+    justify-content: space-between;
+}
+
+.card_blog, .card_dados, .card_login {
+    width: 350px;
+    height: 300px;
+    border-radius: 50px;
+    padding: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    color: white;
+    text-align: center;
+}
+
+.card_blog h3, .card_dados h3, .card_login h3 {
+    font-size: 28px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.card_blog p, .card_dados p, .card_login p {
+    text-align: left;
+}
+
+.botao_acessar {
+    width: 90%;
+    height: 25%;
+    color: #000350;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 65px;
+}
+
+.card_blog, .card_dados, .card_login {
+    background-color: #000350;
+}
+
