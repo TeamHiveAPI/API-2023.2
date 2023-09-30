@@ -40,12 +40,13 @@ body {
     border-width: 2px;
 }
 
-/* Hero Banner da página Dados */
-
 .active {
     color: white;
     background-color: #000350;
 }
+
+/* Hero Banner da página Dados */
+
 
 .hero_banner {
     display: flex;

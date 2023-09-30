@@ -5,8 +5,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter";
+    text-decoration: none;
 }
 
+/* 
+
+Erika, todas as páginas tem que ter essa margem rsrsrs
+Ativa esse código e arruma o que ficou estranho
+(e não esquece de ativar a margem do footer lá embaixo também)
+
+body {
+    margin: 0 10%;
+} 
+
+*/
 
 .navbar {
     display: flex;
@@ -40,35 +52,34 @@
     background-color: #000350;
 }
 
-.banner {
-    background-color: #000350;
-    background: radial-gradient(157.43% 38.26% at 50% 29%, rgba(0, 3, 80, 0.73) 0%, #000350 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 345px;
-}
-
-.banner  {
+.hero_banner {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    background: radial-gradient(150% 64% at 80% 40%, rgba(0, 3, 80, 0.7) 0%, #000350 100%);
+    margin: 0 -12.5%;
+}
+
+.conteudo_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 10%;
+}
+
+.conteudo_escrito_titulo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
     color: white;
+    margin-top: 128px;
 }
 
-.banner h1 {
-    margin: 64px 253px 0px;
-    font-size: 60px;
-    font-weight: bold;
-}
-
-.banner p {
-    margin: 32px 72px 128px;
+.conteudo_escrito_subtitulo {
+    font-weight: 500;
     font-size: 20px;
-    font-weight: 600;
+    color: white;
+    margin-bottom: 128px;
 }
 
 .container {
@@ -92,11 +103,11 @@
     justify-content: center;
     background-color: #000350;
     color: white;
-    margin: 32px 428px;
-    width: 590px;
-    height: 55px;
-    border-radius: 50px;
-    font-size: 40px;
+    margin: 32px;
+    width: 512px;
+    height: 64px;
+    border-radius: 48px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -111,8 +122,8 @@
 }
 
 .postagem {
-    display: inline;
-    white-space: nowrap;
+    display: flex;
+    
     color: #969696;
     font-weight: 500;
     margin-top: 70px;
@@ -271,7 +282,7 @@
 
 footer {
     padding: 64px 0;
-    /*margin: 0 -12.5%;*/
+    /* margin: 0 -12.5%; */
     margin-top: 64px;
     background-color: #00022C;
     color:white;
