@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+body {
+    margin: 0 10%;
+}
+
+/* navbarrra */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0px 24px 0px;
+}
+
+.navbar_imagem {
+    width: 125px;
+}
+
+.navbar_menu {
+    display: flex;
+    font-weight: 600;
+    gap: 32px;
+}
+
+.navbar_menu_item {
+    color: #000350;
+    padding: 8px 28px 8px 28px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* heading da paginarr */
+
+.active {
+    color: white;
+    background-color: #000350;
+}
+
+.hero_banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: radial-gradient(150% 64% at 80% 40%, rgba(0, 3, 80, 0.7) 0%, #000350 100%);
+    margin: 0 -12.5%;
+}
+
+.conteudo_escrito {
+    display: flex;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 10%;
+}
+
+.conteudo_escrito_titulo {
+    display: flex;
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    color: white;
+    margin-top: 128px;
+}
+
+.conteudo_escrito_subtitulo {
+    display: flex;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 128px;
+}
+
+/* Conteúdo da página */
+
+.porque_dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pqdados_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.pqdados_escrito_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000350;
+    margin-top: 80px;
+}
+
+.pqdados_escrito_paragrafo {
+    margin-bottom: 150px;
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: first baseline;
+}
+
+.numero_cli_hemo_pedi{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+  
+/* footerrrrra */
+
+footer {
+    padding: 64px 0;
+    margin: 0 -12.5%;
+    margin-top: 64px;
+    background-color: #00022C;
+    color:white;
+}
+
+.footer_principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10%;
+}
+
+.footer_parte_esquerdo {
+    max-width: 500px;
+}
+
+.footer_logo_time {
+    margin-top: 32px;
+    width: 200px;
+}
+
+.footer_logo_github {
+    margin-top: 32px;
+    width: 48px;
+    cursor: pointer;
+}
+
+.footer_direitos_autorais {
+    margin-top: 64px;
+    text-align: center;
+}
+
+
+/* dropdown livia */
+
+select{
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.tema{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding-bottom: 50px;
+}
+
