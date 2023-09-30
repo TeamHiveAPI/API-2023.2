@@ -12,9 +12,15 @@
 
     <img class="navbar_imagem" src="../static/img/wireframe.png">
     <nav class="navbar_menu">
+<<<<<<< Updated upstream
         <a class="navbar_menu_item active" href="index.html">Home</a>
         <a class="navbar_menu_item" href="blog.html">Blog</a>
         <a class="navbar_menu_item" href="dados.html" >Dados</a>
+=======
+        <a class="navbar_menu_item" href="index.html">Home</a>
+        <a class="navbar_menu_item">Blog</a>
+        <a class="navbar_menu_item active" href="dados.html" >Dados</a>
+>>>>>>> Stashed changes
         <a class="navbar_menu_item">Login</a>
     </nav>
 
@@ -30,37 +36,38 @@
     </section>
 
     <section class="porque_dados">
-        <div class="pqdados_escrito">
-            <h1 class="pqdados_escrito_titulo">Por que mostrar esses dados?</h1>
-            <p class="pqdados_escrito_paragrafo">Muitos pais com filhos que sofrem de IRC se deparam com a falta de Dados Públicos em relação à Dados de Nefrologia Pediátrica. Ao mesmo tempo, estas pessoas gostariam de levantar todas as informações para ajudar a Frente Parlamentar de Nefrologia, criada em junho de 2023, e melhorar as Políticas Públicas em relação à Nefrologia Pediátrica. Acredita-se que, trazendo estes dados à luz, possa-se sensibilizar o Poder Público e a população em geral.</p>
+        <div class="porque_dados_escrito">
+            <h1 class="porque_dados_escrito_titulo">Por que mostrar esses dados?</h1>
+            <p class="porque_dados_escrito_paragrafo">Muitos pais com filhos que sofrem de IRC se deparam com a falta de Dados Públicos em relação à Dados de Nefrologia Pediátrica. Ao mesmo tempo, estas pessoas gostariam de levantar todas as informações para ajudar a Frente Parlamentar de Nefrologia, criada em junho de 2023, e melhorar as Políticas Públicas em relação à Nefrologia Pediátrica. Acredita-se que, trazendo estes dados à luz, possa-se sensibilizar o Poder Público e a população em geral.</p>
         </div>
         
     </section>
 
     <section class="dados">
         <div class="numero_cli_hemo_pedi">
-            <h2 class="titulo_numero_cli_hemo_pedi">Número de clínicas e hospitais que ofertem hemodiálise pediátrica: </h2>
-
+            <h2 class="titulo_tipo_de_dados">Número de clínicas e hospitais que oferecem hemodiálise pediátrica</h2>
              <div class="tema">
-                <div class="dropdown_num_cli_hemo_pedi">
-                    <label for="tema1">Estado: </label>
-                    <select name="estado" id="tema1" class="estados">
-                        <option value="">Selecione um estado</option>
-                        <option value="exemplo1">exemplo um</option>
-                        <option value="exemplo2">exemplo dois</option>
-                        <option value="exemplo3">exemplo tres</option>
-                    </select>
-                 </div>
-    
-                 <div class="dropdown_num_cli_hemo_pedi">
-                    <label for="tema2">Município:  </label>
-                    <select name="municipio" id="tema2" class="municipios">
-                        <option value="">Selecione um município</option>
-                        <option value="exemplo1">exemplo um</option>
-                        <option value="exemplo2">exemplo dois</option>
-                        <option value="exemplo3">exemplo tres</option>
-                    </select>
-                 </div>
+                <div class="dropdown">
+                    <label for="tema1">Estado:</label>
+                    <img class="setinha" src="/src/static/img/setinha.png">
+                        <select name="estado" id="tema1" class="estados">
+                            
+                            <option value="">Selecione um estado</option>
+                            <option value="exemplo1">Exemplo 1</option>
+                            <option value="exemplo2">Exemplo 2</option>
+                            <option value="exemplo3">Exemplo 3</option>
+                        </select>
+                </div>
+                <div class="dropdown">
+                    <label for="tema2">Município:</label>
+                    <img class="setinha" src="/src/static/img/setinha.png">
+                        <select name="municipio" id="tema2" class="municipios">
+                            <option value="">Selecione um município</option>
+                            <option value="exemplo1">Exemplo 1</option>
+                            <option value="exemplo2">Exemplo 2</option>
+                            <option value="exemplo3">Exemplo 3</option>
+                        </select>
+                </div>
              </div>
             <div class="grafico_exemplo">
                 <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
@@ -68,26 +75,26 @@
         </div>
 
         <div class="centros_trans_de_criancas">
-            <h2 class="titulo_centros_trans_de_criancas">Centros transplatadores de crianças: </h2>
+            <h2 class="titulo_tipo_de_dados">Centros transplantadores de crianças</h2>
             <div class="grafico_exemplo">
                 <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
             </div>
         </div>
 
         <div class="num_cri_trans_brasil">
-            <h2 class="titulo_num_cri_trans_brasil">Número de crianças em filas de transplante no Brasil: </h2>
-            
+            <h2 class="titulo_tipo_de_dados">Número de crianças em filas de transplante no Brasil</h2>
             <div class="tema">
-                <div class="dropdown_num_cri_trans_brasil">
+                <div class="dropdown">
                     <label for="tema3">Região: </label>
+                    <img class="setinha" src="/src/static/img/setinha.png">
                     <select name="regiao" id="tema3" class="regioes">
                         <option value="">Selecione uma região</option>
-                        <option value="exemplo1">exemplo um</option>
-                        <option value="exemplo2">exemplo dois</option>
-                        <option value="exemplo3">exemplo tres</option>
+                        <option value="exemplo1">Exemplo 1</option>
+                        <option value="exemplo2">Exemplo 2</option>
+                        <option value="exemplo3">Exemplo 3</option>
                     </select>
                  </div>
-                 </div>
+             </div>
             
             <div class="grafico_exemplo">
                 <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
@@ -95,30 +102,43 @@
         </div>
 
         <div class="criancas_trat_conserv">
-            <h2 class="titulo_criancas_trat_conserv">Crianças em tratamento conservador:  </h2>
+            <h2 class="titulo_tipo_de_dados">Crianças em tratamento conservador</h2>
             <div class="grafico_exemplo">
                 <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
             </div>
         </div>
 
         <div class="centros_cri_menos_10kg">
-            <h2 class="titulo_centros_cri_menos_10kg">Centros que atendem crianças com menos de 10kg:  </h2>
+            <h2 class="titulo_tipo_de_dados">Centros que atendem crianças com menos de 10kg</h2>
             <div class="grafico_exemplo">
                 <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
             </div>
         </div>
 
+        <div class="projeto_proadi_sus">
+            <h2 class="titulo_tipo_de_dados">Informações sobre o projeto Proadi SUS Hospital Samaritano</h2>
+            <div class="tema">
+                <div class="dropdown">
+                    <label for="tema3">Triênio: </label>
+                    <img class="setinha" src="/src/static/img/setinha.png">
+                    <select name="regiao" id="tema3" class="regioes">
+                        <option value="">Selecione um triênio:</option>
+                        <option value="exemplo1">Exemplo 1</option>
+                        <option value="exemplo2">Exemplo 2</option>
+                        <option value="exemplo3">Exemplo 3</option>
+                    </select>
+                 </div>
+             </div>
+
+            <div class="grafico_bloqueado">
+                <div class="grafico_bloqueado_elementos">
+                    <img class="icone_bloqueado" src="../static/img/icone_bloqueado.png">
+                    <p>Você precisa de uma conta para poder visualizar essas informações.</p>
+                </div>
+            </div>
     </section>
 
-
 </main>
-
-
-
-
-
-
-
 
 <footer>
     <div class="footer_principal">
@@ -135,4 +155,5 @@
 </footer>
 
 </body>
+
 </html>

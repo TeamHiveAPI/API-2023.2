@@ -5,13 +5,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter";
+    text-decoration: none;
 }
 
 body {
     margin: 0 10%;
 }
 
-/* navbarrra */
+/* Navbar */
 
 .navbar {
     display: flex;
@@ -39,7 +40,7 @@ body {
     border-width: 2px;
 }
 
-/* heading da paginarr */
+/* Hero Banner da página Dados */
 
 .active {
     color: white;
@@ -48,16 +49,13 @@ body {
 
 .hero_banner {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
     background: radial-gradient(150% 64% at 80% 40%, rgba(0, 3, 80, 0.7) 0%, #000350 100%);
     margin: 0 -12.5%;
 }
 
 .conteudo_escrito {
-    display: flex;
-    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -65,7 +63,6 @@ body {
 }
 
 .conteudo_escrito_titulo {
-    display: flex;
     text-align: center;
     font-weight: 700;
     font-size: 48px;
@@ -74,8 +71,6 @@ body {
 }
 
 .conteudo_escrito_subtitulo {
-    display: flex;
-    text-align: center;
     font-weight: 500;
     font-size: 20px;
     color: white;
@@ -91,37 +86,64 @@ body {
     justify-content: space-around;
 }
 
-.pqdados_escrito {
+.porque_dados_escrito {
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.pqdados_escrito_titulo {
+.porque_dados_escrito_titulo {
     font-weight: 700;
     font-size: 48px;
     color: #000350;
     margin-top: 80px;
 }
 
-.pqdados_escrito_paragrafo {
-    margin-bottom: 150px;
+.porque_dados_escrito_paragrafo {
+    margin-bottom: 64px;
 }
 
-.dados{
+.dados {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: first baseline;
 }
 
-.numero_cli_hemo_pedi{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+.titulo_tipo_de_dados {
+    margin-top: 64px;
+    color: #000350;
 }
-  
-/* footerrrrra */
+
+.dropdown {
+    margin-top: 32px;
+}
+
+.grafico_exemplo {
+    display: flex;
+    text-align: center;
+    margin-top: 64px;
+}
+
+.grafico_bloqueado {
+    display: flex;
+    padding: 128px 256px;
+    margin-top: 64px;
+    border: 1px solid #303030;
+    border-radius: 32px;
+}
+
+.grafico_bloqueado_elementos {
+    flex-direction: column;
+    text-align: center;
+}
+
+.icone_bloqueado {
+    width: 96px;
+    margin-bottom: 32px;
+}
+
+/* Footer */
 
 footer {
     padding: 64px 0;
@@ -161,18 +183,39 @@ footer {
 
 /* dropdown livia */
 
-select{
-    width: 65%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1.1rem;
+select {
+    appearance: none;
+    width: 420px;
+    padding: 12px;
+    border: 1px solid #303030;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
 }
 
-.tema{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    padding-bottom: 50px;
+label {
+    background-color: #000350;
+    padding: 12px;
+    color: white;
+    border-radius: 12px;
+    margin-right: 16px;
+    font-weight: 600;
 }
 
+option {
+    margin-top: 20px;
+}
+
+.tema {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.setinha {
+    position: absolute;
+    z-index: 1;
+    margin-left: 390px;
+    margin-top: 18px;
+    width: 15px;
+}

@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter";
+    text-decoration: none;
 }
 
 body {
@@ -282,6 +283,10 @@ hr {
     font-weight: 700;
     cursor: pointer;
     margin-top: 65px;
+}
+
+.botao_acessar:hover {
+    background-color: #ececec;
 }
 
 .card_blog, .card_dados, .card_login {
