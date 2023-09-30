@@ -8,17 +8,10 @@
     text-decoration: none;
 }
 
-/* 
-
-Erika, todas as páginas tem que ter essa margem rsrsrs
-Ativa esse código e arruma o que ficou estranho
-(e não esquece de ativar a margem do footer lá embaixo também)
-
 body {
     margin: 0 10%;
 } 
 
-*/
 
 .navbar {
     display: flex;
@@ -113,17 +106,17 @@ body {
 
 .texto {
     text-align: center;
-    margin: 0px 428px;
+    margin: 0px 330px;
 }
 
 .container2 {
     display: flex;
-    margin: 200px 80px 0px;
+    margin: 200px 0px 0px;
 }
 
 .postagem {
     display: flex;
-    
+    white-space: nowrap;
     color: #969696;
     font-weight: 500;
     margin-top: 70px;
@@ -132,9 +125,8 @@ body {
 .coluna {
     display: flex;
     flex-direction: column;
-    margin: 36px 580px 10px 42px;
-    justify-content: space-between;
-    gap: 16px;
+    margin: 36px 480px 10px 42px;
+    gap: 12px;
     white-space: nowrap;
 }
 
@@ -150,11 +142,7 @@ body {
 .linha {
     border-color: #000350;
     border-width: 1px;
-    margin: 24px 80px;
-}
-
-.texto1 {
-    margin: 0px 80px;
+    margin: 24px 0px;
 }
 
 .ler {
@@ -180,18 +168,16 @@ body {
     font-weight: bold;
     font-size: 40px;
     margin-bottom: 32px;
-    margin-left: 80px;
 }
 
 .victor1 {
-    width: 300px;
+    width: 250px;
     height: 500px;
-    margin-left: 80px;
     margin-right: 48px;
 }
 
 .victor2 {
-    width: 550px;
+    width: 480px;
     height: 500px;
 }
 
@@ -201,7 +187,6 @@ body {
     height: 260px;
     border: 1px solid black;
     margin-left: 48px;
-    margin-right: 80px;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -225,40 +210,38 @@ body {
 }
 
 .do1 {
-    width: 280px;
+    width: 250px;
     height: 550px;
-    margin-left: 80px;
     margin-right: 40px;
 }
 
 .do2 {
-    width: 270px;
+    width: 230px;
     height: 390px;
     margin-right: 40px;
 }
 
 .do3 {
-    width: 280px;
+    width: 230px;
     height: 410px;
     margin-right: -8px;
 }
 
 .agatha1 {
-    width: 280px;
+    width: 240px;
     height: 530px;
-    margin-left: 80px;
     margin-right: 40px;
 }
 
 .agatha2 {
-    width: 290px;
+    width: 240px;
     height: 450px;
     margin-right: 40px;
 }
 
 .agatha3 {
-    width: 270px;
-    height: 540px;
+    width: 240px;
+    height: 500px;
     margin-right: -8px;
 }
 
@@ -282,7 +265,7 @@ body {
 
 footer {
     padding: 64px 0;
-    /* margin: 0 -12.5%; */
+    margin: 0 -12.5%;
     margin-top: 64px;
     background-color: #00022C;
     color:white;
