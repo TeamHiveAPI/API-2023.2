@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Inter";
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,7 +20,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 24px 0px 24px 0px;
-    margin: 0 10%;
 }
 
 .navbar_imagem {
@@ -296,4 +296,29 @@ footer {
 .footer_direitos_autorais {
     margin-top: 64px;
     text-align: center;
+}
+
+#progress {
+    display: none;
+    position: fixed;
+    bottom: 64px;
+    right: 64px;
+    width: 64px;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+#progress_value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: white;
+    border-radius: 50%;
+    font-size: 36px;
 }
