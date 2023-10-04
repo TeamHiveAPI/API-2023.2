@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 10%;
+} 
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0px 24px 0px;
+    background-color: white;
+}
+
+.navbar_imagem {
+    width: 125px;
+}
+
+.navbar_menu {
+    display: flex;
+    font-weight: 600;
+    gap: 32px;
+}
+
+.navbar_menu_item {
+    color: #000350;
+    padding: 8px 28px 8px 28px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.active {
+    color: white;
+    background-color: #000350;
+}
+
+.container {
+    background-color: #000350;
+    padding: 75px 50px;
+    margin: 0 -12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    width: 500px;
+    height: 550px;
+}
+
+.cadastro, .login {
+    background-color: white;
+    width: 500px;
+    height: 550px;
+    border-radius: 0 50px 50px 0px;
+}
+
+.titulo_cadastro, .titulo_login {
+    margin: 56px 260px 28px 90px;
+    font-size: 60px;
+    color: #000350;
+}
+
+label {
+    margin: 0 368px 15px 90px;
+    white-space: nowrap;
+}
+
+input {
+    margin: 10px 90px 32px;
+    width: 320px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #000350;
+    margin: 0 150px;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.linha {
+    display: flex;
+    justify-content: center;
+    margin: 30px 90px;
+}
+
+.cadastre {
+    margin: 30px 0;
+}
