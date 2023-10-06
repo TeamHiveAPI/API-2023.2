@@ -74,19 +74,24 @@ body {
 }
 
 label {
-    margin: 0 368px 15px 90px;
+    margin: 0 368px 0px 90px;
     white-space: nowrap;
 }
 
 input {
-    margin: 10px 90px 32px;
+    margin: 0px 90px 32px;
     width: 320px;
     height: 35px;
-    border-radius: 10px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #969696;
+    outline: none;
+    letter-spacing: 1px;
 }
 
 button {
     background-color: #000350;
+    border: none;
     margin: 0 150px;
     width: 200px;
     height: 40px;
@@ -97,14 +102,45 @@ button {
     color: white;
     font-weight: bold;
     font-size: 18px;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #00032e;
+    cursor: pointer;
 }
 
 .linha {
     display: flex;
     justify-content: center;
-    margin: 30px 90px;
+    align-items: center;
+    gap: 25px;
+    margin: 32px 110px 32px;
+
+}
+
+.linha p {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+hr {
+    width: 500px;
+    border: none;
+    border-bottom: 1px solid #969696;
+    margin: 0px -20px;
 }
 
 .cadastre {
-    margin: 30px 0;
+    border: none;
+    transition: background-color 0.5s ease;
+}
+
+.cadastre button:hover {
+    background-color: #00032e;
+    cursor: pointer;
+}
+
+.cadastre a{
+    color: white;
 }
