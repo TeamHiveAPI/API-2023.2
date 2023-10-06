@@ -11,8 +11,7 @@
 
 body {
     margin: 0 10%;
-} 
-
+}
 
 .navbar {
     display: flex;
@@ -114,6 +113,10 @@ body {
     margin: 200px 0px 0px;
 }
 
+.imagem_usuario {
+    width: 96px;
+}
+
 .postagem {
     display: flex;
     white-space: nowrap;
@@ -185,7 +188,7 @@ body {
 .file {
     width: 260px;
     height: 260px;
-    border: 1px solid black;
+    border: 2px solid black;
     margin-left: 48px;
     border-radius: 25px;
     display: flex;
@@ -255,7 +258,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 50px;
     width: 260px;
     height: 50px;
@@ -301,8 +304,8 @@ footer {
 #progress {
     display: none;
     position: fixed;
-    bottom: 64px;
-    right: 64px;
+    bottom: 48px;
+    right: 48px;
     width: 64px;
     height: 64px;
     justify-content: center;

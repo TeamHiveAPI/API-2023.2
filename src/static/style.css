@@ -356,8 +356,8 @@ footer {
 #progress {
     display: none;
     position: fixed;
-    bottom: 64px;
-    right: 64px;
+    bottom: 48px;
+    right: 48px;
     width: 64px;
     height: 64px;
     justify-content: center;

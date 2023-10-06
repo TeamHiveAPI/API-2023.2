@@ -6,13 +6,11 @@
     box-sizing: border-box;
     font-family: "Inter";
     text-decoration: none;
-    scroll-behavior: smooth;
 }
 
 body {
     margin: 0 10%;
 } 
-
 
 .navbar {
     display: flex;
@@ -47,8 +45,8 @@ body {
 }
 
 .container {
-    background-color: #000350;
-    padding: 75px 50px;
+    background: radial-gradient(150% 64% at 80% 40%, rgba(0, 3, 80, 0.7) 0%, #000350 100%);
+    padding: 48px;
     margin: 0 -12.5%;
     display: flex;
     justify-content: center;
