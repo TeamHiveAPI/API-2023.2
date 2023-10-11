@@ -53,16 +53,28 @@ body {
     align-items: center;
 }
 
-.container img {
-    width: 500px;
-    height: 550px;
+.cadastro-img {
+    width: 650px;
+    height: 1050px;
 }
 
-.cadastro, .login {
+.cadastro {
+    background-color: white;
+    width: 650px;
+    height: 1050px;
+    border-radius: 0 50px 50px 0px;
+}
+
+.login {
     background-color: white;
     width: 500px;
     height: 550px;
     border-radius: 0 50px 50px 0px;
+}
+
+.login-img {
+    width: 500px;
+    height: 550px;
 }
 
 .titulo_cadastro, .titulo_login {
@@ -76,8 +88,19 @@ label {
     white-space: nowrap;
 }
 
-input {
+.cadastro input {
     margin: 0px 90px 32px;
+    width: 450px;
+    height: 35px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #969696;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.login input {
+    margin: 0 90px 32px;
     width: 320px;
     height: 35px;
     border: none;
@@ -87,7 +110,23 @@ input {
     letter-spacing: 1px;
 }
 
-button {
+.cadastro button {
+    background-color: #000350;
+    border: none;
+    margin: 0 200px;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+}
+
+.login button {
     background-color: #000350;
     border: none;
     margin: 0 150px;
@@ -141,4 +180,15 @@ hr {
 
 .cadastre a{
     color: white;
+}
+
+select {
+    margin: 10px 90px 32px;
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: #c9c9c9;
 }
