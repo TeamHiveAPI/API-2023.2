@@ -27,10 +27,25 @@
             </div>
         </section>
 
-        <article class="container">
-            <img class="mensagem" src="../static/img/SMS.png" alt="">
-                <p class="fundo">Compartilhe sua história!</p>
-                <p class="texto">Você pode enviar um e-mail com a sua história para administracao@site.com.br para que possamos adicioná-la ao blog. Apenas usuários com contas em nosso site terão suas histórias adicionadas. Não se esqueça de especificar em nosso e-mail qual é a sua conta!</p>
+        <article>
+            <div class="container">
+                <img class="mensagem" src="../static/img/SMS.png" alt="">
+                <button class="fundo" onclick="formulario()">Compartilhe sua história!</button>
+            </div>
+                <form action="" id="form">
+                    <input class="input1" type="text" placeholder="Insira o nome do seu filho"> <br>
+                    <input class="input2" type="text" placeholder="Conte a sua história"> <br>
+                    <div class="submit">
+                        <button type="submit">
+                            <img src="../static/img/mail-send.png" alt="">
+                            Enviar
+                        </button>
+                        <button type="reset">
+                            <img class="x" src="../static/img/x.png" alt="">
+                            Apagar
+                        </button>
+                    </div>
+                </form>
         </article>
         <article>
             <div class="container2">
@@ -97,7 +112,7 @@
             <p class="postagem">Data de Postagem: 02/09/2023</p>
             </div>
             <hr class="linha">
-            <p>Ágatha foi diagnosticada com DRC Doença Renal Crônica) aos 3 anos de idade. Em Alagoas, Estado onde moramos, não há tratamento adequado para essa patologia em crianças, como consequência foi transferida para São Paulo com intenção de encontrar a causa da doença e iniciar tratamento adequado além de prepará-la para o transplante. Fez hemodiálise durante 18 meses, precisou de 12 transfusões de sangue e 6 trocas de catéter permanente, inúmeras drogas para se manter estável enquanto dialisava. Inscrita na Fila de Espera para Transplante em julho de 2014, testada algumas vezes, bateu na trave algumas outras. Depois de enfrentar a desnutrição, hipertensão, restrição alimentar e hídrica conseguimos estabilizá-la, em maio de 2015 depois de testagem, exames e muita precaução foi autorizado o transplante com o pai. Alguns meses depois pudemos retornar a nossa cidade natal. Além do diagnóstico do TEA (transtorno do espectro autista), teve algumas intercorrências no decorrer dos anos em tratamento, sempre com o suporte do centro transplantador em São Paulo pois ainda não temos suporte em Alagoas e isso faz com que tenhamos que viajar quase que mensalmente até lá. Hoje Ágatha cursa a 7 ° série, 13 anos de idade e 8 de transplante renal, teve o diagnóstico recente de TEA (TRANSTORNO DO ESPECTRO AUTISTA). Infelizmente até hoje não temos Nefro pediatra pelo SUS para dar suporte...</p>
+            <p>Ágatha foi diagnosticada com DRC Doença Renal Crônica aos 3 anos de idade. Em Alagoas, Estado onde moramos, não há tratamento adequado para essa patologia em crianças, como consequência foi transferida para São Paulo com intenção de encontrar a causa da doença e iniciar tratamento adequado além de prepará-la para o transplante. Fez hemodiálise durante 18 meses, precisou de 12 transfusões de sangue e 6 trocas de catéter permanente, inúmeras drogas para se manter estável enquanto dialisava. Inscrita na Fila de Espera para Transplante em julho de 2014, testada algumas vezes, bateu na trave algumas outras. Depois de enfrentar a desnutrição, hipertensão, restrição alimentar e hídrica conseguimos estabilizá-la, em maio de 2015 depois de testagem, exames e muita precaução foi autorizado o transplante com o pai. Alguns meses depois pudemos retornar a nossa cidade natal. Além do diagnóstico do TEA (transtorno do espectro autista), teve algumas intercorrências no decorrer dos anos em tratamento, sempre com o suporte do centro transplantador em São Paulo pois ainda não temos suporte em Alagoas e isso faz com que tenhamos que viajar quase que mensalmente até lá. Hoje Ágatha cursa a 7 ° série, 13 anos de idade e 8 de transplante renal, teve o diagnóstico recente de TEA (TRANSTORNO DO ESPECTRO AUTISTA). Infelizmente até hoje não temos Nefro pediatra pelo SUS para dar suporte...</p>
             <div class="botao">
                 <p class="ler">Ler mais</p>
             </div>
@@ -137,6 +152,12 @@
         <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
     </footer>
 
+    <script>
+        function formulario() {
+            var formulario = document.getElementById('form');
+            formulario.style.display = 'inline';
+        }
+    </script>
 </body>
 
 </html>
