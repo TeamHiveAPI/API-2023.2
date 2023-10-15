@@ -110,25 +110,24 @@ O tutorial será publicado na última sprint.
 
 ## 🌱 Backlog do Produto
 
-| Sprint | ID | Item | Prioridade | Descrição | Estimativa | Status | Data Entrega |
-| :----: | :---: | :-----: | :-----: | :-------: | :---------------------: | :-----------: | :------------: |
-| 1️ | 01 | Protótipo Navegável | 100 | Eu, como visitante, quero poder visualizar a introdução dos assuntos e dados que serão abordados na página home. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 95 | Eu, como visitante, quero poder ter acesso as demais páginas a partir de uma ferramenta de navegação. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 90 | Eu,  como visitante, quero poder acessar a página a página “Blog” onde poderei conferir os relatos de pais e filhos com IRC. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 85 | Eu, como visitante, quero poder mandar os meus relatos pessoais na página “Blog” com direito a anexar imagens. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 80 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas clínicas existem na minha região. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 75 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas crianças estão na fila esperando transplante na minha região. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 70 | Eu, como visitante com conta cadastrada, quero poder acessar a página de login para acessar minha conta. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 65 | Eu, como visitante, quero poder acessar a página de cadastro para criar uma conta. | 5 horas | ✅ | 24/09
-| 1️ | 01 | Protótipo Navegável | 60 | Eu, como visitante com conta cadastrada, quero poder acessar os dados sobre o projeto Proadi SUS Hospital Samaritano. | 5 horas | ✅ | 24/09
-| 2 | 02 | Página "Home" | 55 | Eu, como visitante, quero acessar uma página “Home” para ser apresentado ao contexto e visão geral do site. | 4 horas | ⌛ | 15/10
-| 2 | 02 | Página "Home" | 50 | Eu, como visitante, quero acessar um espaço de navegação entre páginas para os explorar o site por completo. | 4 horas | ⌛ | 15/10
-| 3 | 03 | Página "Blog" | 45 | Eu, como visitante com conta cadastrada, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 4 horas | ⌛ | 15/10
-| 3 | 03 | Página "Blog" | 40 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ⌛ | 15/10
-| 3 | 04 | Página "Dados" | 35 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ⌛ | 05/11
-| 3 | 04 | Página "Dados" | 30 | Eu, como visitante com conta cadastrada, quero poder visualizar os dados do projeto Proadi SUS. | 5 horas | ⌛ | 05/11
-| 3 | 05 | Página "Login" | 25 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ⌛ | 05/11
-| 3 | 06 | Página "Minha Conta" | 20 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ⌛ | 05/11
+| Sprint | ID | Item | Prioridade | Descrição | Estimativa de Esforço | Status | Data Entrega | Critério de aceitação | Teste de aceitação | 
+| :----: | :---: | :-----: | :-----: | :-------: | :---------------------: | :-----------: | :------------: | :------------: | :------------: |
+| 1️ | 01 | Protótipo Navegável | 100 | Eu, como visitante, quero poder visualizar a introdução dos assuntos e dados que serão abordados na página home. | 5 horas | ✅ | 24/09 | Visualização da página Home no protótipo. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 95 | Eu, como visitante, quero poder ter acesso as demais páginas a partir de uma ferramenta de navegação. | 5 horas | ✅ | 24/09 | Navegação entre as páginas do site feita por uma ferramenta de navegação. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 90 | Eu,  como visitante, quero poder acessar a página a página “Blog” onde poderei conferir os relatos de pais e filhos com IRC. | 5 horas | ✅ | 24/09 | Visualização dos relatos com fotos e texto. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 85 | Eu, como visitante, quero poder mandar os meus relatos pessoais na página “Blog” com direito a anexar imagens. | 5 horas | ✅ | 24/09 | Postagem do relato pessoal do responsável  em formato de texto com a possibilidade de anexar imagens. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 80 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas clínicas existem na minha região. | 5 horas | ✅ | 24/09 | Realização da filtragem no mapa para conferir quantas clínicas de nefropediatria existem na minha região. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 75 | Eu, como visitante, quero poder acessar a página de dados e verificar quantas crianças estão na fila esperando transplante na minha região. | 5 horas | ✅ | 24/09 | Realização da filtragem no mapa para saber quantas crianças estão na fila de transplante na minha região. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 70 | Eu, como visitante com conta cadastrada, quero poder acessar a página de login para acessar minha conta. | 5 horas | ✅ | 24/09 | Realização do login na página de login para o acesso da conta. | Protótipo Navegável
+| 1️ | 01 | Protótipo Navegável | 65 | Eu, como visitante, quero poder acessar a página de cadastro para criar uma conta. | 5 horas | ✅ | 24/09 | Realização do cadastro na pagina de login para criar uma conta. | Protótipo Navegável
+| 2 | 02 | Página "Home" | 60 | Eu, como visitante, quero acessar uma página “Home” para ser apresentado ao contexto e visão geral do site. | 4 horas | ⌛ | 15/10 | Visualização da página Home, em html com css. | Página “Home”
+| 2 | 02 | Página "Home" | 55 | Eu, como visitante, quero acessar um espaço de navegação entre páginas para os explorar o site por completo. | 4 horas | ⌛ | 15/10 | Disponibilidade de um espaço de navegação visível em todas as páginas do site com inclusão de links para todas as páginas relevantes, mantendo rdenação lógica dos links. | Página “Home”
+| 3 | 03 | Página "Blog" | 50 | Eu, como visitante com conta cadastrada, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 4 horas | ⌛ | 15/10 | Usuários registrados podem criar relatos que podem incluir anexos de fotos. | Página “Blog”
+| 3 | 03 | Página "Blog" | 45 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ⌛ | 15/10 | Visualização dos relatos postados na páginas de forma clara e organizada, com informações legíveis sendo possível navegar pelos relatos e acessar detalhes adicionais, como fotos, por exemplo.
+ | Página “Blog”
+| 3 | 04 | Página "Dados" | 40 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ⌛ | 05/11 | Visualização dos dados na páginas de forma clara e organizada. |  Página “Dados”
+| 3 | 05 | Página "Login" | 35 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ⌛ | 05/11 | Efetução do login ou se cadastrar no site, devendo solicitar informações relevantes para o cadastro, como e-mail e senha. | Página “Login”
+| 3 | 06 | Página "Minha Conta" | 30 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ⌛ | 05/11 | Visualização das informações de sua própria conta, sendo elas nome, e-mail e outras detalhes relevantes, que devem ser exibidas de forma clara e legível. | Página “Minha conta”
 
 <br>
 
