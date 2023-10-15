@@ -101,7 +101,7 @@ O tutorial será publicado na última sprint.
 
 | Sprint | Relatório | Status | 
 | :----: | :--------: | :----------: |
-| 1️⃣ | [Clique aqui](/redirecionar-depois) | ✅ |
+| 1️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V1.0) | ✅ |
 | 2️⃣ | ⌛ | ⌛ |   
 | 3️⃣ | ⌛ | ⌛ |
 | 4️⃣ | ⌛ | ⌛ |
