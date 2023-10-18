@@ -35,7 +35,7 @@ class FormCadastro(FlaskForm):
 	)
 
 	parentesco = SelectField(
-		'Grau de parentesco'
+		'Grau de parentesco',
 		choices=[
 			'Mãe/pai',
 			'Avô/avó',

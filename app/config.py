@@ -5,6 +5,6 @@ basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, ".env"))
 
 class Config:
-	MYSQL_DATABASE_HOST = 'localhost'
-	MYSQL_DATABASE_USER = 'root'
-	MYSQL_DATABASE_DB = 'bdAPI'
+	SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI") # Caminho para o banco de dados mysql
+	SQLALCHEMY_ECHO = False
+	SQLALCHEMY_TRACK_MODIFICATIONS = False
