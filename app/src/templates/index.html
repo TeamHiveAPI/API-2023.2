@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
-    <script src="/src/static/script.js"></script>
-    <title>Site Rim</title>
+{% extends "base.html" %}
+{% block estilo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
+{% block title %} 
+HOME
+{% endblock %}
+{% block nav %}
+    <a class="navbar_menu_item {{ nav }}" href="{{ url_for('index') }}">HOME</a>
+    <a class="navbar_menu_item " href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
+    <a class="navbar_menu_item" href="{{ url_for('login') }}">LOGIN</a>
+{% endblock %}
 
-</head>
-
-<body>
-
-<header class="navbar">
-    <img class="navbar_imagem" src="../static/img/wireframe.png">
-    <nav class="navbar_menu">
-        <a class="navbar_menu_item active" href="index.html">Home</a>
-        <a class="navbar_menu_item" href="blog.html">Blog</a>
-        <a class="navbar_menu_item" href="dados.html">Dados</a>
-        <a class="navbar_menu_item" href="login.html">Login</a>
-    </nav>
-</header>
-
+{% block conteudo %}
 <main>
     <section class="hero_banner">
         <div class="conteudo_escrito">
             <h1 class="conteudo_escrito_titulo">ESTAS CRIANÇAS <br> PRECISAM DE <br> VISIBILIDADE</h1>
             <h2 class="conteudo_escrito_subtitulo">Conheça a luta pelos quais os pais passam para <br> garantir um tratamento digno aos seus filhos <br> com Insuficiência Renal Crônica (IRC)</h2>
         </div>
-        <img class="hero_banner_imagem" src="../static/img/imagem_rins.png">
+        <img class="hero_banner_imagem" src="{{ url_for('static', filename='img/imagem_rins.png') }}">
     </section>
 
     <section class="problematica">
@@ -39,19 +32,19 @@
 
     <section class="cards">
         <div class="card_familia">
-            <img class="icone_familia"src="../static/img/icone_familia.png">
+            <img class="icone_familia"src="{{ url_for('static', filename='img/icone_familia.png') }}">
             <p>Família descobre que o filho possui IRC</p>
         </div>
         <div class="card_sem_nefro">
-            <img class="icone_sem_nefro" src="../static/img/icone_sem_nefro.png">
+            <img class="icone_sem_nefro" src="{{ url_for('static', filename='img/icone_sem_nefro.png') }}">
             <p>Família procura por Nefrologista Pediátrico na região, porém não acham</p>
         </div>
         <div class="card_carro">
-            <img class="icone_carro" src="../static/img/icone_carro.png">
+            <img class="icone_carro" src="{{ url_for('static', filename='img/icone_carro.png') }}">
             <p>Família precisa mudar de Estado para achar um Nefrologista disponível</p>
         </div>
         <div class="card_morreu">
-            <img class="icone_morreu" src="../static/img/icone_morreu.png">
+            <img class="icone_morreu" src="{{ url_for('static', filename='img/icone_morreu.png') }}">
             <p>As famílias que não tem condições de se mudar acabam perdendo seu filho para a doença renal</p>
         </div>
     </section>
@@ -103,17 +96,17 @@
         <div class="card_blog">
             <h3>Blog</h3>
             <p>Confira alguns relatos de mães de seus filhos com IRC:</p>
-            <a href="blog.html"><button class="botao_acessar">Acessar</button></a>
+            <a href="{{ url_for('blog') }}"><button class="botao_acessar">Acessar</button></a>
         </div>
         <div class="card_dados">
             <h3>Dados</h3>
             <p>Analise estatísticas governamentais sobre esse assunto:</p>
-            <a href="dados.html"><button class="botao_acessar">Acessar</button></a>
+            <a href="{{ url_for('dados') }}"><button class="botao_acessar">Acessar</button></a>
         </div>
         <div class="card_login">
             <h3>Login</h3>
             <p>Faça login para poder visualizar alguns dados privados:</p>
-            <a href="login.html"><button class="botao_acessar">Acessar</button></a>
+            <a href="{{ url_for('login') }}"><button class="botao_acessar">Acessar</button></a>
         </div>
     </section>
 
@@ -127,16 +120,13 @@
     <div class="footer_principal">
         <div class="footer_parte_esquerdo">
             <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
-            <img class="footer_logo_time" src="../static/img/logo_time.png">
+            <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
         </div>
         <div class="footer_parte_direito">
             <p>Confira o repositório desse site no Github:</p>
-            <a href="https://github.com/TeamHiveAPI/API-2023.2"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="../static/img/logo_github.png"> </a>
+            <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
         </div>
     </div>
     <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
 </footer>
-
-</body>
-
-</html>
+{% endblock %}

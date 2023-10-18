@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../static/cadastrologin.css">
-</head>
-<body>
-    <header class="navbar">
-        <img class="navbar_imagem" src="../static/img/wireframe.png">
-        <nav class="navbar_menu">
-            <a class="navbar_menu_item" href="./index.html">Home</a>
-            <a class="navbar_menu_item" href="./blog.html">Blog</a>
-            <a class="navbar_menu_item" href="./dados.html">Dados</a>
-            <a class="navbar_menu_item active" href="/">Login</a>
-        </nav>
-    </header>
+{% extends "base.html" %}
+
+{% block estilo %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='cadastrologin.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
+
+{% block title %} 
+LOGIN
+{% endblock %}
+{% block nav %}
+    <a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
+    <a class="navbar_menu_item " href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
+    <a class="navbar_menu_item {{ nav }}" href="{{ url_for('login') }}">LOGIN</a>
+{% endblock %}
+
+{% block conteudo %}
     <main>
         <section>
             <div class="container">
-                <img class="login-img" src="../static/img/login.png" alt="">
+                <img class="login-img" src="{{ url_for('static', filename='img/login.png') }}" alt="">
                 <div class="login">
                     <h1 class="titulo_login">Login</h1>
                         <form action="">
@@ -36,12 +36,11 @@
                     </div>
                     <div class="cadastre">
                         <button type="submit">
-                            <a href="./cadastro.html">Cadastre-se</a>
+                            <a href="{{ url_for('cadastro') }}">Cadastre-se</a>
                         </button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-</body>
-</html>
+{% endblock %}

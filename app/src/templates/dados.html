@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\static\dadosstyle.css">
-    <script src="/src/static/script.js"></script>
-    <title>Dados</title>
-</head>
-<body>
-    
-<header class="navbar">
+{% extends "base.html" %}
 
-    <img class="navbar_imagem" src="../static/img/wireframe.png">
-    <nav class="navbar_menu">
-        <a class="navbar_menu_item" href="index.html">Home</a>
-        <a class="navbar_menu_item" href="blog.html">Blog</a>
-        <a class="navbar_menu_item active" href="dados.html" >Dados</a>
-        <a class="navbar_menu_item" href="login.html">Login</a>
-    </nav>
+{% block estilo %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='dadosstyle.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
 
-</header>
+{% block title %} 
+DADOS
+{% endblock %}
+{% block nav %}
+    <a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
+    <a class="navbar_menu_item " href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item {{ nav }}" href="{{ url_for('dados') }}">DADOS</a>
+    <a class="navbar_menu_item" href="{{ url_for('login') }}">LOGIN</a>
+{% endblock %}
 
+{% block conteudo %}
 <main>
 
     <section class="hero_banner">
@@ -44,7 +39,7 @@
              <div class="tema">
                 <div class="dropdown">
                     <label for="tema1">Estado:</label>
-                    <img class="setinha" src="/src/static/img/setinha.png">
+                    <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
                         <select name="estado" id="tema1" class="estados">
                             
                             <option value="">Selecione um estado</option>
@@ -55,7 +50,7 @@
                 </div>
                 <div class="dropdown">
                     <label for="tema2">Município:</label>
-                    <img class="setinha" src="/src/static/img/setinha.png">
+                    <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
                         <select name="municipio" id="tema2" class="municipios">
                             <option value="">Selecione um município</option>
                             <option value="exemplo1">Exemplo 1</option>
@@ -81,7 +76,7 @@
             <div class="tema">
                 <div class="dropdown">
                     <label for="tema3">Região: </label>
-                    <img class="setinha" src="/src/static/img/setinha.png">
+                    <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
                     <select name="regiao" id="tema3" class="regioes">
                         <option value="">Selecione uma região</option>
                         <option value="exemplo1">Exemplo 1</option>
@@ -121,16 +116,13 @@
     <div class="footer_principal">
         <div class="footer_parte_esquerdo">
             <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
-            <img class="footer_logo_time" src="../static/img/logo_time.png">
+            <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
         </div>
         <div class="footer_parte_direito">
             <p>Confira o repositório desse site no Github:</p>
-            <a href="https://github.com/TeamHiveAPI/API-2023.2"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="../static/img/logo_github.png"> </a>
+            <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
         </div>
     </div>
     <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
 </footer>
-
-</body>
-
-</html>
+{% endblock %}

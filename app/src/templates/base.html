@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block estilo %} {% endblock %}
+    <title>{% block titulo %} {% endblock %}</title>
+</head>
+<body>
+<header class="navbar">
+    <img class="navbar_imagem" src="{{ url_for('static', filename='img/wireframe.png') }}">
+    <nav class="navbar_menu">
+        {% block nav %} {% endblock %}
+    </nav>
+</header>
+
+{% block conteudo %}
+{% endblock %}
+
+</body>
+
+</html>
