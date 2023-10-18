@@ -18,16 +18,6 @@ def blog():
 def dados():
     return render_template('dados.html', nav= 'active')
 
-#Rota pagina login
-@app.route('/login')
-def login():
-    return render_template('login.html', nav= 'active', titulo = 'LOGIN')
-
-#Rota pagina cadastro
-@app.route ('/cadastro')
-def cadastro():
-    return render_template('cadastro.html', nav= 'active')
-
 #Rota minha conta 
 @app.route('/minhaconta')
 def conta():
