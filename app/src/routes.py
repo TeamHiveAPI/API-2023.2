@@ -22,6 +22,3 @@ def dados():
 @app.route('/minhaconta')
 def conta():
     return render_template('minhaconta.html', nav= 'active', titulo = 'MINHA-CONTA')
-
-app.run(debug=True)
-
