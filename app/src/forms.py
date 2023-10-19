@@ -29,7 +29,7 @@ class FormCadastro(FlaskForm):
 	email = StringField(
 		'Email',
 		validators[
-			DataRequired()
+			DataRequired(),
 			Email(message='Digite um e-mail válido.')
 		]
 	)
