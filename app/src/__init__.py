@@ -19,6 +19,7 @@ def create_app():
 	with app.app_context():
 		from . import routes
 		from . import auth
+		from . import models
 
 		app.register_blueprint(auth.auth_bp) 
 
