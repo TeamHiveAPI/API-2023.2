@@ -1,4 +1,4 @@
-from flask import Blueprints, render_template
+from flask import Blueprint, render_template
 
 auth_bp = Blueprint(
     'auth_bp', __name__,

@@ -16,7 +16,7 @@ class FormCadastro(FlaskForm):
 	cpf = StringField(
 		'CPF',
 		validators[
-			DataRequired()
+			DataRequired(),
 			Length(11)
 		]
 	)
