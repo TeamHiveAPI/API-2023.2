@@ -1,9 +1,6 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, Blueprint
 
-app = Flask(
-	__name__,
-	template_folder="templates"
-)
+from flask import current_app as app
 
 #Rota pagina inicial
 @app.route('/')

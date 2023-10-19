@@ -13,7 +13,7 @@ BLOG
     <a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
     <a class="navbar_menu_item {{ nav }}" href="{{ url_for('blog') }}">BLOG</a>
     <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
-    <a class="navbar_menu_item" href="{{ url_for('login') }}">LOGIN</a>
+    <a class="navbar_menu_item" href="{{ url_for('auth_bp.login') }}">LOGIN</a>
 {% endblock %}
 
 {% block conteudo %}
