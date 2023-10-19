@@ -7,6 +7,6 @@ load_dotenv(path.join(basedir, ".env"))
 class Config:
 	FLASK_APP = "wsgi.py"
 
-	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://fatec:senha@localhost:3306/usuarios' # Caminho para o banco de dados mysql
+	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://fatec:senha@localhost:3306/bd' # Caminho para o banco de dados mysql
 	SQLALCHEMY_ECHO = False
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
