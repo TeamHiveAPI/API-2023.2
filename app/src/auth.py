@@ -8,7 +8,7 @@ auth_bp = Blueprint(
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    return render_template('login.html', nav='active')
 
 @auth_bp.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
