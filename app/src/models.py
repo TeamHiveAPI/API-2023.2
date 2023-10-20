@@ -1,10 +1,11 @@
+from . import db
+from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from . import db
 
-class Usuario(db.Model):
+class Usuario(UserMixin, db.Model):
+
 	__tablename__ = "usuario"
-
 	id = db.Column(
 		db.Integer,
 		primary_key=True
@@ -46,6 +47,19 @@ class Usuario(db.Model):
 		db.String(20),
 		nullable=False
 	)
+
+	def __init__(self, nome, dn, cpf, endereco, email, senha, profissao):
+		self.nome = nome 
+		self.dn = dn
+		self.cpf = cpf
+		self.endereco = endereco
+		self.email = email
+		self.senha = generate_password_hash(senha, method='sha256')#faz a criptografia da senha, e armazena com segurança no banco de dados
+		self.profissao = profissao
+
+	#confere se a senha é igual ao do usuario.
+	def check_password(self, senha):
+		return check_password_hash(self.senha, senha)
 
 class Post(db.Model):
 	__tablename__ = "post"

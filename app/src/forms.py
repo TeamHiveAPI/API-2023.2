@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, TextField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length
 
-class FormCadastro(FlaskForm):
+class (FlaskForm):
 	nome = StringField(
 		'Nome',
 		validators=[DataRequired()]

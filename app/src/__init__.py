@@ -1,7 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask
+from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
-
-from sqlalchemy.sql import func
+from flask_login import LoginManager
 
 db = SQLAlchemy()
 
@@ -10,18 +10,21 @@ def create_app():
 		__name__, 
 		instance_relative_config=False, 
 		template_folder="templates", 
-		static_folder="static"
-	)
+		static_folder="static")
 	app.config.from_object('config.Config')
 
+	login_manager = LoginManager()
+	session = Session(app)
+
 	db.init_app(app)
+	login_manager.init_app(app)
 
 	with app.app_context():
 		from . import routes
 		from . import auth
 		from . import models
 
-		app.register_blueprint(auth.auth_bp) 
+		app.register_blueprint(auth.auth_bp)
 
 		db.create_all()
 
