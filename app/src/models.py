@@ -57,7 +57,7 @@ class Usuario(UserMixin, db.Model):
 		nullable=False
 	)
 
-	def __init__(self, nome, dn, cpf, endereco, email, senha, profissao):
+	def __init__(self, nome, dn, cpf, endereco, email, parentesco, senha, profissao, comochegou):
 		self.nome = nome 
 		self.dn = dn
 		self.cpf = cpf

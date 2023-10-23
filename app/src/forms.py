@@ -21,7 +21,7 @@ class CadastroForm(FlaskForm):
 		]
 	)
 
-	endereço = StringField(
+	endereco = StringField(
 		'Endereço',
 		[DataRequired()]
 	)
@@ -61,10 +61,20 @@ class CadastroForm(FlaskForm):
 		]
 	)
 
-	senha = StringField(
+	senha = PasswordField(
 		'Senha',
 		[DataRequired()]
 	)
+
+	confirmar = PasswordField(
+        'Confirm Your Password',
+        validators=[
+            DataRequired(),
+            EqualTo('senha', message='As senhas devem ser iguais.')
+        ]
+    )
+
+	cadastrar = SubmitField('Cadastrar')
 
 class PostForm(FlaskForm):
 	titulo = StringField(
@@ -78,3 +88,14 @@ class PostForm(FlaskForm):
 	)
 
 	enviar = SubmitField('Enviar')
+
+class LoginForm(FlaskForm):
+	email = StringField(
+        'Email',
+        validators=[
+            DataRequired(),
+            Email(message='Digite um email válido.')
+        ]
+    )
+    senha = PasswordField('Senha', validators=[DataRequired()])
+    login = SubmitField('Log In')
