@@ -12,6 +12,7 @@ def create_app():
 		template_folder="templates", 
 		static_folder="static")
 	app.config.from_object('config.Config')
+	app.secret_key='timehive'
 
 	login_manager = LoginManager()
 	session = Session(app)

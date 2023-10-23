@@ -1,21 +1,22 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextField, SubmitField, SelectField
+from wtforms import StringField, TextField, SubmitField, SelectField, va
 from wtforms.validators import DataRequired, Length
 
 class CadastroForm(FlaskForm):
 	nome = StringField(
 		'Nome',
-		[DataRequired()]
+		validators=[DataRequired()
+			length(min= , max=)]
 	)
 
 	dn = StringField(
 		'DN',
-		[DataRequired()]
+		validators=[DataRequired()]
 	)
 
 	cpf = StringField(
 		'CPF',
-		[
+		validators=[
 			DataRequired(),
 			Length(11)
 		]
@@ -23,12 +24,12 @@ class CadastroForm(FlaskForm):
 
 	endereco = StringField(
 		'Endereço',
-		[DataRequired()]
+		validators=[DataRequired()]
 	)
 
 	email = StringField(
 		'Email',
-		[
+		validators=[
 			DataRequired(),
 			Email(message='Digite um e-mail válido.')
 		]
@@ -47,7 +48,7 @@ class CadastroForm(FlaskForm):
 
 	profissao = StringField(
 		'Profissão',
-		[DataRequired()]
+		validators=[DataRequired()]
 	)
 
 	comochegou = SelectField(
