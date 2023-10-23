@@ -9,7 +9,7 @@ auth_bp = Blueprint('auth_bp', __name__,template_folder='templates',static_folde
 #rotas relativas
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
-	if current_user.is_authenticated:
+	if current_user.is_authenticated:#verifica se o usuario já ta autenticado
 		return redirect(url_for('index'))
 	
 	form =LoginForm()
@@ -27,7 +27,7 @@ def cadastro():
 	form = CadastroForm()
 	if form.validade_on_submit():
 		existing_user = Usuario.query.filter_by(email=form.email.data).first()
-		if existing_user == None:
+		if existing_user is None:
 			usuario = Usuario()
 			usuario=(usuario, form.nome.data, form.dn.data, form.cpf.data, form.endereco.data, form.email.data, form.parentesco.data, form.profissao.data, form.comochegou.data, form.senha.data)
 			db.session.add(usuario)

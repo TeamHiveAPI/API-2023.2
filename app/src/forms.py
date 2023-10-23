@@ -5,8 +5,7 @@ from wtforms.validators import DataRequired, Length
 class CadastroForm(FlaskForm):
 	nome = StringField(
 		'Nome',
-		validators=[DataRequired()
-			length(min= , max=)]
+		validators=[DataRequired()]
 	)
 
 	dn = StringField(
@@ -69,7 +68,7 @@ class CadastroForm(FlaskForm):
 
 	confirmar = PasswordField(
         'Confirm Your Password',
-        validators=[
+		[
             DataRequired(),
             EqualTo('senha', message='As senhas devem ser iguais.')
         ]
