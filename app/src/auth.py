@@ -11,12 +11,3 @@ def login():
 @auth_bp.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     return render_template('cadastro.html')
-
-@auth_bp.route('/minhaconta')
-def conta():
-    return render_template('minhaconta.html', nav='active')
-
-@auth_bp.route('/logout')
-def logout():
-    return redirect (url_for('index'))
-

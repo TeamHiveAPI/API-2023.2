@@ -2,20 +2,20 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, TextField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length
 
-class (FlaskForm):
+class CadastroForm(FlaskForm):
 	nome = StringField(
 		'Nome',
-		validators=[DataRequired()]
+		[DataRequired()]
 	)
 
 	dn = StringField(
 		'DN',
-		validators[DataRequired()]
+		[DataRequired()]
 	)
 
 	cpf = StringField(
 		'CPF',
-		validators[
+		[
 			DataRequired(),
 			Length(11)
 		]
@@ -23,12 +23,12 @@ class (FlaskForm):
 
 	endereço = StringField(
 		'Endereço',
-		validators[DataRequired()]
+		[DataRequired()]
 	)
 
 	email = StringField(
 		'Email',
-		validators[
+		[
 			DataRequired(),
 			Email(message='Digite um e-mail válido.')
 		]
@@ -44,3 +44,37 @@ class (FlaskForm):
 			'Outro'
 		]
 	)
+
+	profissao = StringField(
+		'Profissão',
+		[DataRequired()]
+	)
+
+	comochegou = SelectField(
+		'Como chegou ao site?'
+		choices=[
+			'Internet',
+			'Redes sociais',
+			'Indicação de amigo',
+			'Indicação profissional',
+			'Outro'
+		]
+	)
+
+	senha = StringField(
+		'Senha',
+		[DataRequired()]
+	)
+
+class PostForm(FlaskForm):
+	titulo = StringField(
+		'Título',
+		[DataRequired()]
+	)
+
+	conteudo = StringField(
+		'Depoimento',
+		[DataRequired()]
+	)
+
+	enviar = SubmitField('Enviar')

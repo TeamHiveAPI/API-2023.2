@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, Blueprint
-
+from flask_login import current_user, login_required, logout_user
 from flask import current_app as app
 
 #Rota pagina inicial
@@ -16,3 +16,15 @@ def blog():
 @app.route('/dados')
 def dados():
     return render_template('dados.html', nav='active')
+
+@app.route('/minhaconta', methods=['GET'])
+@login_required
+def conta():
+    return render_template('minhaconta.html', nav='active')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
