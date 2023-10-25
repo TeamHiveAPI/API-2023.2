@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from flask_session import Session
 
 db = SQLAlchemy()
+login_manager = LoginManager()
 
 def create_app():
 	app = Flask(
@@ -12,9 +13,8 @@ def create_app():
 		template_folder="templates", 
 		static_folder="static")
 	app.config.from_object('config.Config')
-	app.secret_key='timehive'
+	#app.secret_key='timehive'
 
-	login_manager = LoginManager()
 	session = Session(app)
 
 	db.init_app(app)

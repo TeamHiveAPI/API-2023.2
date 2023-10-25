@@ -10,3 +10,5 @@ class Config:
 	SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI") # Caminho para o banco de dados mysql
 	SQLALCHEMY_ECHO = False
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+	SECRET_KEY = environ.get("SECRET_KEY")

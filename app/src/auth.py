@@ -3,6 +3,7 @@ from .forms import CadastroForm, LoginForm
 from .models import db, Usuario
 from flask_login import current_user, login_user
 from werkzeug.security import  check_password_hash
+from . import login_manager
 
 auth_bp = Blueprint('auth_bp', __name__,template_folder='templates',static_folder='static')
 
@@ -35,3 +36,10 @@ def cadastro():
 			login_user(usuario)
 			return redirect(url_for('index'))
 	return render_template('cadastro.html')
+
+@login_manager.user_loader
+def load_user(user_id):
+    """Check if user is logged-in on every page load."""
+    if user_id is not None:
+        return Usuario.query.get(user_id)
+    return None
