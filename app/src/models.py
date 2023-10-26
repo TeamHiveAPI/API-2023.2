@@ -21,7 +21,7 @@ class Usuario(db.Model):
 		self.endereco = endereco
 		self.email = email
 		self.parentesco = parentesco
-		self.senha = senha #faz a criptografia da senha, e armazena com segurança no banco de dados
+		self.senha = senha 
 		self.profissao = profissao
 		self.comochegou = comochegou
 
