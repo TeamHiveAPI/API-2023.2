@@ -25,9 +25,6 @@ class Usuario(db.Model):
 		self.profissao = profissao
 		self.comochegou = comochegou
 
-	def check_password(self, senha):
-		return (self.senha, senha)
-
 class Post(db.Model):
 	__tablename__ = "post"
 	id = db.Column(db.Integer,primary_key=True)
