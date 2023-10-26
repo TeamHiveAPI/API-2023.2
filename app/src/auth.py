@@ -13,20 +13,20 @@ def login():
 	if current_user.is_authenticated:#verifica se o usuario já ta autenticado
 		return redirect(url_for('index'))
 	
-	form =LoginForm()
+	form = LoginForm()
 	if form.validate_on_submit():
-		usuario= Usuario.query.filter_by(email= form.email.data).first()
+		usuario = Usuario.query.filter_by(email= form.email.data).first()
 		if usuario and check_password_hash(usuario.senha, form.senha.data):
 			login_user(usuario)
 			return redirect(url_for('index'))
 		
 	flash('E-mail ou senha invalidos!')
-	return render_template('login', form=form, nav='active')
+	return render_template('login.html', form=form, nav='active')
 
 @auth_bp.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
 	form = CadastroForm()
-	if form.validade_on_submit():
+	if form.validate_on_submit():
 		existing_user = Usuario.query.filter_by(email=form.email.data).first()
 		if existing_user is None:
 			usuario = Usuario()
@@ -35,7 +35,7 @@ def cadastro():
 			db.session.commit()
 			login_user(usuario)
 			return redirect(url_for('index'))
-	return render_template('cadastro.html')
+	return render_template('cadastro.html', form=form)
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -43,3 +43,9 @@ def load_user(user_id):
     if user_id is not None:
         return Usuario.query.get(user_id)
     return None
+
+@login_manager.unauthorized_handler
+def unauthorized():
+	"""Redirect unauthorized users to Login page."""
+	flash('You must be logged in to view that page.')
+	return redirect(url_for('auth_bp.login'))

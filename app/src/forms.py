@@ -1,15 +1,15 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, SelectField, EmailField, PasswordField
+from wtforms import StringField, TextAreaField, SubmitField, SelectField, EmailField, PasswordField, DateField
 from wtforms.validators import DataRequired, Length, EqualTo, Email
 
 class CadastroForm(FlaskForm):
 	nome = StringField(
-		'Nome',
+		'Nome completo',
 		validators=[DataRequired()]
 	)
 
-	dn = StringField(
-		'DN',
+	dn = DateField(
+		'Data de nascimento',
 		validators=[DataRequired()]
 	)
 
@@ -63,18 +63,18 @@ class CadastroForm(FlaskForm):
 
 	senha = PasswordField(
 		'Senha',
-		[DataRequired()]
+		validators=[DataRequired()]
 	)
 
 	confirmar = PasswordField(
-		'Confirm Your Password',
-		[
+		'Confirme sua senha',
+		validators=[
 			DataRequired(),
 			EqualTo('senha', message='As senhas devem ser iguais.')
 		]
 	)
 
-	cadastrar = SubmitField('Cadastrar')
+	submit = SubmitField('Cadastrar')
 
 class PostForm(FlaskForm):
 	titulo = StringField(
@@ -87,7 +87,7 @@ class PostForm(FlaskForm):
 		[DataRequired()]
 	)
 
-	enviar = SubmitField('Enviar')
+	submit = SubmitField('Enviar')
 
 class LoginForm(FlaskForm):
 	email = StringField(
@@ -98,4 +98,4 @@ class LoginForm(FlaskForm):
 		]
 	)
 	senha = PasswordField('Senha', validators=[DataRequired()])
-	login = SubmitField('Log In')
+	submit = SubmitField('Log In')
