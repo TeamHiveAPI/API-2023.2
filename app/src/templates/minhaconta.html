@@ -32,10 +32,9 @@ MINHA-CONTA
             <h1>Senha:</h1>
             <p class="info_paragrafo">nefrologia123</p>
             <div class="minha_conta_botao">
-                <button type="submit">
-                    <img src="{{ url_for('static', filename='img/wireframe.png') }}">
-                    <p>Sair</p>
-                </button>
+                <form method="post" action="{{ url_for('logout') }}">
+                    <button type="submit" class="minha_conta_botao">Sair</button>
+                </form>
             </div>
         </div>
     </section>
