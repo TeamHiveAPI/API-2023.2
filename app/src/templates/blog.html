@@ -1,159 +1,178 @@
 {% extends 'base.html' %}
 
-{% block estilo %} 
+{% block estilo %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styleblog.css') }}">
 
 {% endblock %}
 
-{% block title %} 
+{% block title %}
 BLOG
 {% endblock %}
 
 {% block nav %}
-    <a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
-    <a class="navbar_menu_item {{ nav }}" href="{{ url_for('blog') }}">BLOG</a>
-    <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
-    <a class="navbar_menu_item" href="{{ url_for('login') }}">{{ title }}</a>
+<a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
+<a class="navbar_menu_item {{ nav }}" href="{{ url_for('blog') }}">BLOG</a>
+<a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
+<a class="navbar_menu_item" href="{{ url_for('login') }}">{{ title }}</a>
 {% endblock %}
 
 {% block conteudo %}
-    <main>
-        <section class="hero_banner">
-            <div class="conteudo_escrito">
-                <h1 class="conteudo_escrito_titulo">BLOG</h1>
-                <h2 class="conteudo_escrito_subtitulo">Confira relatos de pais sobre suas lutas para garantir aos seus filhos com IRC um tratamento adequado</h2>
-            </div>
-        </section>
-
-        <article>
-            <div class="container">
-                <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
-                <button class="fundo" onclick="formulario()">Compartilhe sua história!</button>
-            </div>
-                <form action="" id="form">
-                    <input class="input1" type="text" placeholder="Insira o nome do seu filho"> <br>
-                    <input class="input2" type="text" placeholder="Conte a sua história"> <br>
-                    <div class="submit">
-                        <button type="submit">
-                            <img src="{{ url_for('static', filename='img/mail-send.png') }}" alt="">
-                            Enviar
-                        </button>
-                        <button type="reset">
-                            <img class="x" src="{{ url_for('static', filename='img/x.png') }}" alt="">
-                            Apagar
-                        </button>
-                    </div>
-                </form>
-        </article>
-        <article>
-            <div class="container2">
-                 <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
-                <div class="coluna">
-                    <p class="nome">Margarida Braga dos Reis</p>
-                    <p class="mae">Mãe de Victor</p>
-                </div>
-            <p class="postagem">Data de Postagem: 01/09/2023</p>
-            </div>
-            <hr class="linha">
-            <p>Victor Daniel foi diagnosticado aos quatro meses de gestação com hidronefrose bilateral. Começamos um acompanhamento mais detalhado ao logo da gravidez na Santa Casa de Misericórdia de Belém. Ao nascer, ele realizou vários exames onde foi constatado o DRC (Doença Renal Crônica) secundário e a válvula de uretra posterior (VUP), optando pelo tratamento conservador com medicamentos, alimentação e exames periódicos para avaliação da progressão da doença.</p>
-            <br>
-            <p>Quando surgiu a necessidade de fazer hemodiálise o hospital de Belém não tinha equipamentos para realizar dialise em bebês - foi então que entraram em contato com o hospital de São Paulo. No dia 26/05/2017 fomos para São Paulo, mas não iniciou-se de imediato a hemodiálise, precisando retomar o tratamento conservador. Contudo, no dia 28/07/2017, foi passado um cateter para começar a hemodiálise que ficou durante por 1 anos e 9 meses, mais de 8 transfusões de sangue, foram 10 passagens de cateter, fez vesicostomia, passagem de gastrostomia para ajudar no ganho de peso, conseguiu entrar na fila pro transplante em 2018. Nesse período teve várias intercorrências, foi testado duas vezes em períodos diferentes, mas o rim acabou ficando com outro paciente...</p>
-            <div class="botao">
-                <p class="ler">Ler mais</p>
-            </div>
-            <p class="anexo">Anexos</p>
-            <div class="fotos">
-                <img class="victor1" src="{{ url_for('static', filename='img/image 1.png') }}" alt="">
-                <img class="victor2" src="{{ url_for('static', filename='img/image 2.png') }}" alt="">
-                <div class="file">
-                    <img class="victor3" src="{{ url_for('static', filename='img/Imagem File.png') }}" alt="">
-                    <p class="ver">Ver mais</p>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="container2">
-                <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
-                <div class="coluna">
-                    <p class="nome">Tais Ferreira da Silva Costa</p>
-                    <p class="mae">Mãe de Dhomini</p>
-                </div>
-            <p class="postagem">Data de Postagem: 02/09/2023</p>
-            </div>
-            <hr class="linha">
-            <p>Dhomini nasceu no Hospital Regional do Gama Distrito Federal, Nasceu de uma Cesariana pélvica. Tivemos alta, sendo que após 3 dias de vida, teve que repetir o exame de coração pois, o primeiro havia dado uma alteração, que segundo a equipe médica o segundo estava tudo normal depois do exame tivemos alta. Com o passar dos dias percebi que Dhomini não pegava peso, tinha dificuldade para amamentar, os sinais da doença já começaram com 1 mês de vida eram os primeiros sinais. Em fevereiro de 2015 levei ele na UBS da minha cidade, a médica pediu que levasse ele para o hospital HMIB hospital materno de Brasília.
-            Ao chegar no hospital Dhomini já teve que ir para o oxigênio e passa sonda na uretra, fizeram vários exames mais no Hospital HMIB não tinha especialista e foi encaminhado para o hospital de Base de Brasília, lá teve que tomar bolsa de sangue e outros procedimentos foram necessários.</p>
-            <br>
-            <p>Após algumas intercorrências e sem melhora do quadro resolvi entrar em contato com a Doutora Mayume, de São Paulo e perguntei ela como fazia para poder ir para São Paulo ela me explicou sobre hospital de referência em doença renal crônica em criança de...</p>
-            <br>
-            <div class="botao">
-                <p class="ler">Ler mais</p>
-            </div>
-            <p class="anexo">Anexos</p>
-            <div class="fotos">
-                <img class="do1" src="{{ url_for('static', filename='img/image 3.png') }}" alt="">
-                <img class="do2" src="{{ url_for('static', filename='img/image 4.png') }}" alt="">
-                <img class="do3" src="{{ url_for('static', filename='img/image 5.png') }}" alt="">
-                <div class="file">
-                    <img class="arquivo" src="{{ url_for('static', filename='img/Imagem File.png') }}" alt="">
-                    <p class="ver">Ver mais</p>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="container2">
-                <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
-                <div class="coluna">
-                    <p class="nome">Vandressa Santos</p>
-                    <p class="mae">Mãe de Agatha</p>
-                </div>
-            <p class="postagem">Data de Postagem: 02/09/2023</p>
-            </div>
-            <hr class="linha">
-            <p>Ágatha foi diagnosticada com DRC Doença Renal Crônica aos 3 anos de idade. Em Alagoas, Estado onde moramos, não há tratamento adequado para essa patologia em crianças, como consequência foi transferida para São Paulo com intenção de encontrar a causa da doença e iniciar tratamento adequado além de prepará-la para o transplante. Fez hemodiálise durante 18 meses, precisou de 12 transfusões de sangue e 6 trocas de catéter permanente, inúmeras drogas para se manter estável enquanto dialisava. Inscrita na Fila de Espera para Transplante em julho de 2014, testada algumas vezes, bateu na trave algumas outras. Depois de enfrentar a desnutrição, hipertensão, restrição alimentar e hídrica conseguimos estabilizá-la, em maio de 2015 depois de testagem, exames e muita precaução foi autorizado o transplante com o pai. Alguns meses depois pudemos retornar a nossa cidade natal. Além do diagnóstico do TEA (transtorno do espectro autista), teve algumas intercorrências no decorrer dos anos em tratamento, sempre com o suporte do centro transplantador em São Paulo pois ainda não temos suporte em Alagoas e isso faz com que tenhamos que viajar quase que mensalmente até lá. Hoje Ágatha cursa a 7 ° série, 13 anos de idade e 8 de transplante renal, teve o diagnóstico recente de TEA (TRANSTORNO DO ESPECTRO AUTISTA). Infelizmente até hoje não temos Nefro pediatra pelo SUS para dar suporte...</p>
-            <div class="botao">
-                <p class="ler">Ler mais</p>
-            </div>
-            <p class="anexo">Anexos</p>
-            <div class="fotos">
-                <img class="agatha1" src="{{ url_for('static', filename='img/image 9.png') }}" alt="">
-                <img class="agatha2" src="{{ url_for('static', filename='img/image 10.png') }}" alt="">
-                <img class="agatha3" src="{{ url_for('static', filename='img/image 11.png') }}" alt="">
-                 <div class="file">
-                    <img class="arquivo" src="{{ url_for('static', filename='img/Imagem File.png') }}" alt="">
-                    <p class="ver">Ver mais</p>
-                </div>
-            </div>
-        </article>
-        <div class="botao1">
-            <p class="carregar">Carregar mais posts</p>
+<main>
+    <section class="hero_banner">
+        <div class="conteudo_escrito">
+            <h1 class="conteudo_escrito_titulo">BLOG</h1>
+            <h2 class="conteudo_escrito_subtitulo">Confira relatos de pais sobre suas lutas para garantir aos seus filhos com IRC um tratamento adequado</h2>
         </div>
+    </section>
+    {% if session['user_id'] is not none %}
+    <!-- Se o usuário estiver logado, exibe o formulário -->
+    <article>
+        <div class="container">
+            <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
+            <button class="fundo" onclick="formulario()">Compartilhe sua história!</button>
+        </div>
+        <form action="{{ url_for('blog') }} " method="post">
+            <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome do seu filho"> <br>
+            <input class="input2" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"> <br>
+            <div class="submit">
+                <button type="submit">
+                    <img src="{{ url_for('static', filename='img/mail-send.png') }}" alt="">
+                    Enviar
+                </button>
+                <button type="reset" id="reset">
+                    <img class="x" src="{{ url_for('static', filename='img/x.png') }}" alt="">
+                    Apagar
+                </button>
+            </div>
+        </form>
+    </article>
+    {% else %}
+    <!-- Se o usuário não estiver logado, exibe o link para a página de login -->
+    <a href="{{ url_for('login') }}">
+        <div class="container">
+            <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
+            <button class="fundo">Compartilhe sua história!</button>
+        </div>
+    </a>
+    {% endif %}
+
+    <article>
+        <div class="container2">
+            <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
+            <div class="coluna">
+                <p class="nome">Margarida Braga dos Reis</p>
+                <p class="mae">Mãe de Victor</p>
+            </div>
+            <p class="postagem">Data de Postagem: 01/09/2023</p>
+        </div>
+        <hr class="linha">
+        <p>Victor Daniel foi diagnosticado aos quatro meses de gestação com hidronefrose bilateral. Começamos um acompanhamento mais detalhado ao logo da gravidez na Santa Casa de Misericórdia de Belém. Ao nascer, ele realizou vários exames onde foi constatado o DRC (Doença Renal Crônica) secundário e a válvula de uretra posterior (VUP), optando pelo tratamento conservador com medicamentos, alimentação e exames periódicos para avaliação da progressão da doença.</p>
+        <br>
+        <p>Quando surgiu a necessidade de fazer hemodiálise o hospital de Belém não tinha equipamentos para realizar dialise em bebês - foi então que entraram em contato com o hospital de São Paulo. No dia 26/05/2017 fomos para São Paulo, mas não iniciou-se de imediato a hemodiálise, precisando retomar o tratamento conservador. Contudo, no dia 28/07/2017, foi passado um cateter para começar a hemodiálise que ficou durante por 1 anos e 9 meses, mais de 8 transfusões de sangue, foram 10 passagens de cateter, fez vesicostomia, passagem de gastrostomia para ajudar no ganho de peso, conseguiu entrar na fila pro transplante em 2018. Nesse período teve várias intercorrências, foi testado duas vezes em períodos diferentes, mas o rim acabou ficando com outro paciente...</p>
+        <div class="botao">
+            <p class="ler">Ler mais</p>
+        </div>
+        <p class="anexo">Anexos</p>
+        <div class="fotos">
+            <img class="victor1" src="{{ url_for('static', filename='img/image 1.png') }}" alt="">
+            <img class="victor2" src="{{ url_for('static', filename='img/image 2.png') }}" alt="">
+            <div class="file">
+                <img class="victor3" src="{{ url_for('static', filename='img/ImagemFile.png') }}" alt="">
+                <p class="ver">Ver mais</p>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="container2">
+            <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
+            <div class="coluna">
+                <p class="nome">Tais Ferreira da Silva Costa</p>
+                <p class="mae">Mãe de Dhomini</p>
+            </div>
+            <p class="postagem">Data de Postagem: 02/09/2023</p>
+        </div>
+        <hr class="linha">
+        <p>Dhomini nasceu no Hospital Regional do Gama Distrito Federal, Nasceu de uma Cesariana pélvica. Tivemos alta, sendo que após 3 dias de vida, teve que repetir o exame de coração pois, o primeiro havia dado uma alteração, que segundo a equipe médica o segundo estava tudo normal depois do exame tivemos alta. Com o passar dos dias percebi que Dhomini não pegava peso, tinha dificuldade para amamentar, os sinais da doença já começaram com 1 mês de vida eram os primeiros sinais. Em fevereiro de 2015 levei ele na UBS da minha cidade, a médica pediu que levasse ele para o hospital HMIB hospital materno de Brasília.
+            Ao chegar no hospital Dhomini já teve que ir para o oxigênio e passa sonda na uretra, fizeram vários exames mais no Hospital HMIB não tinha especialista e foi encaminhado para o hospital de Base de Brasília, lá teve que tomar bolsa de sangue e outros procedimentos foram necessários.</p>
+        <br>
+        <p>Após algumas intercorrências e sem melhora do quadro resolvi entrar em contato com a Doutora Mayume, de São Paulo e perguntei ela como fazia para poder ir para São Paulo ela me explicou sobre hospital de referência em doença renal crônica em criança de...</p>
+        <br>
+        <div class="botao">
+            <p class="ler">Ler mais</p>
+        </div>
+        <p class="anexo">Anexos</p>
+        <div class="fotos">
+            <img class="do1" src="{{ url_for('static', filename='img/image 3.png') }}" alt="">
+            <img class="do2" src="{{ url_for('static', filename='img/image 4.png') }}" alt="">
+            <img class="do3" src="{{ url_for('static', filename='img/image 5.png') }}" alt="">
+            <div class="file">
+                <img class="arquivo" src="{{ url_for('static', filename='img/Imagem File.png') }}" alt="">
+                <p class="ver">Ver mais</p>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="container2">
+            <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
+            <div class="coluna">
+                <p class="nome">Vandressa Santos</p>
+                <p class="mae">Mãe de Agatha</p>
+            </div>
+            <p class="postagem">Data de Postagem: 02/09/2023</p>
+        </div>
+        <hr class="linha">
+        <p>Ágatha foi diagnosticada com DRC Doença Renal Crônica aos 3 anos de idade. Em Alagoas, Estado onde moramos, não há tratamento adequado para essa patologia em crianças, como consequência foi transferida para São Paulo com intenção de encontrar a causa da doença e iniciar tratamento adequado além de prepará-la para o transplante. Fez hemodiálise durante 18 meses, precisou de 12 transfusões de sangue e 6 trocas de catéter permanente, inúmeras drogas para se manter estável enquanto dialisava. Inscrita na Fila de Espera para Transplante em julho de 2014, testada algumas vezes, bateu na trave algumas outras. Depois de enfrentar a desnutrição, hipertensão, restrição alimentar e hídrica conseguimos estabilizá-la, em maio de 2015 depois de testagem, exames e muita precaução foi autorizado o transplante com o pai. Alguns meses depois pudemos retornar a nossa cidade natal. Além do diagnóstico do TEA (transtorno do espectro autista), teve algumas intercorrências no decorrer dos anos em tratamento, sempre com o suporte do centro transplantador em São Paulo pois ainda não temos suporte em Alagoas e isso faz com que tenhamos que viajar quase que mensalmente até lá. Hoje Ágatha cursa a 7 ° série, 13 anos de idade e 8 de transplante renal, teve o diagnóstico recente de TEA (TRANSTORNO DO ESPECTRO AUTISTA). Infelizmente até hoje não temos Nefro pediatra pelo SUS para dar suporte...</p>
+        <div class="botao">
+            <p class="ler">Ler mais</p>
+        </div>
+        <p class="anexo">Anexos</p>
+        <div class="fotos">
+            <img class="agatha1" src="{{ url_for('static', filename='img/image 9.png') }}" alt="">
+            <img class="agatha2" src="{{ url_for('static', filename='img/image 10.png') }}" alt="">
+            <img class="agatha3" src="{{ url_for('static', filename='img/image 11.png') }}" alt="">
+            <div class="file">
+                <img class="arquivo" src="{{ url_for('static', filename='img/Imagem File.png') }}" alt="">
+                <p class="ver">Ver mais</p>
+            </div>
+        </div>
+    </article>
+    <div class="botao1">
+        <p class="carregar">Carregar mais posts</p>
+    </div>
     </section>
 
     <div id="progress">
         <span id="progress_value">&#x1F815;</span>
     </div>
 
-    </main>
+</main>
 
-    <footer>
-        <div class="footer_principal">
-            <div class="footer_parte_esquerdo">
-                <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
-                <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
-            </div>
-            <div class="footer_parte_direito">
-                <p>Confira o repositório desse site no Github:</p>
-                <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
-            </div>
+<footer>
+    <div class="footer_principal">
+        <div class="footer_parte_esquerdo">
+            <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
+            <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
         </div>
-        <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
-    </footer>
+        <div class="footer_parte_direito">
+            <p>Confira o repositório desse site no Github:</p>
+            <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
+        </div>
+    </div>
+    <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
+</footer>
 
-    <script>
-        function formulario() {
-            var formulario = document.getElementById('form');
-            formulario.style.display = 'inline';
-        }
-    </script>
+<script>
+    function formulario() {
+        var formulario = document.getElementById('form');
+        formulario.style.display = 'inline';
+    }
+
+    document.getElementById('reset').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        document.getElementById('nomefilho').value = '';
+        document.getElementById('conteudo').value = '';
+    });
+
+</script>
 {% endblock %}
