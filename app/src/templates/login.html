@@ -22,7 +22,7 @@ LOGIN
                 <img class="login-img" src="{{ url_for('static', filename='img/login.png') }}" alt="">
                 <div class="login">
                     <h1 class="titulo_login">Login</h1>
-                        <form action="">
+                        <form action="{{ url_for('login') }}">
                             <label for="nome">Usuário</label> <br>
                             <input type="text" placeholder="CPF ou email" id="nome"> <br>
                             <label for="senha">Senha</label> <br>
