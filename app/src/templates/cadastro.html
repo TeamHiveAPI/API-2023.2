@@ -22,7 +22,7 @@ CADASTRO
                 <img class="cadastro-img" src="{{ url_for('static', filename='img/cadastro.png') }}" alt="">
                 <div class="cadastro">
                     <h1 class="titulo_cadastro">Cadastro</h1>
-                    <form method="POST" action="{{ url_for('auth_bp.cadastro')}}">
+                    <form method="POST" action="{{ url_for('cadastro') }}">
                         {{form.nome.label}} {{form.nome(id="nome")}}
                         <!-- <label for="nome">Nome completo</label> <br> -->
                         <!-- <input type="text" id="nome"> <br> -->
