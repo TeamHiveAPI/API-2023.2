@@ -10,13 +10,28 @@ def index():
     return render_template('index.html', nav='active', title='LOGIN')
 
 #Rota pagina blog 
-@app.route('/blog')
+@app.route('/blog', methods=['GET', 'POST'])
 def blog():
+    if request.method == 'POST':
+        autor = session['user_id']
+        nomefilho = request.form['nomefilho']
+        conteudo = request.form['conteudo']
+        novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo)
+        db.session.add(novo_post)
+
+        try:
+            db.session.commit()
+            flash('Post adicionado com sucesso!')
+            return redirect(url_for('blog'))
+        except Exception as e:
+            db.session.rollback()  # Desfaz a transação
+            flash(f'Erro ao adicionar o post: {str(e)}')
+
     if session.get('user_logado'):
         return render_template('blog.html', title='MINHA CONTA', nav='active')
-    #acho que faz assim
-    #postagem = Post.query.order_by(Post.id)
+
     return render_template('blog.html', nav='active', title='LOGIN')
+
 
 #Rota pagina dados 
 @app.route('/dados')
@@ -64,13 +79,14 @@ def login():
         return redirect(url_for('conta'))
     
     if request.method == 'POST':
-        email = request.form['email']
-        senha = request.form['senha']
-        usuario = Usuario.query.filter_by(email= email).first()
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        usuario = Usuario.query.filter_by(email = email).first()
         if usuario:
             if senha == usuario.senha:
+                session['user_id'] = usuario.id
                 session['user_logado'] = usuario.nome
-                request.form['email'] = usuario.email
+                session['user_email'] = usuario.email
                 return redirect(url_for('conta'))
             return redirect(url_for('login'))
     return render_template('login.html', nav='active', title='LOGIN')    
@@ -78,7 +94,9 @@ def login():
 @app.route('/logout', methods=['POST'])
 def logout():
     if request.method == 'POST':
+        session['user_id'] = None
         session['user_logado'] = None
+        session['user_email'] = None
         flash('Logout realizado com sucesso!')
         return redirect(url_for('login'))
 
