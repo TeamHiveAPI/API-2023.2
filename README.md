@@ -63,16 +63,15 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 
 <br>
 
+<strong>Sprint 1: </strong>
+
 <img src="prototiponavegavel.gif" alt="Prototipo Navegavel" width=750px>
 
 <br>
 
------------------------------------------------------------------------
+<strong>Sprint 2: </strong>
 
-
-<strong>Sprint 1: </strong> [Protótipo Navegável](https://www.figma.com/proto/oAzPuq5XfHFBd72A0mbcSP/Site-Rim?type=design&node-id=1-2&t=F6lUhn9fDnYq07iA-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
-
-<strong>Sprint 2: </strong> Em andamento ⌛
+<img src="sprint2.gif" alt="O site na segunda sprint" width=750px>
 
 <strong>Sprint 3: </strong> Em andamento ⌛
 
