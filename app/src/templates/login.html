@@ -24,9 +24,9 @@ LOGIN
                     <h1 class="titulo_login">Login</h1>
                         <form action="{{ url_for('login') }} " method="post">
                             <label for="nome">Usuário</label> <br>
-                            <input type="email" placeholder="Digite seu E-mail" id="email" required> <br>
+                            <input type="email" placeholder="Digite seu E-mail" id="email" name="email" required> <br>
                             <label for="senha">Senha</label> <br>
-                            <input type="password" placeholder="Digite sua Senha" id="senha" required> <br>
+                            <input type="password" placeholder="Digite sua Senha" id="senha" name="senha" required> <br>
                             <button type="submit">Login</button>
                         </form>
                     <div class="linha">
