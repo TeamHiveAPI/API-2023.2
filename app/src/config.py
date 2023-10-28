@@ -6,6 +6,6 @@ SQLALCHEMY_DATABASE_URI = \
      SGBD = 'mysql+mysqlconnector',
      usuario = 'fatec',
      senha = 'senha',
-     servidor = 'localhost:3306', 
+     servidor = '3.222.58.89:3306', 
      database = 'bd'
  )
