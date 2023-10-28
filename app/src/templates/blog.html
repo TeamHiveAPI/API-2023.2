@@ -56,11 +56,11 @@ BLOG
             <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
                 <button type="submit">
-                    <img src="{{ url_for('static', filename='img/mail-send.png') }}" alt="">
+                    <img class="icone_novo_enviar" src="{{ url_for('static', filename='img/icone_enviar.png') }}" alt="">
                     Enviar
                 </button>
                 <div id="botao_modal_1">
-                    <img class="icone_novo" src="{{ url_for('static', filename='img/selecionar_Imagem.png') }}" alt="">
+                    <img class="icone_novo" src="{{ url_for('static', filename='img/icone_selecionar_imagem.png') }}" alt="">
                     Selecionar Imagem
                 </div>
                 <button type="reset" id="reset">
@@ -199,4 +199,5 @@ BLOG
     });
 
 </script>
+
 {% endblock %}

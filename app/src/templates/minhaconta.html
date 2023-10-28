@@ -3,7 +3,7 @@
 
 {% block estilo %} 
 <link rel="stylesheet" href="{{ url_for('static', filename='minhaconta.css') }}">
-<script src="{{ url_for('static', filename='sricpt.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}" async></script>
 {% endblock %}
 
 {% block title %} 
@@ -20,10 +20,33 @@ MINHA-CONTA
 
     <hr>
 
-    <section class="minha_conta">
-        <div class="minha_conta_imagem">
-            <img src="{{ url_for('static', filename='img/perfil.png') }}">
+    <div id="modal" class="modal">
+        <div class="modal_conteudo">
+            <div class="modal_cima">
+                <h1>Selecionar Imagem</h1>
+                <p>Selecione apenas uma foto em formato .png</p>
+            </div>
+            <div class="modal_baixo">
+                <form name="selecionar_imagem" onsubmit="return validateForm()">
+                    <input type="file" id="selecionar_imagem" name="imagem" multiple accept=".png, .jpg, .jpeg">
+                    <input class="botao_modal_enviar" type="submit" value="Enviar">
+                </form>
+                <button class="modal_baixo_botao_voltar">Voltar</button>
+            </div>
         </div>
+    </div>
+
+    <section class="minha_conta">
+        <div class="parte_esquerda">
+            <div class="minha_conta_imagem">
+                <img src="{{ url_for('static', filename='img/perfil.png') }}">
+            </div>
+            <div class="minha_conta_baixo" id="botao_modal_1">
+                Selecionar Imagem
+                <img class="icone_novo" src="{{ url_for('static', filename='img/icone_selecionar_imagem.png') }}" alt="">
+            </div>
+        </div>
+
         <div class="minha_conta_info">
             <h1>Nome de usuário:</h1>
             <p class="info_paragrafo">Usuário do site</p>
@@ -33,7 +56,7 @@ MINHA-CONTA
             <p class="info_paragrafo">nefrologia123</p>
             <div class="minha_conta_botao">
                 <form method="post" action="{{ url_for('logout') }}">
-                    <button type="submit" class="minha_conta_botao">Sair</button>
+                    <button type="submit">Sair</button>
                 </form>
             </div>
         </div>

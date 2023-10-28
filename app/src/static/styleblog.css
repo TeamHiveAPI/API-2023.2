@@ -422,6 +422,11 @@ input {
     height: 28px;
 }
 
+.icone_novo_enviar {
+    width: 32px;
+    height: 28px;
+}
+
 .submit button:nth-child(3) {
     background-color: #a7156d;
 }
@@ -515,4 +520,12 @@ input {
     background-color: #000350;
     color: white;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
 }
+
+
+.botao_modal_enviar:hover {
+    background-color: #01033a;
+}
+

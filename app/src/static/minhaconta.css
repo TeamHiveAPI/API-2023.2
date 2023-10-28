@@ -51,11 +51,11 @@ hr {
 .minha_conta {
     display: flex;
     flex-direction: row;
-    gap: 64px;
+    gap: 96px;
 }
 
 .minha_conta_imagem img {
-    width: 250px;
+    width: 280px;
 }
 
 .info_paragrafo {
@@ -75,7 +75,7 @@ hr {
     font-size: 24px;
     font-weight: 700;
     flex-direction: row;
-    background-color: #000350;
+    background-color: #a7156d;
     color: white;
     border-radius: 24px;
     margin-top: 32px;
@@ -83,5 +83,136 @@ hr {
 }
 
 .minha_conta_botao button:hover {
-    background-color:#000242;
+    background-color:#8a0c58;
+}
+
+/* Modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal_conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 200px auto;
+    justify-content: center;
+    background-color: white;
+    padding: 32px;
+    border-radius: 32px;
+    animation-name: animatetop;
+    animation-duration: 0.6s;
+}
+
+@keyframes animatetop {
+    from {margin-top: -200px; opacity:0}
+    to {margin-top: 200px; opacity:1}
+}
+
+.modal_cima {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.modal_baixo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal_baixo_botao_sim {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    border-radius: 48px;
+    background-color: #03045E;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+.modal_baixo_botao_sim:hover {
+    background-color: #020348;
+}
+
+.modal_baixo_botao_voltar {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    border-radius: 48px;
+    background-color: #a5a5a5;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+.modal_baixo_botao_voltar:hover {
+    background-color: #8f8f8f;
+}
+
+.botao_modal_enviar {
+    background-color: #000350;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao_modal_enviar:hover {
+    background-color: #01033a;
+}
+
+.parte_esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.minha_conta_baixo {
+    display: flex;
+    border: none;
+    padding: 16px 32px 16px 32px;
+    align-items: center;
+    gap: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    flex-direction: row;
+    background-color: #03045E;
+    color: white;
+    border-radius: 24px;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+.minha_conta_baixo:hover {
+    background-color: #020348;
+}
+
+.icone_novo {
+    width: 22px;
+    height: 28px;
+}
+
+input {
+    border: 1px solid #ababab;
+    font-size: 1rem;
+    border-radius: 8px;
+    height: 48px;
+    padding: 12px 20px;
+    outline: none;
 }
