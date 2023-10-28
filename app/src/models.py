@@ -25,14 +25,30 @@ class Usuario(db.Model):
 		self.profissao = profissao
 		self.comochegou = comochegou
 
+# Criação de uma tabela para as imagens, associada aos posts
+class Imagem(db.Model):
+    __tablename__ = "imagem"
+    id = db.Column(db.Integer, primary_key=True)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    imagem = db.Column(db.LargeBinary, nullable=True)
+
+    def __init__(self, post_id, imagem):
+        self.post_id = post_id
+        self.imagem = imagem
+
 class Post(db.Model):
     __tablename__ = "post"
     id = db.Column(db.Integer, primary_key=True)
     autor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
     nome_filho = db.Column(db.Text, nullable=False)
     conteudo = db.Column(db.Text, nullable=False)
-	#falta imagem (parte do banco)
+    data_postagem = db.Column(db.Date, nullable=False)
+    
+    # Estabelecendo a relação entre Post e Imagem
+    imagens = db.relationship('Imagem', backref='post', lazy='dynamic')
 
-	#def __init__(self, autor, titulo, conteudo, imagem):
-		#completar (parte do blog)
-
+    def __init__(self, autor_id, nome_filho, conteudo, data_postagem):
+        self.autor_id = autor_id 
+        self.nome_filho = nome_filho
+        self.conteudo = conteudo
+        self.data_postagem = data_postagem
