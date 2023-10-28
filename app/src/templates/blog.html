@@ -2,6 +2,7 @@
 
 {% block estilo %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styleblog.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}" async></script>
 
 {% endblock %}
 
@@ -18,6 +19,25 @@ BLOG
 
 {% block conteudo %}
 <main>
+
+    <!-- Modal Selecionar Imagem -->
+
+    <div id="modal" class="modal">
+        <div class="modal_conteudo">
+            <div class="modal_cima">
+                <h1>Selecionar Imagem</h1>
+                <p>Selecione até 5 imagens em formato .png</p>
+            </div>
+            <div class="modal_baixo">
+                <form name="selecionar_imagem" onsubmit="return validateForm()">
+                    <input type="file" id="selecionar_imagem" name="imagem" multiple accept=".png, .jpg, .jpeg">
+                    <input class="botao_modal_enviar" type="submit" value="Enviar">
+                </form>
+                <button class="modal_baixo_botao_voltar">Voltar</button>
+            </div>
+        </div>
+    </div>
+
     <section class="hero_banner">
         <div class="conteudo_escrito">
             <h1 class="conteudo_escrito_titulo">BLOG</h1>
@@ -32,15 +52,19 @@ BLOG
             <button class="fundo" onclick="formulario()">Compartilhe sua história!</button>
         </div>
         <form action="{{ url_for('blog') }} " method="post">
-            <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome do seu filho"> <br>
-            <input class="input2" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"> <br>
+            <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome do seu filho">
+            <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
                 <button type="submit">
                     <img src="{{ url_for('static', filename='img/mail-send.png') }}" alt="">
                     Enviar
                 </button>
+                <div id="botao_modal_1">
+                    <img class="icone_novo" src="{{ url_for('static', filename='img/selecionar_Imagem.png') }}" alt="">
+                    Selecionar Imagem
+                </div>
                 <button type="reset" id="reset">
-                    <img class="x" src="{{ url_for('static', filename='img/x.png') }}" alt="">
+                    <img class="icone_novo" src="{{ url_for('static', filename='img/icone_apagar.png') }}" alt="">
                     Apagar
                 </button>
             </div>
