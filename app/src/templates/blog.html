@@ -72,10 +72,12 @@ BLOG
     </article>
     {% else %}
     <!-- Se o usuário não estiver logado, exibe o link para a página de login -->
-    <a href="{{ url_for('login') }}">
         <div class="container">
             <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
             <button class="fundo">Compartilhe sua história!</button>
+            <p>Apenas usuários logados podem publicar suas histórias no blog.</p>
+            <p>Crie uma conta clicando no botão abaixo:</p>
+            <a href="{{ url_for('login') }}"><button class="fundo login_botao">Login</button></a>
         </div>
     </a>
     {% endif %}

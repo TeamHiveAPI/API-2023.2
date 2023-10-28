@@ -83,7 +83,9 @@ button {
     justify-content: center;
     align-items: center;
     margin-top: 48px;
+    gap: 32px;
     flex-direction: column;
+    font-size: 1.2rem;
 }
 
 .mensagem {
@@ -94,18 +96,33 @@ button {
 
 
 .fundo {
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #000350;
     color: white;
-    margin: 32px;
-    width: 512px;
+    width: auto;
+    padding: 24px 48px;
     height: 64px;
     border-radius: 48px;
     font-size: 2rem;
     font-weight: bold;
+}
+
+.login_botao {
+    cursor: pointer;
+}
+
+.login_botao:hover {
+    background-color: #00022C;
+}
+
+.redirect_login {
+    color: #0195df;
+}
+
+.redirect_login:hover {
+    color: #0882c0;
 }
 
 .texto {
@@ -529,3 +546,6 @@ input {
     background-color: #01033a;
 }
 
+form {
+    margin-top: 32px;
+}
