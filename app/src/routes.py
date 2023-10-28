@@ -1,6 +1,7 @@
 from controller import app
+from datetime import datetime
 from flask import render_template, redirect, url_for, request, session, flash
-from models import Usuario, Post, db
+from models import Imagem, Usuario, Post, db
 
 #Rota pagina inicial
 @app.route('/')
@@ -9,28 +10,61 @@ def index():
         return render_template('index.html', title='MINHA CONTA', nav='active', )
     return render_template('index.html', nav='active', title='LOGIN')
 
-#Rota pagina blog 
+# Rota do Blog
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
     if request.method == 'POST':
-        autor = session['user_id']
-        nomefilho = request.form['nomefilho']
-        conteudo = request.form['conteudo']
-        novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo)
-        db.session.add(novo_post)
+            if 'user_id' in session:
+                autor = session['user_id']
+                nomefilho = request.form['nomefilho']
+                conteudo = request.form['conteudo']
+                data_postagem = datetime.now()
+                #imagens = request.files.getlist('imagem') 
 
-        try:
-            db.session.commit()
-            flash('Post adicionado com sucesso!')
-            return redirect(url_for('blog'))
-        except Exception as e:
-            db.session.rollback()  # Desfaz a transação
-            flash(f'Erro ao adicionar o post: {str(e)}')
+                novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo, data_postagem=data_postagem)
+                db.session.add(novo_post)
 
-    if session.get('user_logado'):
-        return render_template('blog.html', title='MINHA CONTA', nav='active')
+                try:
+                    db.session.commit()
+                    #novo_post_id = novo_post.id 
+                    #if imagens:
+                        #for imagem in imagens:
+                            #nova_imagem = Imagem(novo_post_id, imagem)
+                            #db.session.add(nova_imagem)
+                            #db.session.commit()
+                            #pass
+                    flash('Post adicionado com sucesso!')
+                    return redirect(url_for('blog'))
+                except Exception as e:
+                    db.session.rollback()
+                    flash(f'Erro ao adicionar o post: {str(e)}')
+            else:
+                flash('Faça login para postar!')
 
-    return render_template('blog.html', nav='active', title='LOGIN')
+    posts = Post.query.order_by(Post.id.desc()).all()
+    posts_info = []
+
+    for post in posts:
+        autor_id = post.autor_id
+        usuario = Usuario.query.filter_by(id=autor_id).first()
+        
+        if usuario:
+            data_formatada = post.data_postagem.strftime("%d-%m-%Y")
+            post_info = {
+                'nome_parente': usuario.nome,
+                'parentesco': usuario.parentesco,
+                'nome_filho': post.nome_filho,
+                'data_postagem': data_formatada,
+                'conteudo': post.conteudo
+            }
+            posts_info.append(post_info)
+        else:
+            print(f"Usuário não encontrado para o post com ID: {post.id}")
+
+    if 'user_logado' in session: 
+        return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info)
+
+    return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info)
 
 
 #Rota pagina dados 
