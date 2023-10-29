@@ -107,10 +107,12 @@ def cadastro():
         novo_user = Usuario(nome=nome, dn=dn, cpf=cpf,endereco=endereco, email=email, parentesco=parentesco, senha=senha, profissao=profissao, comochegou=comochegou)
         db.session.add(novo_user)
         db.session.commit()
+        flash ('Usuário criado com sucesso. Realize o login.')
         return redirect(url_for('conta'))
     #no metodo get ele vai renderizar a pagina
     return render_template('cadastro.html',title='CADASTRO', nav='active')
 
+#Rota para logar com o usuario
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if session.get('user_logado'):
@@ -129,13 +131,34 @@ def login():
                 return redirect(url_for('conta'))
         flash('Verifique suas credenciais!')
     return render_template('login.html', nav='active', title='LOGIN')  
-    
-@app.route('/logout', methods=['POST'])
+
+#Rota para deletar conta do usuario
+@app.route('/deletar-conta', methods=['POST'])
+def deletar_conta():
+    if request.method == 'POST':
+        if session.get('user_logado'):
+            user_id = session['user_id']
+            user = Usuario.query.get(user_id)
+            if user:
+                db.session.delete(user)
+                db.session.commit()
+                flash('Conta excluida com sucesso!')
+                return redirect(url_for('logout'))
+    return "Acesso inválido a esta página."
+
+#Rota para sair da conta do usuario
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
     if request.method == 'POST':
+        # Lógica de logout
         session['user_id'] = None
         session['user_logado'] = None
         session['user_email'] = None
         flash('Logout realizado com sucesso!')
         return redirect(url_for('login'))
+    # Lógica de logout para solicitações GET
+    session['user_id'] = None
+    session['user_logado'] = None
+    session['user_email'] = None
+    return redirect(url_for('login'))
 
