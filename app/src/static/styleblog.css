@@ -107,6 +107,7 @@ button {
     border-radius: 48px;
     font-size: 2rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .login_botao {

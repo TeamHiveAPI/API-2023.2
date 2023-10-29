@@ -48,9 +48,9 @@ BLOG
     <article>
         <div class="container">
             <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
-            <button class="fundo" onclick="formulario()">Compartilhe sua história!</button>
+            <button class="fundo" onclick="exibirFormulario()">Compartilhe sua história!</button>
         </div>
-        <form action="{{ url_for('blog') }} " method="post">
+        <form id="meuFormulario" action="{{ url_for('blog') }}" method="post" style="display: none;">
             <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome do seu filho">
             <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
@@ -144,6 +144,11 @@ BLOG
         document.getElementById('nomefilho').value = '';
         document.getElementById('conteudo').value = '';
     });
+
+    function exibirFormulario() {
+    var formulario = document.getElementById("meuFormulario");
+    formulario.style.display = "block";
+}
 
 </script>
 
