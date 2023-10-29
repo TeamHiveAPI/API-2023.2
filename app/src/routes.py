@@ -74,10 +74,14 @@ def dados():
         return render_template('dados.html', title='MINHA CONTA', nav='active')
     return render_template('dados.html', title='LOGIN', nav='active')
 
-@app.route('/minhaconta', methods=['GET'])
+@app.route('/minhaconta', methods=['GET', 'POST'])
 def conta():
     if session.get('user_logado'):
-        return render_template('minhaconta.html', title='MINHA CONTA', nav='active')
+        user_id = session['user_id'] 
+        user = Usuario.query.get(user_id)#coloquei 
+        if user:  # Verifique se o usuário existe
+            return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user)
+    
     return redirect(url_for('login'))
 
 @app.route('/cadastro', methods=['GET', 'POST'])
@@ -121,9 +125,10 @@ def login():
                 session['user_id'] = usuario.id
                 session['user_logado'] = usuario.nome
                 session['user_email'] = usuario.email
+                flash('Login realizado com sucesso!')
                 return redirect(url_for('conta'))
-            return redirect(url_for('login'))
-    return render_template('login.html', nav='active', title='LOGIN')    
+        flash('Verifique suas credenciais!')
+    return render_template('login.html', nav='active', title='LOGIN')  
     
 @app.route('/logout', methods=['POST'])
 def logout():
