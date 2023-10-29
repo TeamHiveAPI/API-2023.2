@@ -64,6 +64,9 @@ MINHA-CONTA
             <h1>Senha:</h1>
             <p class="info_paragrafo">{{ user.senha }}</p>  
             <div class="minha_conta_botao">
+                <form method="post" action="{{ url_for('deletar_conta') }}">
+                    <button type="submit">Excluir conta</button>
+                </form>
                 <form method="post" action="{{ url_for('logout') }}">
                     <button type="submit">Sair</button>
                 </form>
