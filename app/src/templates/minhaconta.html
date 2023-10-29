@@ -17,6 +17,15 @@ MINHA-CONTA
 {% endblock %}
 
 {% block conteudo %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flash-messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
     <hr>
 
@@ -46,19 +55,20 @@ MINHA-CONTA
                 <img class="icone_novo" src="{{ url_for('static', filename='img/icone_selecionar_imagem.png') }}" alt="">
             </div>
         </div>
-
         <div class="minha_conta_info">
+            {% if user %}
             <h1>Nome de usuário:</h1>
-            <p class="info_paragrafo">Usuário do site</p>
+            <p class="info_paragrafo">{{ user.nome }}</p>
             <h1>E-mail:</h1>
-            <p class="info_paragrafo">usuario@gmail.com</p>
+            <p class="info_paragrafo">{{ user.email }}</p>
             <h1>Senha:</h1>
-            <p class="info_paragrafo">nefrologia123</p>
+            <p class="info_paragrafo">{{ user.senha }}</p>  
             <div class="minha_conta_botao">
                 <form method="post" action="{{ url_for('logout') }}">
                     <button type="submit">Sair</button>
                 </form>
             </div>
+            {% endif %}
         </div>
-    </section>
+    </section>        
 {% endblock %}
