@@ -550,3 +550,8 @@ input {
 form {
     margin-top: 32px;
 }
+
+.img-jinja {
+    width: 20%;
+    object-fit: contain;
+}
