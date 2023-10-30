@@ -80,7 +80,7 @@ def blog():
         else:
             print(f"Usuário não encontrado para o post com ID: {post.id}")
 
-    if 'user_logado' in session: 
+    if session.get('user_logado'):
         return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info)
 
     return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info)
