@@ -133,7 +133,8 @@ button {
 
 .container2 {
     display: flex;
-    margin: 200px 0px 0px;
+    justify-content: space-between;
+    margin-top: 200px;
 }
 
 .imagem_usuario {
@@ -143,16 +144,16 @@ button {
 .postagem {
     display: flex;
     white-space: nowrap;
+    align-items: flex-end;
     color: #969696;
     font-weight: 500;
-    margin-top: 70px;
 }
 
 .coluna {
     display: flex;
-    flex-direction: column;
-    margin: 36px 480px 10px 42px;
-    gap: 12px;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 32px;
     white-space: nowrap;
 }
 
@@ -163,6 +164,12 @@ button {
 .mae {
     color: #969696;
     font-weight: 500;
+}
+
+.nome_e_mae {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .linha {
@@ -193,6 +200,7 @@ button {
 .anexo {
     font-weight: bold;
     font-size: 40px;
+    margin-top: 64px;
     margin-bottom: 32px;
 }
 
@@ -435,6 +443,17 @@ input {
     outline: none;
 }
 
+.selecionar_imagem_sem_borda {
+    border: none;
+}
+
+.centralizar_aviso {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+
 .icone_novo {
     width: 22px;
     height: 28px;
@@ -554,4 +573,5 @@ form {
 .img-jinja {
     width: 20%;
     object-fit: contain;
+    margin-right: 5%;
 }

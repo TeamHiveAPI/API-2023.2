@@ -59,7 +59,7 @@ BLOG
                     Enviar
                 </button>
                 <div id="botao_modal_1">
-                    <input type="file" name="imagem" id="imagens_input" multiple onchange="limitarNumeroImagens(this)">
+                    <input class="selecionar_imagem_sem_borda" type="file" name="imagem" id="imagens_input" multiple onchange="limitarNumeroImagens(this)">
                     <img class="icone_novo" src="{{ url_for('static', filename='img/icone_selecionar_imagem.png') }}" alt="">
                     Selecionar Imagem
                 </div>
@@ -68,6 +68,7 @@ BLOG
                     Apagar
                 </button>
             </div>
+            <p class="centralizar_aviso">Selecione até 3 imagens</p>
         </form>
     </article>
     {% else %}
@@ -85,10 +86,12 @@ BLOG
     {% for post in posts %}
     <article>
         <div class="container2">
-            <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
             <div class="coluna">
-                <p class="nome">{{ post.nome_parente }}</p>
-                <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
+                <img class="imagem_usuario" src="{{ url_for('static', filename='img/perfil.png') }}" alt="">
+                <div class="nome_e_mae">
+                    <p class="nome">{{ post.nome_parente }}</p>
+                    <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
+                </div>
             </div>
             <p class="postagem">Data de Postagem: {{ post.data_postagem }}</p>
         </div>
