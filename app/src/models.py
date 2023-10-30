@@ -27,14 +27,15 @@ class Usuario(db.Model):
 
 # Criação de uma tabela para as imagens, associada aos posts
 class Imagem(db.Model):
-    __tablename__ = "imagem"
+    __tablename__ = 'imagem'
+
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
-    imagem = db.Column(db.LargeBinary, nullable=True)
+    caminho_arquivo = db.Column(db.String(255))  # Adicionando o campo para o caminho do arquivo
 
-    def __init__(self, post_id, imagem):
+    def __init__(self, post_id, caminho_arquivo):  # Ajuste no construtor
         self.post_id = post_id
-        self.imagem = imagem
+        self.caminho_arquivo = caminho_arquivo
 
 class Post(db.Model):
     __tablename__ = "post"
