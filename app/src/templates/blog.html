@@ -20,12 +20,12 @@ BLOG
 {% block conteudo %}
 <main>
 
-    <!-- Modal Selecionar Imagem -->
+    <!-- Modal Selecionar Imagem 
     <div id="modal" class="modal">
         <div class="modal_conteudo">
             <div class="modal_cima">
                 <h1>Selecionar Imagem</h1>
-                <p>Selecione até 5 imagens em formato .png</p>
+                <p>Selecione até 3 imagens em formato .png, .jpg, .jpeg</p>
             </div>
             <div class="modal_baixo">
                 <form name="selecionar_imagem" onsubmit="return validateForm()">
@@ -36,7 +36,7 @@ BLOG
             </div>
         </div>
     </div>
-
+-->
     <section class="hero_banner">
         <div class="conteudo_escrito">
             <h1 class="conteudo_escrito_titulo">BLOG</h1>
@@ -50,7 +50,7 @@ BLOG
             <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
             <button class="fundo" onclick="exibirFormulario()">Compartilhe sua história!</button>
         </div>
-        <form id="meuFormulario" action="{{ url_for('blog') }}" method="post" style="display: none;">
+        <form id="meuFormulario" action="{{ url_for('blog') }}" method="post" enctype="multipart/form-data" style="display: none;">
             <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome do seu filho">
             <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
@@ -59,6 +59,7 @@ BLOG
                     Enviar
                 </button>
                 <div id="botao_modal_1">
+                    <input type="file" name="imagem" id="imagens_input" multiple onchange="limitarNumeroImagens(this)">
                     <img class="icone_novo" src="{{ url_for('static', filename='img/icone_selecionar_imagem.png') }}" alt="">
                     Selecionar Imagem
                 </div>
@@ -71,13 +72,13 @@ BLOG
     </article>
     {% else %}
     <!-- Se o usuário não estiver logado, exibe o link para a página de login -->
-        <div class="container">
-            <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
-            <button class="fundo">Compartilhe sua história!</button>
-            <p>Apenas usuários logados podem publicar suas histórias no blog.</p>
-            <p>Crie uma conta clicando no botão abaixo:</p>
-            <a href="{{ url_for('login') }}"><button class="fundo login_botao">Login</button></a>
-        </div>
+    <div class="container">
+        <img class="mensagem" src="{{ url_for('static', filename='img/SMS.png') }}" alt="">
+        <button class="fundo">Compartilhe sua história!</button>
+        <p>Apenas usuários logados podem publicar suas histórias no blog.</p>
+        <p>Crie uma conta clicando no botão abaixo:</p>
+        <a href="{{ url_for('login') }}"><button class="fundo login_botao">Login</button></a>
+    </div>
     </a>
     {% endif %}
 
@@ -93,17 +94,17 @@ BLOG
         </div>
         <hr class="linha">
         <p> {{ post.conteudo }} </p>
-        <div class="botao">
-            <p class="ler">Ler mais</p>
-        </div>
+        <!--
+            <div class="botao">
+                <p class="ler">Ler mais</p>
+            </div>
+        -->
         <p class="anexo">Anexos</p>
         <div class="fotos">
-            <img class="victor1" src="{{ url_for('static', filename='img/image 1.png') }}" alt="">
-            <img class="victor2" src="{{ url_for('static', filename='img/image 2.png') }}" alt="">
-            <div class="file">
-                <img class="victor3" src="{{ url_for('static', filename='img/ImagemFile.png') }}" alt="">
-                <p class="ver">Ver mais</p>
-            </div>
+            {% for img in post.caminho_das_imagens %}
+            <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
+            {% endfor %}
+            <!-- <p class="ver">Ver mais</p> -->
         </div>
     </article>
     {% endfor %}
@@ -146,10 +147,17 @@ BLOG
     });
 
     function exibirFormulario() {
-    var formulario = document.getElementById("meuFormulario");
-    formulario.style.display = "block";
-}
+        var formulario = document.getElementById("meuFormulario");
+        formulario.style.display = "block";
+    }
 
+    function limitarNumeroImagens(input) {
+    // Verifica se o número de arquivos selecionados é maior que 3
+    if (input.files.length > 3) {
+        alert("Você pode selecionar no máximo 3 imagens!");
+        input.value = '';  // Limpa a seleção
+    }
+}
 </script>
 
 {% endblock %}
