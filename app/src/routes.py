@@ -165,18 +165,25 @@ def login():
         flash('Verifique suas credenciais!')
     return render_template('login.html', nav='active', title='LOGIN')  
 
-#Rota para deletar conta do usuario
+# Rota para deletar conta do usuário
 @app.route('/deletar-conta', methods=['POST'])
 def deletar_conta():
     if request.method == 'POST':
-        if session.get('user_logado'):
+        if 'user_id' in session:
             user_id = session['user_id']
             user = Usuario.query.get(user_id)
             if user:
+                # Trate os registros associados na tabela 'post'
+                posts = Post.query.filter_by(autor_id=user_id).all()
+                for post in posts:
+                    db.session.delete(post)
+
+                # Agora você pode excluir o usuário
                 db.session.delete(user)
                 db.session.commit()
-                flash('Conta excluida com sucesso!')
+                flash('Conta excluída com sucesso!')
                 return redirect(url_for('logout'))
+
     return "Acesso inválido a esta página."
 
 #Rota para sair da conta do usuario
