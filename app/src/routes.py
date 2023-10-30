@@ -1,7 +1,10 @@
 from controller import app
 from datetime import datetime
 from flask import render_template, redirect, url_for, request, session, flash
+from werkzeug.utils import secure_filename
 from models import Imagem, Usuario, Post, db
+import os
+from os.path import join
 
 #Rota pagina inicial
 @app.route('/')
@@ -10,36 +13,50 @@ def index():
         return render_template('index.html', title='MINHA CONTA', nav='active', )
     return render_template('index.html', nav='active', title='LOGIN')
 
-# Rota do Blog
+# Rota blog
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():
     if request.method == 'POST':
-            if 'user_id' in session:
-                autor = session['user_id']
-                nomefilho = request.form['nomefilho']
-                conteudo = request.form['conteudo']
-                data_postagem = datetime.now()
-                #imagens = request.files.getlist('imagem') 
+        if 'user_id' in session:
+            autor = session['user_id']
+            nomefilho = request.form['nomefilho']
+            conteudo = request.form['conteudo']
+            data_postagem = datetime.now()
+            imagens = request.files.getlist('imagem')  # Obter várias imagens
 
-                novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo, data_postagem=data_postagem)
-                db.session.add(novo_post)
+            novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo, data_postagem=data_postagem)
+            db.session.add(novo_post)
 
-                try:
-                    db.session.commit()
-                    #novo_post_id = novo_post.id 
-                    #if imagens:
-                        #for imagem in imagens:
-                            #nova_imagem = Imagem(novo_post_id, imagem)
-                            #db.session.add(nova_imagem)
-                            #db.session.commit()
-                            #pass
-                    flash('Post adicionado com sucesso!')
-                    return redirect(url_for('blog'))
-                except Exception as e:
-                    db.session.rollback()
-                    flash(f'Erro ao adicionar o post: {str(e)}')
-            else:
-                flash('Faça login para postar!')
+            try:
+                db.session.commit()
+                novo_post_id = novo_post.id
+
+                for imagem in imagens:  # Iterar sobre várias imagens
+                    if imagem:
+                        nome_arquivo = secure_filename(imagem.filename)
+                        caminho_completo = join(app.config['upload_path'], nome_arquivo)
+                        
+                        # Verifica se o arquivo já existe e, se existir, gera um novo nome
+                        contador = 1
+                        while os.path.exists(caminho_completo):
+                            nome_arquivo = f"{os.path.splitext(nome_arquivo)[0]} ({contador}){os.path.splitext(nome_arquivo)[1]}"
+                            caminho_completo = join(app.config['upload_path'], nome_arquivo)
+                            contador += 1
+                        
+                        imagem.save(caminho_completo)
+                        nova_imagem = Imagem(post_id=novo_post_id, caminho_arquivo=nome_arquivo)
+                        db.session.add(nova_imagem)
+                
+                db.session.commit()  # Realizar o commit fora do loop, após processar todas as imagens
+                flash('Post adicionado com sucesso!')
+                return redirect(url_for('blog'))
+
+            except Exception as e:
+                db.session.rollback()
+                flash(f'Erro ao adicionar o post: {str(e)}')
+
+        else:
+            flash('Faça login para postar!')
 
     posts = Post.query.order_by(Post.id.desc()).all()
     posts_info = []
@@ -47,7 +64,8 @@ def blog():
     for post in posts:
         autor_id = post.autor_id
         usuario = Usuario.query.filter_by(id=autor_id).first()
-        
+        caminhos_das_imagens = Imagem.query.filter_by(post_id=post.id).with_entities(Imagem.caminho_arquivo).all()
+
         if usuario:
             data_formatada = post.data_postagem.strftime("%d-%m-%Y")
             post_info = {
@@ -55,7 +73,8 @@ def blog():
                 'parentesco': usuario.parentesco,
                 'nome_filho': post.nome_filho,
                 'data_postagem': data_formatada,
-                'conteudo': post.conteudo
+                'conteudo': post.conteudo,
+                'caminho_das_imagens': caminhos_das_imagens
             }
             posts_info.append(post_info)
         else:
@@ -66,6 +85,20 @@ def blog():
 
     return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info)
 
+
+@app.route('/salvar_imagem', methods=['POST'])
+def salvar_imagem():
+    imagem = request.files['imagem']
+    nome_arquivo = imagem.filename
+    caminho_arquivo = os.path.join(app.root_path, 'uploads', nome_arquivo)
+    imagem.save(caminho_arquivo)
+
+    with open(caminho_arquivo, 'rb') as file:
+        dados_imagem = file.read()
+
+    nova_imagem = Imagem(nome=nome_arquivo, dados_imagem=dados_imagem)
+    db.session.add(nova_imagem)
+    db.session.commit()
 
 #Rota pagina dados 
 @app.route('/dados')
