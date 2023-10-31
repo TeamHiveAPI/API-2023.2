@@ -111,12 +111,49 @@ def dados():
 @app.route('/minhaconta', methods=['GET', 'POST'])
 def conta():
     if session.get('user_logado'):
-        user_id = session['user_id'] 
-        user = Usuario.query.get(user_id) 
-        if user:  # Verifique se o usuário existe
-            return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user)
-    
+        user_id = session['user_id']
+        user = Usuario.query.get(user_id)
+        if user:
+            if user.imagem_perfil:
+                imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + user.imagem_perfil)
+            else:
+                imagem_perfil_url = url_for('static', filename='img/perfil.png')
+            
+            return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
     return redirect(url_for('login'))
+
+@app.route('/upload_perfil', methods=['POST'])
+def upload_perfil():
+    if 'imagem_perfil' in request.files:
+        file = request.files['imagem_perfil']
+        if file:
+            # Verifique se o arquivo tem uma extensão permitida (por exemplo, .png, .jpg, .jpeg)
+            if '.' in file.filename and file.filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg'}:
+                filename = secure_filename(file.filename)
+                caminho_arquivo = os.path.join(app.config['upload_perfil'], filename)
+                # Salve a imagem no caminho especificado
+                file.save(caminho_arquivo)
+                # Atualize o caminho da imagem de perfil do usuário no banco de dados
+                if 'user_id' in session:
+                    user_id = session['user_id']
+                    user = Usuario.query.get(user_id)
+                    if user:
+                        user.imagem_perfil = filename
+                        db.session.commit()
+                        flash('Imagem de perfil atualizada com sucesso')
+                    else:
+                        flash('Usuário não encontrado')
+                else:
+                    flash('Você deve estar logado para atualizar a imagem de perfil')
+            else:
+                flash('Apenas arquivos PNG, JPG e JPEG são permitidos')
+        else:
+            flash('Nenhum arquivo de imagem foi selecionado')
+    else:
+        flash('Campo de imagem de perfil não encontrado na solicitação')
+
+    return redirect(url_for('conta'))
+    
 #Rota de cadastro 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
@@ -174,22 +211,17 @@ def deletar_conta():
             user_id = session['user_id']
             user = Usuario.query.get(user_id)
             if user:
-                # Trate os registros associados na tabela 'post'
-
                 posts = Post.query.filter_by(autor_id=user_id).all()
-                
                 for post in posts:
                     images = Imagem.query.filter_by(post_id=post.id).all()
                     for image in images:
                         db.session.delete(image)
                     db.session.delete(post)
-
                 # Agora você pode excluir o usuário
                 db.session.delete(user)
                 db.session.commit()
                 flash('Conta excluída com sucesso!')
                 return redirect(url_for('logout'))
-
     return "Acesso inválido a esta página."
 
 #Rota para sair da conta do usuario

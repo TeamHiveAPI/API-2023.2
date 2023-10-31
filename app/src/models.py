@@ -14,9 +14,9 @@ class Usuario(db.Model):
     senha = db.Column(db.String(200), nullable=False)
     profissao = db.Column(db.String(20), nullable=False)
     comochegou = db.Column(db.String(22), nullable=False)
-    foto_perfil = db.Column(BINARY)
+    imagem_perfil = db.Column(db.String(255), nullable=True) 
 
-    def __init__(self, nome, dn, cpf, endereco, email, parentesco, senha, profissao, comochegou, foto_perfil):
+    def __init__(self, nome, dn, cpf, endereco, email, parentesco, senha, profissao, comochegou):
         self.nome = nome
         self.dn = dn
         self.cpf = cpf
@@ -26,7 +26,7 @@ class Usuario(db.Model):
         self.senha = senha
         self.profissao = profissao
         self.comochegou = comochegou
-        self.foto_perfil = foto_perfil
+
 
 # Criação de uma tabela para as imagens, associada aos posts
 class Imagem(db.Model):

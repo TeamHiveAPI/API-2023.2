@@ -36,19 +36,20 @@ MINHA-CONTA
                 <p>Selecione apenas uma foto em formato .png</p>
             </div>
             <div class="modal_baixo">
-                <form name="selecionar_imagem" onsubmit="return validateForm()">
-                    <input type="file" id="selecionar_imagem" name="imagem" multiple accept=".png, .jpg, .jpeg">
+                <form id="selecionar_imagem_form" action="{{ url_for('upload_perfil') }}" method="post" enctype="multipart/form-data">
+                    <input type="file" id="selecionar_imagem" name="imagem_perfil" accept=".png, .jpg, .jpeg">
                     <input class="botao_modal_enviar" type="submit" value="Enviar">
                 </form>
                 <button class="modal_baixo_botao_voltar">Voltar</button>
             </div>
         </div>
     </div>
-
+    
     <section class="minha_conta">
-        <div class="parte_esquerda">
+        <div class="parte_esquerda">    
+            {% if user %}
             <div class="minha_conta_imagem">
-                <img src="{{ url_for('static', filename='img/perfil.png') }}">
+                <img class="foto_perfil" src="{{ imagem_perfil_url }}" alt="Imagem de perfil">
             </div>
             <div class="minha_conta_baixo" id="botao_modal_1">
                 Selecionar Imagem
@@ -56,13 +57,12 @@ MINHA-CONTA
             </div>
         </div>
         <div class="minha_conta_info">
-            {% if user %}
             <h1>Nome de usuário:</h1>
             <p class="info_paragrafo">{{ user.nome }}</p>
             <h1>E-mail:</h1>
             <p class="info_paragrafo">{{ user.email }}</p>
             <h1>Senha:</h1>
-            <p class="info_paragrafo">{{ user.senha }}</p>  
+            <p class="info_paragrafo">{{ user.senha }}</p>
             <div class="minha_conta_botao">
                 <form method="post" action="{{ url_for('deletar_conta') }}">
                     <button type="submit">Excluir conta</button>
