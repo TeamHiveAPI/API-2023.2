@@ -111,7 +111,7 @@ def dados():
 def conta():
     if session.get('user_logado'):
         user_id = session['user_id'] 
-        user = Usuario.query.get(user_id)#coloquei 
+        user = Usuario.query.get(user_id) 
         if user:  # Verifique se o usuário existe
             return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user)
     
@@ -174,8 +174,13 @@ def deletar_conta():
             user = Usuario.query.get(user_id)
             if user:
                 # Trate os registros associados na tabela 'post'
+
                 posts = Post.query.filter_by(autor_id=user_id).all()
+                
                 for post in posts:
+                    images = Imagem.query.filter_by(post_id=post.id).all()
+                    for image in images:
+                        db.session.delete(image)
                     db.session.delete(post)
 
                 # Agora você pode excluir o usuário
