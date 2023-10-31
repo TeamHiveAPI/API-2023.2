@@ -30,7 +30,7 @@ class Imagem(db.Model):
     __tablename__ = 'imagem'
 
     id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id', ondelete='CASCADE'))
     caminho_arquivo = db.Column(db.String(255))  # Adicionando o campo para o caminho do arquivo
 
     def __init__(self, post_id, caminho_arquivo):  # Ajuste no construtor
@@ -40,7 +40,7 @@ class Imagem(db.Model):
 class Post(db.Model):
     __tablename__ = "post"
     id = db.Column(db.Integer, primary_key=True)
-    autor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    autor_id = db.Column(db.Integer, db.ForeignKey('usuario.id', ondelete='CASCADE'))
     nome_filho = db.Column(db.Text, nullable=False)
     conteudo = db.Column(db.Text, nullable=False)
     data_postagem = db.Column(db.Date, nullable=False)
