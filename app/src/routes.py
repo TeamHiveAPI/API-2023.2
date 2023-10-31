@@ -107,6 +107,7 @@ def dados():
         return render_template('dados.html', title='MINHA CONTA', nav='active')
     return render_template('dados.html', title='LOGIN', nav='active')
 
+#Rota de perfil
 @app.route('/minhaconta', methods=['GET', 'POST'])
 def conta():
     if session.get('user_logado'):
@@ -116,7 +117,7 @@ def conta():
             return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user)
     
     return redirect(url_for('login'))
-
+#Rota de cadastro 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     #no metodo post, ele coleta as informações, verifica se o usuario já existe 
