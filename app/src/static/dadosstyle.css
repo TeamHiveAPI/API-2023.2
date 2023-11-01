@@ -48,7 +48,6 @@ body {
 
 /* Hero Banner da página Dados */
 
-
 .hero_banner {
     display: flex;
     flex-direction: column;
@@ -78,31 +77,12 @@ body {
     color: white;
     margin-bottom: 128px;
 }
-/* conteudo novo */
-.dados{
-    height: 100vh;
-   
-}
-.centro_transplante{
-    list-style: none;
-    margin: 0 auto;
-    
-    
-}
-.centro_transplante li{
-    margin-bottom: 1%;
-}
-#chart_div{
-    margin: 0 auto;
-    width: 900px; 
-    height: 500px;
-}
+
 /* Conteúdo da página */
 
 .porque_dados {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-around;
 }
 
@@ -157,7 +137,6 @@ body {
 
 .todos_dados_grupo {
     display: none;
-
 }
 
 .mostrar {
@@ -179,6 +158,15 @@ body {
 
 .card_hospital p:last-child, .card_hospital_grupo p:last-child {
     margin-bottom: 0px;
+}
+
+#chart_div {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.margem_grafico {
+    margin-top: 96px;
 }
 
 /* Footer */
@@ -217,7 +205,6 @@ footer {
     margin-top: 64px;
     text-align: center;
 }
-
 
 /* dropdown livia */
 
