@@ -3,6 +3,7 @@
 {% block estilo %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styleblog.css') }}">
 <script src="{{ url_for('static', filename='script.js') }}" async></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 {% endblock %}
 
@@ -96,24 +97,23 @@ BLOG
             <p class="postagem">Data de Postagem: {{ post.data_postagem }}</p>
         </div>
         <hr class="linha">
-        <p> {{ post.conteudo }} </p>
-        <!--
-            <div class="botao">
-                <p class="ler">Ler mais</p>
-            </div>
-        -->
+        <p class="postContent" data-post-id="{{ loop.index }}"> {{ post.conteudo }} </p>
+        <div class="botao">
+            <p class="readMore ler" data-post-id="{{ loop.index }}">Ler mais</p>
+        </div>
         <p class="anexo">Anexos</p>
         <div class="fotos">
             {% for img in post.caminho_das_imagens %}
             <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
             {% endfor %}
-            <!-- <p class="ver">Ver mais</p> -->
         </div>
     </article>
     {% endfor %}
+    <!--
     <div class="botao1">
         <p class="carregar">Carregar mais posts</p>
     </div>
+    -->
     </section>
 
     <div id="progress">
@@ -160,7 +160,8 @@ BLOG
         alert("Você pode selecionar no máximo 3 imagens!");
         input.value = '';  // Limpa a seleção
     }
-}
+    }
+
 </script>
 
 {% endblock %}
