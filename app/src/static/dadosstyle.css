@@ -78,7 +78,25 @@ body {
     color: white;
     margin-bottom: 128px;
 }
-
+/* conteudo novo */
+.dados{
+    height: 100vh;
+   
+}
+.centro_transplante{
+    list-style: none;
+    margin: 0 auto;
+    
+    
+}
+.centro_transplante li{
+    margin-bottom: 1%;
+}
+#chart_div{
+    margin: 0 auto;
+    width: 900px; 
+    height: 500px;
+}
 /* Conteúdo da página */
 
 .porque_dados {
