@@ -1,6 +1,6 @@
 from controller import app
 from datetime import datetime
-from flask import render_template, redirect, url_for, request, session, flash
+from flask import render_template, redirect, url_for, request, session, flash, jsonify
 from werkzeug.utils import secure_filename
 from models import Imagem, Usuario, Post, db
 import os
@@ -57,6 +57,11 @@ def blog():
 
         else:
             flash('Faça login para postar!')
+    else:
+        page = request.args.get('page', default=1, type=int)
+        posts_per_page = 5
+        Post.query.order_by(Post.id.desc()).paginate(page=page, per_page=posts_per_page, error_out=False)
+
 
     posts = Post.query.order_by(Post.id.desc()).all()
     posts_info = []
@@ -80,6 +85,9 @@ def blog():
         else:
             print(f"Usuário não encontrado para o post com ID: {post.id}")
 
+    if 'application/json' in request.headers.get('Accept'):
+                return jsonify(posts_info)
+    
     if session.get('user_logado'):
         return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info)
 
@@ -99,6 +107,7 @@ def salvar_imagem():
     nova_imagem = Imagem(nome=nome_arquivo, dados_imagem=dados_imagem)
     db.session.add(nova_imagem)
     db.session.commit()
+
 
 #Rota pagina dados 
 @app.route('/dados')
