@@ -18,7 +18,7 @@
 
 ## 📖 Sobre o Projeto
 
-O objetivo desse projeto é criar um site informativo que conscientize a população sobre o sofrimento que os pais passam para poder garantir um tratamento de qualidade para suas crianças com Insuficiência Renal Crônica (IRC), além de ajudar estes pais a procurarem por hospitais que cuidem de crianças com IRC, o que é raro.
+O objetivo desse projeto é criar um site informativo que conscientize a população brasileira sobre as dificuldades que os pais de crianças com Doença Renal Crônica (DRC) enfrentam para poder garantir um tratamento de qualidade, além de ajudar estes pais a procurarem por hospitais que cuidem de crianças com DRC e outros recursos que ajudem a lidar a raridade de meios de tratamento no Brasil.
 
 <br>
 
