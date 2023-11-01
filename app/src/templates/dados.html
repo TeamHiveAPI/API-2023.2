@@ -34,78 +34,177 @@ DADOS
     </section>
 
     <section class="dados">
-        <div class="numero_cli_hemo_pedi">
-            <h2 class="titulo_tipo_de_dados">Número de clínicas e hospitais que oferecem hemodiálise pediátrica</h2>
-             <div class="tema">
-                <div class="dropdown">
-                    <label for="tema1">Estado:</label>
-                    <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
-                        <select name="estado" id="tema1" class="estados">
-                            
-                            <option value="">Selecione um estado</option>
-                            <option value="exemplo1">Exemplo 1</option>
-                            <option value="exemplo2">Exemplo 2</option>
-                            <option value="exemplo3">Exemplo 3</option>
-                        </select>
-                </div>
-                <div class="dropdown">
-                    <label for="tema2">Município:</label>
-                    <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
-                        <select name="municipio" id="tema2" class="municipios">
-                            <option value="">Selecione um município</option>
-                            <option value="exemplo1">Exemplo 1</option>
-                            <option value="exemplo2">Exemplo 2</option>
-                            <option value="exemplo3">Exemplo 3</option>
-                        </select>
-                </div>
-             </div>
-            <div class="grafico_exemplo">
-                <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
+        <div class="centros_trans">
+            <h1>Centros transportadores de crianças (clínicas que fazem transplante):</h1>
+            <div class="dropdown">
+                <label for="tema1">Região:</label>
+                <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
+                <select name="estado" class="estados" id="dropdown_centros">
+                    <option value="norte">Selecionar Estado</option>
+                    <option value="norte">Norte</option>
+                    <option value="nordeste">Nordeste</option>
+                    <option value="centro_oeste">Centro-oeste</option>
+                    <option value="sudeste">Sudeste</option>
+                    <option value="sul">Sul</option>
+                </select>
             </div>
-        </div>
 
-        <div class="centros_trans_de_criancas">
-            <h2 class="titulo_tipo_de_dados">Centros transplantadores de crianças</h2>
-            <div class="grafico_exemplo">
-                <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
+            <br>
+
+            <div class="card_hospital" id="dados_norte">
+                <p>SANTA CASA DE MISERICÓRDIA DO PARÁ</p>
+                <p> Belém - PA</p>
             </div>
-        </div>
 
-        <div class="num_cri_trans_brasil">
-            <h2 class="titulo_tipo_de_dados">Número de crianças em filas de transplante no Brasil</h2>
-            <div class="tema">
-                <div class="dropdown">
-                    <label for="tema3">Região: </label>
-                    <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
-                    <select name="regiao" id="tema3" class="regioes">
-                        <option value="">Selecione uma região</option>
-                        <option value="exemplo1">Exemplo 1</option>
-                        <option value="exemplo2">Exemplo 2</option>
-                        <option value="exemplo3">Exemplo 3</option>
-                    </select>
-                 </div>
-             </div>
+            <div class="todos_dados_grupo" id="dados_nordeste">
+                <div class="card_hospital_grupo">
+                    <p>INSTITUTO DE MEDICINA INTEGRAL PROF FERNANDO FIGUEIRA - MIP</p>
+                    <p>Recife - PE</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p>REAL HOSPITAL PORTUGUES</p>
+                    <p>Recife - PE</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p>HOSPITAL ASSOCIADOS DE PERNAMBUCO LTDA - HOSPITAL SANTA JOANA </p>
+                    <p>Recife - PE</p>
+                </div>
+            </div>
+
+            <div class="card_hospital" id="dados_centro_oeste">
+                <p>Não há nenhum hospital nesta região</p>
+            </div>
+
+            <div class="todos_dados_grupo" id="dados_sudeste">
+                <div class="card_hospital_grupo">
+                    <p>SES RJ HOSPITAL ESTADUAL TRANSPLANTE CANCER E CIR INFANTIL</p>
+                    <p>Rio de Janeiro - RJ</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p> HOSPITAL DAS CLINICAS SAMUEL LIBANIO POUSO ALEGRE</p>
+                    <p>Pouso Alegre - MG</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p>SANTA CASA DE MISERICORDIA DE BELO HORIZONTE</p>
+                    <p>Belo Horizonte - MG</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p>HOSPITAL SAMARITANO</p>
+                    <p>São Paulo - SP</p>
+                </div>
+            </div>
+
+            <div class="card_hospital" id="dados_sul">
+                <p>HOSPITAL INFANTIL PEQUENO PRINCIPE</p>
+                <p>Curitiba - PR</p>
+            </div>
+
+            <h1 class="margem_cima_dropdown">Clínicas e hospitais que oferecem diálise e hemodiálise:</h1>
+            <div class="dropdown">
+                <label for="tema1">Região:</label>
+                <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
+                <select name="estado" class="estados" id="dropdown_centros_dialise">
+                    <option value="norte">Selecionar Estado</option>
+                    <option value="norte">Norte</option>
+                    <option value="nordeste">Nordeste</option>
+                    <option value="centro_oeste">Centro-oeste</option>
+                    <option value="sudeste">Sudeste</option>
+                    <option value="sul">Sul</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div class="card_hospital" id="dados_norte_dialise">
+                <p>Não há nenhum hospital nesta região</p>
+            </div>
+
+            <div class="todos_dados_grupo" id="dados_nordeste_dialise">
+                <div class="card_hospital_grupo">
+                    <p>HIAS HOSPITAL INFANTIL ALBERT SABIN</p>
+                    <p>Fortaleza - CE</p>
+                    <hr class="margem_divisoria">
+                    <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                    <p>Gestão: DUPLA</p>
+                    <p>Categoria: PÚBLICO</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p>AMIP Praia</p>
+                    <p>João Pessoa - PB</p>
+                    <hr class="margem_divisoria">
+                    <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                    <p>Gestão: MUNICIPAL</p>
+                    <p>Categoria: PRIVADO</p>
+                </div>
+                <div class="card_hospital_grupo">
+                    <p>HOSPITAL INFANTIL VARELA SANTIAGO</p>
+                    <p>Natal - RN</p>
+                    <hr class="margem_divisoria">
+                    <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                    <p>Gestão: DUPLA</p>
+                    <p>Categoria: SEM FINS LUCRATIVOS</p>
+                </div>
+            </div>
+
+                <div class="card_hospital" id="dados_centro_oeste_dialise">
+                    <p>HOSPITAL ESTADUAL DA CRIANCA E DO ADOLESCENTE HECAD</p>
+                    <p>Goiânia - GO</p>
+                    <hr class="margem_divisoria">
+                    <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                    <p>Gestão: ESTADUAL</p>
+                    <p>Categoria: PÚBLICO</p>
+                </div>
+
+                <div class="todos_dados_grupo" id="dados_sudeste_dialise">
+                    <div class="card_hospital_grupo">
+                        <p>HOSPITAL INFANTIL ISMELIA SILVEIRA</p>
+                        <p>Duque de Caxias - RJ</p>
+                        <hr class="margem_divisoria">
+                        <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                        <p>Gestão: MUNICIPAL</p>
+                        <p>Categoria: PÚBLICO</p>
+                    </div>
+                    <div class="card_hospital_grupo">
+                        <p>SMS HOSPITAL MUNICIPAL JESUS AP 22</p>
+                        <p>Rio de Janeiro - RJ</p>
+                        <hr class="margem_divisoria">
+                        <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                        <p>Gestão: MUNICIPAL</p>
+                        <p>Categoria: PÚBLICO</p>
+                    </div>
+                    <div class="card_hospital_grupo">
+                        <p>INSTITUTO DE PUERICULTURA E PEDIATRIA MARTAGÃO GESTEIRA - IPPMG</p>
+                        <p>Rio de Janeiro - RJ</p>
+                        <hr class="margem_divisoria">
+                        <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                        <p>Gestão: MUNICIPAL</p>
+                        <p>Categoria: PÚBLICO</p>
+                    </div>
+                    <div class="card_hospital_grupo">
+                        <p>HOSP MUNICIPAL INFANTIL MENINO JESUS</p>
+                        <p>São Paulo - SP</p>
+                        <hr class="margem_divisoria">
+                        <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                        <p>Gestão: MUNICIPAL</p>
+                        <p>Categoria: PÚBLICO</p>
+                    </div>
+                </div>
+
+                <div class="card_hospital" id="dados_sul_dialise">
+                    <p>HOSPITAL INFANTIL PEQUENO PRINCIPE</p>
+                    <p>Curitiba - PR</p>
+                    <hr class="margem_divisoria">
+                    <p>Tipo do estabelecimento: HOSPITAL ESPECIALIZADO</p>
+                    <p>Gestão: DUPLA</p>
+                    <p>Categoria: SEM FINS LUCRATIVOS</p>
+                </div>
+        </div> 
+    </div>
             
-            <div class="grafico_exemplo">
-                <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
-            </div>
-        </div>
-
-        <div class="criancas_trat_conserv">
-            <h2 class="titulo_tipo_de_dados">Crianças em tratamento conservador</h2>
-            <div class="grafico_exemplo">
-                <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
-            </div>
-        </div>
-
-        <div class="centros_cri_menos_10kg">
-            <h2 class="titulo_tipo_de_dados">Centros que atendem crianças com menos de 10kg</h2>
-            <div class="grafico_exemplo">
-                <img class="imagem_grafico" src="../static/img/grafico_exemplo.png">
-            </div>
-        </div>
     </section>
 
+        <script src="{{ url_for('static', filename='dropdown.js') }}"></script>
+        
     <div id="progress">
         <span id="progress_value">&#x1F815;</span>
     </div>

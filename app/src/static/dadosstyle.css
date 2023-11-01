@@ -121,28 +121,46 @@ body {
     margin-top: 32px;
 }
 
-.grafico_exemplo {
-    display: flex;
-    text-align: center;
-    margin-top: 64px;
-}
-
-.grafico_bloqueado {
-    display: flex;
-    padding: 128px 256px;
-    margin-top: 64px;
-    border: 1px solid #303030;
+.card_hospital {
+    display: none;
+    background-color: #ebebeb;
+    padding: 32px;
     border-radius: 32px;
+    width: 512px;
 }
 
-.grafico_bloqueado_elementos {
-    flex-direction: column;
-    text-align: center;
+.card_hospital_grupo {
+    background-color: #ebebeb;
+    padding: 32px;
+    border-radius: 32px;
+    width: 512px;
+    margin-bottom: 24px;
 }
 
-.icone_bloqueado {
-    width: 96px;
-    margin-bottom: 32px;
+.todos_dados_grupo {
+    display: none;
+
+}
+
+.mostrar {
+    display: block!important;
+}
+
+.margem_cima_dropdown {
+    margin-top: 64px;
+}
+
+.margem_divisoria {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.card_hospital p, .card_hospital_grupo p {
+    margin-bottom: 12px;
+}
+
+.card_hospital p:last-child, .card_hospital_grupo p:last-child {
+    margin-bottom: 0px;
 }
 
 /* Footer */
