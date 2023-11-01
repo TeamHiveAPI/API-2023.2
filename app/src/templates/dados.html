@@ -32,6 +32,21 @@ DADOS
         </div>
         
     </section>
+        <section class="dados">
+        <ul class="centro_transplante">
+            <h2>Clinicas que fazem transplante</h2>
+            <li>SES RJ HOSPITAL ESTADUAL TRANSPLANTE CANCER E CIR INFANTIL - RJ - RIO DE JANEIRO</li>
+            <li>HOSPITAL INFANTIL PEQUENO PRINCIPE - PR - CURITIBA</li>
+            <li>HOSPITAL DAS CLINICAS SAMUEL LIBANIO POUSO ALEGRE - MG - POUSO ALEGRE</li>
+            <li>SANTA CASA DE MISERICORDIA DE BELO HORIZONTE -  MG - BELO HORIZONTE</li>
+            <li>SANTA CASA DE MISERICORDIA DO PARA - PA - BELÉM</li>
+            <li>INSTITUTO DE MEDICINA INTEGRAL PROF FERNANDO FIGUEIRA-IMIP - PE - RECIFE</li>
+            <li>REAL HOSPITAL PORTUGUES - PE - RECIFE</li>
+            <li>HOSPITAL ASSOCIADOS DE PERNAMBUCO LTDA-HOSPITAL SANTA JOANA - PE - RECIFE</li>
+            <li>HOSPITAL SAMARITANO - SP - SÃO PAULO</li> 
+        </ul>
+        <div id="chart_div"></div>
+    </section>
 
     <section class="dados">
         <div class="numero_cli_hemo_pedi">
@@ -125,4 +140,33 @@ DADOS
     </div>
     <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
 </footer>
+// grafico
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  // Some raw data (not necessarily accurate)
+  var data = google.visualization.arrayToDataTable([
+    ['Ano', 'Norte', 'Nordeste', 'Sudeste', 'Sul', 'Centro-Oeste'],
+    ['2018',   8,       12,          29,      4,         6,      ],
+    ['2019',  11,       14,          16,     12,         4,      ],
+    ['2020',  11,       16,          10,      7,         2,      ],
+    ['2021',  12,       21,          13,      7,         3,      ],
+    ['2022',   9,       23,          20,      8,         6,      ],
+    ['2023',   5,        6,           7,      0,         1,      ]
+  ]);
+
+  var options = {
+    title : 'Taxa de mortalidade de crianças e adolescentes com DRC por região.',
+    vAxis: {title: 'Taxa'},
+    hAxis: {title: 'Ano'},
+    seriesType: 'bars',
+    series: {5: {type: 'line'}}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+</script>
 {% endblock %}
