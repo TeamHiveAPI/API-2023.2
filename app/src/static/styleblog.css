@@ -147,6 +147,7 @@ button {
     align-items: flex-end;
     color: #969696;
     font-weight: 500;
+    overflow: hidden;
 }
 
 .coluna {
@@ -574,4 +575,9 @@ form {
     width: 20%;
     object-fit: contain;
     margin-right: 5%;
+}
+
+.postagem.expandido {
+    max-height: none;
+    overflow: visible;
 }
