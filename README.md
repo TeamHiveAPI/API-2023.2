@@ -1,4 +1,4 @@
-<img src="card_introducao.png" alt="Card introdutório">
+<img src="./documento/readme/card_introducao.png" alt="Card introdutório">
 
 <br>
 
@@ -73,13 +73,13 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 
 <strong>Sprint 1: </strong>
 
-<img src="prototiponavegavel.gif" alt="Prototipo Navegavel" width=750px>
+<img src="./documento/readme/prototiponavegavel.gif" alt="Prototipo Navegavel" width=750px>
 
 <br>
 
 <strong>Sprint 2: </strong>
 
-<img src="sprint2.gif" alt="O site na segunda sprint" width=750px>
+<img src="./documento/readme/sprint2.gif" alt="O site na segunda sprint" width=750px>
 
 <strong>Sprint 3: </strong> Em andamento ⌛
 
@@ -102,7 +102,7 @@ O tutorial será publicado na última sprint.
 
 <br>
 
-<img src="card_sprints.png" alt="Card das sprints" width=500px>
+<img src="./documento/readme/card_sprints.png" alt="Card das sprints" width=500px>
 
 <br>
 
