@@ -24,16 +24,21 @@ O objetivo desse projeto é criar um site informativo que conscientize a popula�
 
 ## 💻 Tecnologias que serão utilizadas:
 
-<div float=left>
+<div align="center">
+<img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white&color=F2A630"/>
+<img src="https://img.shields.io/badge/MicrosoftExcel-000000?style=for-the-badge&logo=microsoftexcel&logoColor=white&color=F2A630"/>
+<img src="https://img.shields.io/badge/MicrosoftTeams-000000?style=for-the-badge&logo=microsoftteams&logoColor=white&color=F2A630"/>
+<img src="https://img.shields.io/badge/Slack-000000?style=for-the-badge&logo=slack&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&color=F2A630"/>
+  <br>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/MySQL-000000?style=for-the-badge&logo=mysql&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/Bootstrap-000000?style=for-the-badge&logo=bootstrap&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white&color=F2A630"/>
+
 </div>
 
 <br>
