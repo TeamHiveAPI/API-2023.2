@@ -70,7 +70,10 @@ def blog():
         autor_id = post.autor_id
         usuario = Usuario.query.filter_by(id=autor_id).first()
         caminhos_das_imagens = Imagem.query.filter_by(post_id=post.id).with_entities(Imagem.caminho_arquivo).all()
-
+        if usuario:
+            if usuario.imagem_perfil:
+                imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + usuario.imagem_perfil)
+                                    
         if usuario:
             data_formatada = post.data_postagem.strftime("%d-%m-%Y")
             post_info = {
@@ -79,19 +82,26 @@ def blog():
                 'nome_filho': post.nome_filho,
                 'data_postagem': data_formatada,
                 'conteudo': post.conteudo,
-                'caminho_das_imagens': caminhos_das_imagens
+                'caminho_das_imagens': caminhos_das_imagens,
+                'imagem_perfil_url': imagem_perfil_url
             }
             posts_info.append(post_info)
         else:
             print(f"Usuário não encontrado para o post com ID: {post.id}")
 
+        if usuario:
+            if usuario.imagem_perfil:
+                imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + usuario.imagem_perfil)
+            else:
+                imagem_perfil_url = url_for('static', filename='img/perfil.png')
+
     if 'application/json' in request.headers.get('Accept'):
                 return jsonify(posts_info)
     
     if session.get('user_logado'):
-        return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info)
+        return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
-    return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info)
+    return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
 
 @app.route('/salvar_imagem', methods=['POST'])
