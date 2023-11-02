@@ -139,6 +139,7 @@ button {
 
 .imagem_usuario {
     width: 96px;
+    border-radius: 160px;
 }
 
 .postagem {
