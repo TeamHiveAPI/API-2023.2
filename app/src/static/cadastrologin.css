@@ -8,40 +8,8 @@
     text-decoration: none;
 }
 
-body {
+main {
     margin: 0 10%;
-} 
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 0px 24px 0px;
-    background-color: white;
-}
-
-.navbar_imagem {
-    width: 125px;
-}
-
-.navbar_menu {
-    display: flex;
-    font-weight: 600;
-    gap: 32px;
-}
-
-.navbar_menu_item {
-    color: #000350;
-    padding: 8px 28px 8px 28px;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 2px;
-}
-
-.active {
-    color: white;
-    background-color: #000350;
 }
 
 .container {
@@ -191,4 +159,35 @@ select {
 
 input::placeholder {
     color: #c9c9c9;
+}
+
+.centralizar_screen {
+    display: flex;
+    justify-content: center;
+}
+
+.flash-messages {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #1d7d0d;
+    color: white;
+    width: 320px;
+    padding: 32px;
+    border-radius: 32px;
+    top: 140px;
+    animation-name: popup;
+    animation-duration: 5s;
+    opacity: 0;
+}
+
+.flash-messages li {
+    align-items: center;
+}
+
+@keyframes popup {
+    from {margin-top: -200px; opacity:0}
+    20% {margin-top: 0px; opacity:1}
+    80% {margin-top: 0px; opacity:1}
+    to {margin-top: -200px; opacity:0}
 }

@@ -19,15 +19,19 @@ MINHA-CONTA
 {% block conteudo %}
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul class="flash-messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
+    <div class="centralizar_screen">
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
     {% endwith %}
 
     <hr>
+
+    <main>
 
     <div id="modal" class="modal">
         <div class="modal_conteudo">
@@ -73,5 +77,8 @@ MINHA-CONTA
             </div>
             {% endif %}
         </div>
-    </section>        
+    </section>
+
+    </main>
+
 {% endblock %}

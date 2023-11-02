@@ -1,0 +1,89 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0px 24px 0px;
+}
+
+.navbar_imagem {
+    width: 125px;
+    margin-left: 48px;
+}
+
+.navbar_menu {
+    display: flex;
+    font-weight: 600;
+    gap: 32px;
+    margin-right: 48px;
+}
+
+.navbar_menu_item {
+    color: #000350;
+    padding: 8px 28px 8px 28px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.active {
+    color: white;
+    background-color: #000350;
+}
+
+/* Responsividade */
+
+.navbar_hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    margin-right: 48px;
+}
+
+.navbar_hamburguer_linha {
+    width: 48px;
+    height: 3px;
+    border-radius: 4px;
+    background-color: #03045E;
+}
+
+@media only screen and (max-width: 860px) {
+
+    .navbar_menu {
+        display: none;
+        position: absolute;
+        top: 110px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f4f4f4;
+        z-index: 2;
+        box-shadow: 0px 5px 8px -5px rgba(0,0,0,0.36);
+        animation-name: menutop;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes menutop {
+        from {margin-top: -200px; opacity:0}
+        to {margin-top: 0px; opacity:1}
+    }
+
+    .navbar_menu_item:hover, .navbar_area_aluno:hover {
+        background-color: #000350;
+        color: white;
+        
+    }
+    .navbar_menu_item:nth-child(1) {
+        margin-top: 32px;
+    }
+
+    .navbar_menu_item:nth-child(4) {
+        margin-bottom: 32px;
+    }
+
+    .navbar_hamburguer {
+        display: flex;
+        cursor: pointer;
+    }
+}

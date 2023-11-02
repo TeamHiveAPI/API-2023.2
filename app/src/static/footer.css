@@ -1,0 +1,48 @@
+footer {
+    padding: 64px 0px;
+    margin-top: 64px;
+    background-color: #00022C;
+    color:white;
+}
+
+.footer_principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10%;
+}
+
+.footer_parte_esquerdo {
+    max-width: 500px;
+}
+
+.footer_logo_time {
+    margin-top: 32px;
+    width: 200px;
+}
+
+.footer_logo_github {
+    margin-top: 32px;
+    width: 48px;
+    cursor: pointer;
+}
+
+.footer_direitos_autorais {
+    margin-top: 64px;
+    text-align: center;
+}
+
+/* Responsividade */
+
+@media only screen and (max-width: 1095px) {
+
+    .footer_principal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer_parte_direito {
+        margin-top: 32px;
+    }
+}

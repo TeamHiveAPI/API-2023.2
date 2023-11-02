@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block estilo %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<script src="{{ url_for('static', filename='script.js') }}"></script>
 {% endblock %}
 {% block title %} 
 HOME
 {% endblock %}
 {% block nav %}
     <a class="navbar_menu_item {{ nav }}" href="{{ url_for('index') }}">HOME</a>
-    <a class="navbar_menu_item " href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item" href="{{ url_for('blog') }}">BLOG</a>
     <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
     <a class="navbar_menu_item" href="{{ url_for('login') }}">{{ title }}</a>
 {% endblock %}
@@ -110,23 +109,17 @@ HOME
         </div>
     </section>
 
+    <hr>
+
+    <div class="citacao">
+        <h1>"Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda."</h1>
+        <p class="menor">- Paulo Freire</p>
+    </div>
+
     <div id="progress">
         <span id="progress_value">&#x1F815;</span>
     </div>
 
 </main>
 
-<footer>
-    <div class="footer_principal">
-        <div class="footer_parte_esquerdo">
-            <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
-            <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
-        </div>
-        <div class="footer_parte_direito">
-            <p>Confira o repositório desse site no Github:</p>
-            <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
-        </div>
-    </div>
-    <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
-</footer>
 {% endblock %}

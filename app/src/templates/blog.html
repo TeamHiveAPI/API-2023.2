@@ -19,25 +19,9 @@ BLOG
 {% endblock %}
 
 {% block conteudo %}
+
 <main>
 
-    <!-- Modal Selecionar Imagem 
-    <div id="modal" class="modal">
-        <div class="modal_conteudo">
-            <div class="modal_cima">
-                <h1>Selecionar Imagem</h1>
-                <p>Selecione até 3 imagens em formato .png, .jpg, .jpeg</p>
-            </div>
-            <div class="modal_baixo">
-                <form name="selecionar_imagem" onsubmit="return validateForm()">
-                    <input type="file" id="selecionar_imagem" name="imagem" multiple accept=".png, .jpg, .jpeg">
-                    <input class="botao_modal_enviar" type="submit" value="Enviar">
-                </form>
-                <button class="modal_baixo_botao_voltar">Voltar</button>
-            </div>
-        </div>
-    </div>
--->
     <section class="hero_banner">
         <div class="conteudo_escrito">
             <h1 class="conteudo_escrito_titulo">BLOG</h1>
@@ -87,11 +71,13 @@ BLOG
     <!-- FLASH para quando publicar, quando não tiver logado ou se acontecer algum erro -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul class="flash-messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
+    <div class="centralizar_screen">
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
     {% endwith %}
 
@@ -132,20 +118,6 @@ BLOG
     </div>
 
 </main>
-
-<footer>
-    <div class="footer_principal">
-        <div class="footer_parte_esquerdo">
-            <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
-            <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
-        </div>
-        <div class="footer_parte_direito">
-            <p>Confira o repositório desse site no Github:</p>
-            <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
-        </div>
-    </div>
-    <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
-</footer>
 
 <script>
     function formulario() {

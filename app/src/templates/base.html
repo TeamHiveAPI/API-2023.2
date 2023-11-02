@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
     {% block estilo %} {% endblock %}
     <title>{% block titulo %} {% endblock %}</title>
 </head>
 <body>
 <header class="navbar">
     <img class="navbar_imagem" src="{{ url_for('static', filename='img/wireframe.png') }}">
+    <div class="navbar_hamburguer">
+        <div class="navbar_hamburguer_linha">
+        </div>
+        <div class="navbar_hamburguer_linha">
+        </div>
+        <div class="navbar_hamburguer_linha">      
+        </div>
+    </div>
     <nav class="navbar_menu">
         {% block nav %} {% endblock %}
     </nav>
+
+    <!-- Esse script precisa fazer aqui pois só funciona depois do navbar renderizar  -->
+    
+    <script src="{{ url_for('static', filename='navbar_responsivo.js') }}"></script>
+
 </header>
 
 {% block conteudo %}
 {% endblock %}
 
 </body>
+
+<footer>
+    <div class="footer_principal">
+        <div class="footer_parte_esquerdo">
+            <p>Este site foi feito com carinho como um projeto de API (Aprendizagem por Projeto Integrador) no 1° semestre do curso de Desenvolvimento de Software Multiplataforma (DSM) na FATEC São José dos Campos - Prof Jessen Vidal. Time responsável: </p>
+            <img class="footer_logo_time" src="{{ url_for('static', filename='img/logo_time.png') }}">
+        </div>
+        <div class="footer_parte_direito">
+            <p>Confira o repositório desse site no Github:</p>
+            <a href="https://github.com/TeamHiveAPI/API-2023.2" target="_blank"> <img class="footer_logo_github" href="https://github.com/TeamHiveAPI/API-2023.2" src="{{ url_for('static', filename='img/logo_github.png') }}"> </a>
+        </div>
+    </div>
+    <p class="footer_direitos_autorais">Todos os direitos reservados © 2023</p>
+</footer>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
 
 </html>

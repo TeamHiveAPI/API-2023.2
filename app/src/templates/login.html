@@ -18,11 +18,13 @@ LOGIN
 {% block conteudo %}
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul class="flash-messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
+    <div class="centralizar_screen">
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
     {% endwith %}
     <main>

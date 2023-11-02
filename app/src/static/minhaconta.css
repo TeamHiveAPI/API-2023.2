@@ -8,8 +8,9 @@
     text-decoration: none;
 }
 
-body {
-    margin: 0 10%;
+main {
+    display: flex;
+    justify-content: center;
 }
 
 .navbar {
@@ -217,6 +218,37 @@ input {
     outline: none;
 }
 
-.foto_perfil{
+.foto_perfil {
     border-radius: 160px;
+}
+
+.centralizar_screen {
+    display: flex;
+    justify-content: center;
+}
+
+.flash-messages {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #1d7d0d;
+    color: white;
+    width: 320px;
+    padding: 32px;
+    border-radius: 32px;
+    top: 140px;
+    animation-name: popup;
+    animation-duration: 5s;
+    opacity: 0;
+}
+
+.flash-messages li {
+    align-items: center;
+}
+
+@keyframes popup {
+    from {margin-top: -200px; opacity:0}
+    20% {margin-top: 0px; opacity:1}
+    80% {margin-top: 0px; opacity:1}
+    to {margin-top: -200px; opacity:0}
 }

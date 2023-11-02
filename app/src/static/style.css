@@ -9,39 +9,8 @@
     scroll-behavior: smooth;
 }
 
-body {
+main {
     margin: 0 10%;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 0px 24px 0px;
-}
-
-.navbar_imagem {
-    width: 125px;
-}
-
-.navbar_menu {
-    display: flex;
-    font-weight: 600;
-    gap: 32px;
-}
-
-.navbar_menu_item {
-    color: #000350;
-    padding: 8px 28px 8px 28px;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 2px;
-}
-
-.active {
-    color: white;
-    background-color: #000350;
 }
 
 .hero_banner {
@@ -77,6 +46,46 @@ body {
 .hero_banner_imagem {
     width: 450px;
     margin: 0 10%;
+}
+
+/* Responsividade Hero Banner */
+
+@media only screen and (max-width: 1200px) {
+
+    .hero_banner {
+        flex-direction: column;
+    }
+
+    .conteudo_escrito {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 32px;
+        margin-bottom: 64px;
+        text-align: center;
+        gap: 48px;
+    }
+
+    .conteudo_escrito_titulo {
+        margin-top: 0px;
+    }
+
+    .conteudo_escrito_subtitulo {
+        margin-bottom: 0px;
+    }
+
+    .hero_banner_imagem {
+        margin-bottom: 64px;
+    }
+
+    .conteudo_escrito {
+        flex-direction: column;
+        text-align: center;
+        gap: 48px;
+    }
+
+    .hero_banner_imagem {
+        width: 200px;
+    }
 }
 
 .problematica {
@@ -294,41 +303,6 @@ hr {
     background-color: #000350;
 }
 
-footer {
-    padding: 64px 0;
-    margin: 0 -12.5%;
-    margin-top: 64px;
-    background-color: #00022C;
-    color:white;
-}
-
-.footer_principal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10%;
-}
-
-.footer_parte_esquerdo {
-    max-width: 500px;
-}
-
-.footer_logo_time {
-    margin-top: 32px;
-    width: 200px;
-}
-
-.footer_logo_github {
-    margin-top: 32px;
-    width: 48px;
-    cursor: pointer;
-}
-
-.footer_direitos_autorais {
-    margin-top: 64px;
-    text-align: center;
-}
-
 .minha-conta {
     display: flex;
     min-height: 50vh;
@@ -376,4 +350,38 @@ footer {
     background-color: white;
     border-radius: 50%;
     font-size: 36px;
+}
+
+.citacao {
+    margin: 0px 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.citacao h1, .citacao p {
+    background: linear-gradient(270deg, #34d582, #4e5a9e);color: linear-gradient(270deg, #4e5a9e, #34d582);
+    background-size: 400% 400%;
+    background-clip: text;
+    font-size: 3rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 4s ease infinite;
+}
+
+.menor {
+    font-weight: 600;
+    font-size: 1.5rem!important;
+}
+
+.citacao p {
+    display: flex;
+    justify-content: flex-end;
+}
+    
+@keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
