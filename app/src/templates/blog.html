@@ -84,6 +84,17 @@ BLOG
     </a>
     {% endif %}
 
+    <!-- FLASH para quando publicar, quando não tiver logado ou se acontecer algum erro -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flash-messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
     {% for post in posts %}
     <article>
         <div class="container2">
