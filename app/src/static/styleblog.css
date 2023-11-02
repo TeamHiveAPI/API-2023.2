@@ -110,6 +110,10 @@ button {
     cursor: pointer;
 }
 
+.fundo:hover {
+    background-color: #00022C;
+}
+
 .login_botao {
     cursor: pointer;
 }
