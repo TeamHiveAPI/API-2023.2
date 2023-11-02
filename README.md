@@ -26,8 +26,8 @@ O objetivo desse projeto √© criar um site informativo que conscientize a popula√
 
 <div align="center">
 <img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/MicrosoftExcel-000000?style=for-the-badge&logo=microsoftexcel&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/MicrosoftTeams-000000?style=for-the-badge&logo=microsoftteams&logoColor=white&color=F2A630"/>
+<img src="https://img.shields.io/badge/Microsoft Excel-000000?style=for-the-badge&logo=microsoftexcel&logoColor=white&color=F2A630"/>
+<img src="https://img.shields.io/badge/Microsoft Teams-000000?style=for-the-badge&logo=microsoftteams&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/Slack-000000?style=for-the-badge&logo=slack&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&color=F2A630"/>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&color=F2A630"/>
