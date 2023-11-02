@@ -52,7 +52,7 @@ BLOG
             <button class="fundo" onclick="exibirFormulario()">Compartilhe sua história!</button>
         </div>
         <form id="meuFormulario" action="{{ url_for('blog') }}" method="post" enctype="multipart/form-data" style="display: none;">
-            <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome do seu filho">
+            <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome da criança">
             <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
                 <button type="submit">
@@ -88,7 +88,7 @@ BLOG
     <article>
         <div class="container2">
             <div class="coluna">
-                <img class="imagem_usuario" src="{{ imagem_perfil_url }}" alt="">
+                <img class="imagem_usuario" src="{{ post.imagem_perfil_url }}" alt="Imagem de perfil">
                 <div class="nome_e_mae">
                     <p class="nome">{{ post.nome_parente }}</p>
                     <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
