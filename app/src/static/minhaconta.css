@@ -216,3 +216,7 @@ input {
     padding: 12px 20px;
     outline: none;
 }
+
+.foto_perfil{
+    border-radius: 160px;
+}
