@@ -66,6 +66,8 @@ def blog():
     posts = Post.query.order_by(Post.id.desc()).all()
     posts_info = []
 
+    imagem_perfil_url = url_for('static', filename='img/perfil.png')
+
     for post in posts:
         autor_id = post.autor_id
         usuario = Usuario.query.filter_by(id=autor_id).first()
@@ -89,11 +91,7 @@ def blog():
         else:
             print(f"Usuário não encontrado para o post com ID: {post.id}")
 
-        if usuario:
-            if usuario.imagem_perfil:
-                imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + usuario.imagem_perfil)
-            else:
-                imagem_perfil_url = url_for('static', filename='img/perfil.png')
+
 
     if 'application/json' in request.headers.get('Accept'):
                 return jsonify(posts_info)
