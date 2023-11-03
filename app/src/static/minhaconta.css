@@ -219,7 +219,12 @@ input {
 }
 
 .foto_perfil {
-    border-radius: 160px;
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
 }
 
 .centralizar_screen {
