@@ -128,7 +128,7 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 <pre><code>python3 -m venv venv</code></pre>
 <pre><code>source venv/bin/activate</code></pre>
 <pre><code>cd app/</code></pre>
-<pre><code>pip install -r requirements.txt</code></pre>
+<pre><code>pip install -r requirements_linux.txt</code></pre>
 
 <h3>Passo 8: Configure o MySQL no Arquivo config.py</h3>
 <p>Abra o arquivo `config.py` localizado na pasta `src` e encontre a seguinte seção:</p>
@@ -145,13 +145,17 @@ SQLALCHEMY_DATABASE_URI = \
 </code></pre>
 <p>Altere o valor da chave `senha` para a senha do seu MySQL, se for diferente de 'fatec'.
 
-<h3>Passo 9: Execute a Aplicação</h3>
+<h3>Passo 9: Execute a query no MySQL</h3>
+<pre><code>create database bd;</code></pre>
+
+<h3>Passo 10: Execute a Aplicação</h3>
+<p>Volte para o terminal e execute:</p>
 <pre><code>python controller.py</code></pre>
 
-<h3>Passo 10: Abra o Link no Navegador</h3>
+<h3>Passo 11: Abra o Link no Navegador</h3>
 <p>Abrir o seguinte link em seu navegador de preferência: <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a></p>
 
-<h3>Passo 11: Encerrando o Ambiente Virtual</h3>
+<h3>Passo 12: Encerrando o Ambiente Virtual</h3>
 <pre><code>deactivate</code></pre>
 
 
