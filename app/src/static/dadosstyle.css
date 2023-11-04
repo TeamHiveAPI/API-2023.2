@@ -139,7 +139,47 @@ main {
 .margem_grafico {
     margin-top: 96px;
 }
+/* eber's version */
 
+.titulo-prog-prev {
+    margin-top: 96px;
+}
+
+.p1-maneiras-prev {
+    margin-top: 26px;
+}
+
+.lista-maneiras-prev {
+    margin-top: 36px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.titulo-principais-infos{
+    margin-top: 96px;
+}
+
+.p-principais-infos{
+    margin-top: 26px;
+}
+
+.titulo-principais-medidas{
+    margin-top: 96px;
+}
+
+.p1-principais-medidas{
+    margin-top: 26px;
+}
+
+.lista-principais-medidas{
+    margin-top: 36px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.p2-principais-medidas{
+    margin-top: 26px;
+}
 /* Footer */
 
 footer {
