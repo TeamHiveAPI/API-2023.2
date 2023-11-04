@@ -92,9 +92,68 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 
 ## 💻 Tutorial de execução da Aplicação
 
-```
-O tutorial será publicado na última sprint.
-```
+<h3>Passo 1: Instale as Dependências</h3>
+<p>Certifique-se de ter o Git e o Python instalados no seu sistema.</p>
+<p>Para baixar o Git, acesse <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.</p>
+<p>Para baixar o Python, acesse <a href="https://www.python.org/downloads">https://www.python.org/downloads</a>.</p>
+
+<h3>Passo 2: Instale o MySQL</h3>
+<p>Siga as etapas abaixo para instalar o MySQL:</p>
+<ol>
+    <li>Faça o download do MySQL Community Server a partir do seguinte link: <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>.</li>
+    <li>Escolha a versão adequada para o seu sistema operacional (por exemplo, MySQL Community Server for Windows, MySQL Community Server for macOS, MySQL Community Server for Linux).</li>
+    <li>Siga as instruções para instalar o MySQL no seu sistema operacional.</li>
+    <li>Durante o processo de instalação, você será solicitado a configurar uma senha para o usuário root. Anote a senha, pois você precisará dela mais tarde.</li>
+    <li>Para os usuários Windows certifique-se de que o serviço MySQL esteja em execução. Abra o Prompt de Comando como administrador e execute o seguinte comando:</li>
+    <pre><code>setx PATH "%PATH%;C:\Program Files\MySQL\MySQL Server 8.2\bin"</pre></code>
+    <li>O MySQL deve estar instalado e em execução no seu sistema. Certifique-se de que o serviço MySQL esteja em execução antes de continuar com as etapas do tutorial.</li>
+</ol>
+
+<h3>Passo 3: Abra o Terminal</h3>
+<p>Pesquise por "Terminal" na barra de tarefas do seu dispositivo e abra o terminal.</p>
+
+<h3>Passo 4: Clone o Repositório</h3>
+<pre><code>git clone https://github.com/TeamHiveAPI/API-2023.2.git</code></pre>
+
+<h3>Passo 5: Entre na Pasta app</h3>
+<pre><code>cd app</code></pre>
+
+<h3>Passo 6: Crie o Ambiente Virtual</h3>
+<pre><code>python -m venv venv</code></pre>
+<pre><code>.\venv\Scripts\activate</code></pre>
+<pre><code>cd src/</code></pre>
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<h3>Passo 7: Para Usuários Linux</h3>
+<pre><code>python3 -m venv venv</code></pre>
+<pre><code>source venv/bin/activate</code></pre>
+<pre><code>cd app/</code></pre>
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<h3>Passo 8: Configure o MySQL no Arquivo config.py</h3>
+<p>Abra o arquivo `config.py` localizado na pasta `src` e encontre a seguinte seção:</p>
+<pre><code>SECRET_KEY = 'timehive'
+
+SQLALCHEMY_DATABASE_URI = \
+ '{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format(
+     SGBD = 'mysql+mysqlconnector',
+     usuario = 'root',
+     senha = 'fatec',
+     servidor = 'localhost:3306', 
+     database = 'bd'
+ )
+</code></pre>
+<p>Altere o valor da chave `senha` para a senha do seu MySQL, se for diferente de 'fatec'.
+
+<h3>Passo 9: Execute a Aplicação</h3>
+<pre><code>python controller.py</code></pre>
+
+<h3>Passo 10: Abra o Link no Navegador</h3>
+<p>Abrir o seguinte link em seu navegador de preferência: <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a></p>
+
+<h3>Passo 11: Encerrando o Ambiente Virtual</h3>
+<pre><code>deactivate</code></pre>
+
 
 <br>
 
