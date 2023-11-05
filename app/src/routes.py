@@ -21,10 +21,11 @@ def blog():
             autor = session['user_id']
             nomefilho = request.form['nomefilho']
             conteudo = request.form['conteudo']
+            conteudo_com_br = conteudo.replace('\r\n', ' <br> ')
             data_postagem = datetime.now()
             imagens = request.files.getlist('imagem')  # Obter várias imagens
 
-            novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo, data_postagem=data_postagem)
+            novo_post = Post(autor_id=autor, nome_filho=nomefilho, conteudo=conteudo_com_br, data_postagem=data_postagem)
             db.session.add(novo_post)
 
             try:
