@@ -49,6 +49,8 @@ Criação de um site com função de conscientizar a população sobre o sofrime
 
 <strong>Home: </strong> Introduz o assunto ao usuário e o encoraja a explorar o resto do site
 
+<strong>Quem Somos: </strong> Introduz ao usuário o grupo de mães responsáveis pela iniciativa deste projeto (4º Sprint)
+
 <strong>Blog: </strong> Mostra histórias sobre os pais de crianças com IRC. Informa-se ao usuário que ele pode submeter sua história
 
 <strong>Dados: </strong> Mostra dados verídicos e pertinentes sobre o tema para o usuário
