@@ -165,7 +165,7 @@ SQLALCHEMY_DATABASE_URI = \
 
 <br>
 
-<img src="./documento/readme/card_sprints.png" alt="Card das sprints" width=500px>
+<img src="./documento/readme/card_sprints.png" alt="Card das sprints">
 
 <br>
 
