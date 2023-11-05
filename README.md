@@ -83,7 +83,13 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 
 <img src="./documento/readme/sprint2.gif" alt="O site na segunda sprint" width=750px>
 
-<strong>Sprint 3: </strong> Em andamento ⌛
+<br>
+
+<strong>Sprint 3: </strong>
+
+<img src="./documento/readme/sprint3.gif" alt="O site na terceira sprint" width=750px>
+
+<br>
 
 <strong>Sprint 4: </strong> Em andamento ⌛
 
