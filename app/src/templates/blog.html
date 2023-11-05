@@ -94,7 +94,7 @@ BLOG
             <p class="postagem">Data de Postagem: {{ post.data_postagem }}</p>
         </div>
         <hr class="linha">
-        <p class="postContent" data-post-id="{{ loop.index }}"> {{ post.conteudo }} </p>
+        <p class="postContent" data-post-id="{{ loop.index }}"> {{ post.conteudo | safe }} </p>
         <div class="botao">
             <p class="readMore ler" data-post-id="{{ loop.index }}">Ler mais</p>
         </div>
@@ -137,6 +137,7 @@ BLOG
         formulario.style.display = "block";
     }
 
+    /* limita numero de arquivos na postagem */
     function limitarNumeroImagens(input) {
     // Verifica se o número de arquivos selecionados é maior que 3
     if (input.files.length > 3) {
@@ -145,6 +146,33 @@ BLOG
     }
     }
 
+    /*ler mais */
+    var posts = document.getElementsByClassName("postContent");
+    var buttons = document.getElementsByClassName("readMore");
+
+    for (let i = 0; i < buttons.length; i++) {
+        let button = buttons[i];
+        let postId = button.getAttribute("data-post-id");
+        let content = document.querySelector(`.postContent[data-post-id="${postId}"]`);
+        let originalContent = content.innerHTML;
+
+        if (originalContent.length > 1000) {
+            let truncatedContent = originalContent.substring(0, 1000) + "...";
+            content.innerHTML = truncatedContent;
+
+            button.onclick = function() {
+                if (content.innerHTML === truncatedContent) {
+                    content.innerHTML = originalContent;
+                    button.innerHTML = "Ler menos";
+                } else {
+                    content.innerHTML = truncatedContent;
+                    button.innerHTML = "Ler mais";
+                }
+            };
+        } else {
+            button.style.display = "none";
+        }
+    }
 </script>
 
 {% endblock %}
