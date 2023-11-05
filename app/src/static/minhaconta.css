@@ -56,7 +56,12 @@ hr {
 }
 
 .minha_conta_imagem img {
-    width: 280px;
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
 }
 
 .info_paragrafo {
@@ -218,14 +223,7 @@ input {
     outline: none;
 }
 
-.foto_perfil {
-    border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-}
+
 
 .centralizar_screen {
     display: flex;
