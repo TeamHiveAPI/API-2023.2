@@ -181,7 +181,7 @@ SQLALCHEMY_DATABASE_URI = \
 | :----: | :--------: | :----------: |
 | 1️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V1.0) | ✅ |
 | 2️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V2.0) | ✅ |   
-| 3️⃣ | ⌛ | ⌛ |
+| 3️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V3.0) | ✅ |
 | 4️⃣ | ⌛ | ⌛ |
 
 <br>
