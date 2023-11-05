@@ -87,8 +87,8 @@ for (let i = 0; i < buttons.length; i++) {
     let content = document.querySelector(`.postContent[data-post-id="${postId}"]`);
     let originalContent = content.innerHTML;
 
-    if (originalContent.length > 1400) {
-        let truncatedContent = originalContent.substring(0, 1400) + "...";
+    if (originalContent.length > 1000) {
+        let truncatedContent = originalContent.substring(0, 1000) + "...";
         content.innerHTML = truncatedContent;
 
         button.onclick = function() {
