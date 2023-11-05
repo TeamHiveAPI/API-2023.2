@@ -203,8 +203,8 @@ SQLALCHEMY_DATABASE_URI = \
 | 2 | 03 | Página "Blog" | 50 | Eu, como visitante com conta cadastrada, quero poder postar meu relato com anexos de fotos segundo as instruções do site. | 4 horas | ✅ | 15/10 | Usuários registrados podem criar relatos que podem incluir anexos de fotos. | Página “Blog”
 | 2 | 03 | Página "Blog" | 45 | Eu, como visitante, quero poder visualizar os relatos postados na página. | 4 horas | ✅ | 15/10 | Visualização dos relatos postados na páginas de forma clara e organizada, com informações legíveis sendo possível navegar pelos relatos e acessar detalhes adicionais, como fotos, por exemplo. | Página “Blog”
 | 2 | 04 | Página "Dados" | 40 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ✅ | 15/10 | Visualização dos dados na páginas de forma clara e organizada. |  Página “Dados”
-| 3 | 05 | Página "Login" | 35 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ⌛ | 05/11 | Efetuação do login ou se cadastrar no site, devendo solicitar informações relevantes para o cadastro, como e-mail e senha. | Página “Login”
-| 3 | 06 | Página "Minha Conta" | 30 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ⌛ | 05/11 | Visualização das informações de sua própria conta, sendo elas nome, e-mail e outras detalhes relevantes, que devem ser exibidas de forma clara e legível. | Página “Minha conta”
+| 3 | 05 | Página "Login" | 35 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ✅ | 05/11 | Efetuação do login ou se cadastrar no site, devendo solicitar informações relevantes para o cadastro, como e-mail e senha. | Página “Login”
+| 3 | 06 | Página "Minha Conta" | 30 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ✅ | 05/11 | Visualização das informações de sua própria conta, sendo elas nome, e-mail e outras detalhes relevantes, que devem ser exibidas de forma clara e legível. | Página “Minha conta”
 
 <br>
 
