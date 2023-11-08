@@ -115,6 +115,7 @@ main {
 .cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 100px;
     margin-top: 32px;
@@ -176,6 +177,7 @@ hr {
 .cards_info {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 32px;
     justify-content: space-between;
 }
@@ -257,6 +259,7 @@ hr {
 .cards_call_to_action {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 32px;
     justify-content: space-between;
 }
