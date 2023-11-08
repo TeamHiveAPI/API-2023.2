@@ -114,28 +114,28 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
     <li>Certifique-se de que o serviço MySQL esteja em execução antes de continuar com as etapas do tutorial.</li>
 </ol>
 
-<h3>Passo 3: Abra o Terminal</h3>
+<h3>Abra o Terminal</h3>
 <p>Pesquise por "Terminal" na barra de tarefas do seu dispositivo e abra o terminal.</p>
 
-<h3>Passo 4: Clone o Repositório no terminal</h3>
+<h3>Clone o Repositório no terminal</h3>
 <pre><code>git clone https://github.com/TeamHiveAPI/API-2023.2.git</code></pre>
 
-<h3>Passo 5: Entre na Pasta app</h3>
+<h3>Entre na Pasta app</h3>
 <pre><code>cd app</code></pre>
 
-<h3>Passo 6: Crie o Ambiente Virtual</h3>
+<h3>Crie o Ambiente Virtual</h3>
 <pre><code>python -m venv venv</code></pre>
 <pre><code>.\venv\Scripts\activate</code></pre>
 <pre><code>cd src/</code></pre>
 <pre><code>pip install -r requirements.txt</code></pre>
 
-<h3>Passo 7: Para Usuários Linux</h3>
+<h3>Para Usuários Linux</h3>
 <pre><code>python3 -m venv venv</code></pre>
 <pre><code>source venv/bin/activate</code></pre>
 <pre><code>cd app/</code></pre>
 <pre><code>pip install -r requirements_linux.txt</code></pre>
 
-<h3>Passo 8: Configure o MySQL no Arquivo config.py</h3>
+<h3>Configure o MySQL no Arquivo config.py</h3>
 <p>Abra o arquivo `config.py` localizado na pasta `src` e encontre a seguinte seção:</p>
 <pre><code>SECRET_KEY = 'timehive'
 
@@ -150,17 +150,17 @@ SQLALCHEMY_DATABASE_URI = \
 </code></pre>
 <p>Altere o valor da chave `senha` para a senha do seu MySQL, caso ele for diferente de 'fatec'.
 
-<h3>Passo 9: Execute a query no MySQL</h3>
+<h3>Execute a query no MySQL</h3>
 <pre><code>create database bd;</code></pre>
 
-<h3>Passo 10: Execute a Aplicação</h3>
+<h3>Execute a Aplicação</h3>
 <p>Volte para o terminal e execute:</p>
 <pre><code>python controller.py</code></pre>
 
-<h3>Passo 11: Abra o Link no Navegador</h3>
+<h3>Abra o Link no Navegador</h3>
 <p>Abrir o seguinte link em seu navegador de preferência: <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a></p>
 
-<h3>Passo 12: Encerrando o Ambiente Virtual</h3>
+<h3>Encerrando o Ambiente Virtual</h3>
 <pre><code>deactivate</code></pre>
 
 
