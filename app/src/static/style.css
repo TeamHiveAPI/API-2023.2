@@ -48,46 +48,6 @@ main {
     margin: 0 10%;
 }
 
-/* Responsividade Hero Banner */
-
-@media only screen and (max-width: 1200px) {
-
-    .hero_banner {
-        flex-direction: column;
-    }
-
-    .conteudo_escrito {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 32px;
-        margin-bottom: 64px;
-        text-align: center;
-        gap: 48px;
-    }
-
-    .conteudo_escrito_titulo {
-        margin-top: 0px;
-    }
-
-    .conteudo_escrito_subtitulo {
-        margin-bottom: 0px;
-    }
-
-    .hero_banner_imagem {
-        margin-bottom: 64px;
-    }
-
-    .conteudo_escrito {
-        flex-direction: column;
-        text-align: center;
-        gap: 48px;
-    }
-
-    .hero_banner_imagem {
-        width: 200px;
-    }
-}
-
 .problematica {
     display: flex;
     flex-direction: column;
