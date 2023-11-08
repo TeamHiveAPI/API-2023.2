@@ -98,29 +98,26 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 
 <br>
 
-## 💻 Tutorial de execução da Aplicação
+## 💻 Executando a Aplicação
 
-<h3>Passo 1: Instale as Dependências</h3>
-<p>Certifique-se de ter o Git e o Python instalados no seu sistema.</p>
+<h3>Instale as Dependências</h3>
+<p>Para rodar a aplicação é necessário ter Git e o Python instalados no seu sistema.</p>
 <p>Para baixar o Git, acesse <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.</p>
 <p>Para baixar o Python, acesse <a href="https://www.python.org/downloads">https://www.python.org/downloads</a>.</p>
 
-<h3>Passo 2: Instale o MySQL</h3>
+<h3>Instale o MySQL</h3>
 <p>Siga as etapas abaixo para instalar o MySQL:</p>
 <ol>
     <li>Faça o download do MySQL Community Server a partir do seguinte link: <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>.</li>
-    <li>Escolha a versão adequada para o seu sistema operacional (por exemplo, MySQL Community Server for Windows, MySQL Community Server for macOS, MySQL Community Server for Linux).</li>
     <li>Siga as instruções para instalar o MySQL no seu sistema operacional.</li>
     <li>Durante o processo de instalação, você será solicitado a configurar uma senha para o usuário root. Anote a senha, pois você precisará dela mais tarde.</li>
-    <li>Para os usuários Windows certifique-se de que o serviço MySQL esteja em execução. Abra o Prompt de Comando como administrador e execute o seguinte comando:</li>
-    <pre><code>setx PATH "%PATH%;C:\Program Files\MySQL\MySQL Server 8.2\bin"</pre></code>
-    <li>O MySQL deve estar instalado e em execução no seu sistema. Certifique-se de que o serviço MySQL esteja em execução antes de continuar com as etapas do tutorial.</li>
+    <li>Certifique-se de que o serviço MySQL esteja em execução antes de continuar com as etapas do tutorial.</li>
 </ol>
 
 <h3>Passo 3: Abra o Terminal</h3>
 <p>Pesquise por "Terminal" na barra de tarefas do seu dispositivo e abra o terminal.</p>
 
-<h3>Passo 4: Clone o Repositório</h3>
+<h3>Passo 4: Clone o Repositório no terminal</h3>
 <pre><code>git clone https://github.com/TeamHiveAPI/API-2023.2.git</code></pre>
 
 <h3>Passo 5: Entre na Pasta app</h3>
@@ -151,7 +148,7 @@ SQLALCHEMY_DATABASE_URI = \
      database = 'bd'
  )
 </code></pre>
-<p>Altere o valor da chave `senha` para a senha do seu MySQL, se for diferente de 'fatec'.
+<p>Altere o valor da chave `senha` para a senha do seu MySQL, caso ele for diferente de 'fatec'.
 
 <h3>Passo 9: Execute a query no MySQL</h3>
 <pre><code>create database bd;</code></pre>
