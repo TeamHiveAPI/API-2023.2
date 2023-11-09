@@ -107,7 +107,7 @@ button {
 .container2 {
     display: flex;
     justify-content: space-between;
-    margin-top: 200px;
+    margin-top: 128px;
 }
 
 .imagem_usuario {
@@ -159,7 +159,7 @@ button {
 }
 
 .ler {
-    border: 2px solid black;
+    border: 2px solid #000350;
     width: 145px;
     height: 50px;
     display: flex;
@@ -168,6 +168,13 @@ button {
     border-radius: 50px;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.ler:hover {
+    background-color: #000350;
+    color: white;
+    transition: 0.4s;
 }
 
 .botao {
@@ -514,4 +521,14 @@ form {
     20% {margin-top: 0px; opacity:1}
     80% {margin-top: 0px; opacity:1}
     to {margin-top: -200px; opacity:0}
+}
+
+.fotos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-jinja:last-child {
+    margin-right: 0px;
 }
