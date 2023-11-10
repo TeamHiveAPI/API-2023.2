@@ -188,10 +188,23 @@ def cadastro():
         profissao = request.form['profissao']
         comochegou = request.form['como-chegou']
 
+        usuario2 = Usuario.query.filter_by(cpf=cpf).first()
         usuario = Usuario.query.filter_by(email=email).first()
-        if usuario:
-            flash('Usuario existente!')
-            return redirect(url_for('login') )
+
+        if usuario and usuario2:
+            flash('Email e CPF existentes, realize seu login.')
+            return redirect(url_for('login'))
+        elif usuario:
+            flash('Email existente!')
+            return redirect(url_for('login'))
+        elif usuario2:
+            flash('CPF já existente!')
+            return redirect(url_for('login'))
+        try:
+            dn = datetime.strptime(dn, '%d/%m/%Y').strftime('%Y-%m-%d')
+        except ValueError:
+            flash('Formato de data inválido, siga a legenda!')
+            return redirect(url_for('cadastro'))
         
         novo_user = Usuario(nome=nome, dn=dn, cpf=cpf,endereco=endereco, email=email, parentesco=parentesco, senha=senha, profissao=profissao, comochegou=comochegou)
         db.session.add(novo_user)
