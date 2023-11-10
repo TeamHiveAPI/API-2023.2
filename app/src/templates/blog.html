@@ -106,11 +106,7 @@ BLOG
         </div>
     </article>
     {% endfor %}
-    <!--
-    <div class="botao1">
-        <p class="carregar">Carregar mais posts</p>
-    </div>
-    -->
+
     </section>
 
     <div id="progress">
@@ -120,6 +116,36 @@ BLOG
 </main>
 
 <script>
+
+    /*Botão de Ler Mais e Ler Menos */
+
+    var posts = document.getElementsByClassName("postContent");
+    var buttons = document.getElementsByClassName("readMore");
+
+    for (let i = 0; i < buttons.length; i++) {
+        let button = buttons[i];
+        let postId = button.getAttribute("data-post-id");
+        let content = document.querySelector(`.postContent[data-post-id="${postId}"]`);
+        let originalContent = content.innerHTML;
+
+        if (originalContent.length > 500) {
+            let truncatedContent = originalContent.substring(0, 500) + "...";
+            content.innerHTML = truncatedContent;
+
+            button.onclick = function() {
+                if (content.innerHTML === truncatedContent) {
+                    content.innerHTML = originalContent;
+                    button.innerHTML = "Ler menos";
+                } else {
+                    content.innerHTML = truncatedContent;
+                    button.innerHTML = "Ler mais";
+                }
+            };
+        } else {
+            button.style.display = "none";
+        }
+    }
+
     function formulario() {
         var formulario = document.getElementById('form');
         formulario.style.display = 'inline';
@@ -146,33 +172,7 @@ BLOG
     }
     }
 
-    /*ler mais */
-    var posts = document.getElementsByClassName("postContent");
-    var buttons = document.getElementsByClassName("readMore");
-
-    for (let i = 0; i < buttons.length; i++) {
-        let button = buttons[i];
-        let postId = button.getAttribute("data-post-id");
-        let content = document.querySelector(`.postContent[data-post-id="${postId}"]`);
-        let originalContent = content.innerHTML;
-
-        if (originalContent.length > 1000) {
-            let truncatedContent = originalContent.substring(0, 1000) + "...";
-            content.innerHTML = truncatedContent;
-
-            button.onclick = function() {
-                if (content.innerHTML === truncatedContent) {
-                    content.innerHTML = originalContent;
-                    button.innerHTML = "Ler menos";
-                } else {
-                    content.innerHTML = truncatedContent;
-                    button.innerHTML = "Ler mais";
-                }
-            };
-        } else {
-            button.style.display = "none";
-        }
-    }
+ 
 </script>
 
 {% endblock %}

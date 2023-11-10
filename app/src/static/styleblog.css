@@ -310,8 +310,6 @@ footer {
     height: 20px;
 }
 
-/* CSS do Marco */
-
 .input1 {
     padding: 0px 12px;
     margin-bottom: 16px;
@@ -382,8 +380,6 @@ input {
 .submit button:nth-child(3):hover {
     background-color: #8a0c58;
 }
-
-/* CSS do Marco */
 
 /* Modal */
 
