@@ -108,7 +108,7 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 <h3>Instale o MySQL</h3>
 <p>Siga as etapas abaixo para instalar o MySQL:</p>
 <ol>
-    <li>Faça o download do MySQL Community Server a partir do seguinte link: <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>.</li>
+    <li>Faça o download do MySQL Community Server a partir do seguinte link: <a href="https://dev.mysql.com/downloads/installer/">https://dev.mysql.com/downloads/installer/</a>.</li>
     <li>Siga as instruções para instalar o MySQL no seu sistema operacional.</li>
     <li>Durante o processo de instalação, você será solicitado a configurar uma senha para o usuário root. Anote a senha, pois você precisará dela mais tarde.</li>
     <li>Certifique-se de que o serviço MySQL esteja em execução antes de continuar com as etapas do tutorial.</li>
