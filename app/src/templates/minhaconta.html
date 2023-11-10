@@ -61,21 +61,26 @@ MINHA-CONTA
             </div>
         </div>
         <div class="minha_conta_info">
-            <h1>Nome de usuário:</h1>
-            <p class="info_paragrafo">{{ user.nome }}</p>
-            <h1>CPF:</h1>
-            <p class="info_paragrafo">{{ user.cpf }}</p>
-            <h1>E-mail:</h1>
-            <p class="info_paragrafo">{{ user.email }}</p>
-            <h1>Senha:</h1>
-            <p class="info_paragrafo">{{ user.senha }}</p>
-            <div class="minha_conta_botao">
-                <form method="post" action="{{ url_for('deletar_conta') }}">
-                    <button type="submit">Excluir conta</button>
-                </form>
-                <form method="post" action="{{ url_for('logout') }}">
-                    <button type="submit">Sair</button>
-                </form>
+            <div class="mina_conta_info_esquerda">
+                <h1>Nome de usuário:</h1>
+                <p class="info_paragrafo">{{ user.nome }}</p>
+                <h1>CPF:</h1>
+                <p class="info_paragrafo">{{ user.cpf }}</p>
+            </div>
+
+            <div class="mina_conta_info_direita">
+                <h1>E-mail:</h1>
+                <p class="info_paragrafo">{{ user.email }}</p>
+                <h1>Senha:</h1>
+                <p class="info_paragrafo">{{ user.senha }}</p>
+                <div class="minha_conta_botao">
+                    <form method="post" action="{{ url_for('deletar_conta') }}">
+                        <button type="submit">Excluir conta</button>
+                    </form>
+                    <form method="post" action="{{ url_for('logout') }}">
+                        <button type="submit">Sair</button>
+                    </form>
+                </div>
             </div>
             {% endif %}
         </div>

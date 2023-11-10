@@ -255,3 +255,9 @@ input {
     80% {margin-top: 0px; opacity:1}
     to {margin-top: -200px; opacity:0}
 }
+
+.minha_conta_info {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
