@@ -10,7 +10,7 @@ app.config['upload_perfil'] = os.path.abspath('static/img/uploads_perfil')
 
 db = SQLAlchemy(app)
 
-from  routes import  *
+from routes import *
 
 # Para fazer rodar a aplicação sem precisar ficar reinicializar toda vez
 if __name__ == '__main__':

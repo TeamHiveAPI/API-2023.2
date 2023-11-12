@@ -14,9 +14,10 @@ class Usuario(db.Model):
     senha = db.Column(db.String(200), nullable=False)
     profissao = db.Column(db.String(20), nullable=False)
     comochegou = db.Column(db.String(22), nullable=False)
-    imagem_perfil = db.Column(db.String(255), nullable=True) 
+    imagem_perfil = db.Column(db.String(255), nullable=True)
+    is_admin = db.Column(db.Boolean, nullable=False, default=False)
 
-    def __init__(self, nome, dn, cpf, endereco, email, parentesco, senha, profissao, comochegou):
+    def __init__(self, nome, dn, cpf, endereco, email, parentesco, senha, profissao, comochegou, is_admin=False):
         self.nome = nome
         self.dn = dn
         self.cpf = cpf
@@ -26,6 +27,7 @@ class Usuario(db.Model):
         self.senha = senha
         self.profissao = profissao
         self.comochegou = comochegou
+        self.is_admin = is_admin
 
 
 # Criação de uma tabela para as imagens, associada aos posts
@@ -47,12 +49,14 @@ class Post(db.Model):
     nome_filho = db.Column(db.Text, nullable=False)
     conteudo = db.Column(db.Text, nullable=False)
     data_postagem = db.Column(db.Date, nullable=False)
+    status = db.Column(db.String(10), nullable=False, default='pendente')
     
     # Estabelecendo a relação entre Post e Imagem
     imagens = db.relationship('Imagem', backref='post', lazy='dynamic')
 
-    def __init__(self, autor_id, nome_filho, conteudo, data_postagem):
+    def __init__(self, autor_id, nome_filho, conteudo, data_postagem, status='pendente'):
         self.autor_id = autor_id 
         self.nome_filho = nome_filho
         self.conteudo = conteudo
         self.data_postagem = data_postagem
+        self.status = status

@@ -10,7 +10,10 @@ from os.path import join
 @app.route('/')
 def index():
     if session.get('user_logado'):
-        return render_template('index.html', title='MINHA CONTA', nav='active', )
+        if session.get('is_admin') is False:
+            return render_template('index.html', title='MINHA CONTA', nav='active')
+        else:
+            return render_template('index.html', title='ADMIN', nav='active')
     return render_template('index.html', nav='active', title='LOGIN')
 
 # Rota blog
@@ -49,7 +52,7 @@ def blog():
                         db.session.add(nova_imagem)
                 
                 db.session.commit()  # Realizar o commit fora do loop, após processar todas as imagens
-                flash('Post adicionado com sucesso!')
+                flash('Post enviado para aprovação.')
                 return redirect(url_for('blog'))
 
             except Exception as e:
@@ -61,10 +64,10 @@ def blog():
     else:
         page = request.args.get('page', default=1, type=int)
         posts_per_page = 5
-        Post.query.order_by(Post.id.desc()).paginate(page=page, per_page=posts_per_page, error_out=False)
+        Post.query.filter_by(status='aprovado').order_by(Post.id.desc()).paginate(page=page, per_page=posts_per_page, error_out=False)
 
 
-    posts = Post.query.order_by(Post.id.desc()).all()
+    posts = Post.query.filter_by(status='aprovado').order_by(Post.id.desc()).all()
     posts_info = []
 
     imagem_perfil_url = url_for('static', filename='img/perfil.png')
@@ -98,7 +101,10 @@ def blog():
                 return jsonify(posts_info)
     
     if session.get('user_logado'):
-        return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
+        if session.get('is_admin') is False:
+            return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
+        else:
+            return render_template('blog.html', title='ADMIN', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
     return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
@@ -122,8 +128,64 @@ def salvar_imagem():
 @app.route('/dados')
 def dados():
     if session.get('user_logado'):
-        return render_template('dados.html', title='MINHA CONTA', nav='active')
+        if session.get('is_admin') is False:
+            return render_template('dados.html', title='MINHA CONTA', nav='active')
+        else:
+            return render_template('dados.html', title='ADMIN', nav='active')
     return render_template('dados.html', title='LOGIN', nav='active')
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    if session.get('user_logado'):
+        return render_template('admin.html', title='ADMIN', nav='active')
+
+@app.route('/admin-painel')
+def painel_admin():
+    if session.get('user_logado'):
+        posts = Post.query.filter_by(status='pendente').all()
+        posts_info = []
+
+        imagem_perfil_url = url_for('static', filename='img/perfil.png')
+
+        for post in posts:
+            autor_id = post.autor_id
+            usuario = Usuario.query.filter_by(id=autor_id).first()
+            caminhos_das_imagens = Imagem.query.filter_by(post_id=post.id).with_entities(Imagem.caminho_arquivo).all()
+            if usuario:
+                if usuario.imagem_perfil:
+                    imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + usuario.imagem_perfil)
+                                    
+            if usuario:
+                data_formatada = post.data_postagem.strftime("%d-%m-%Y")
+                post_info = {
+                    'nome_parente': usuario.nome,
+                    'parentesco': usuario.parentesco,
+                    'nome_filho': post.nome_filho,
+                    'data_postagem': data_formatada,
+                    'conteudo': post.conteudo,
+                    'caminho_das_imagens': caminhos_das_imagens,
+                    'imagem_perfil_url': imagem_perfil_url,
+                    'status': post.status
+                }
+                posts_info.append(post_info)
+            else:
+                print(f"Usuário não encontrado para o post com ID: {post.id}")
+    return render_template('paineladmin.html', posts=posts, title='ADMIN', nav='active')
+
+
+@app.route('/aprovar-post/<int:post_id>')
+def approve_post(post_id):
+    post = Post.query.get(post_id)
+    post.status = 'aprovado'
+    db.session.commit()
+    flash('Post aprovado')
+
+@app.route('/rejeitar-post/<int:post_id>')
+def reject_post(post_id):
+    post = Post.query.get(post_id)
+    post.status = 'rejeitado'
+    db.session.commit()
+    flash('Post rejeitado')
 
 #Rota de perfil
 @app.route('/minhaconta', methods=['GET', 'POST'])
@@ -137,7 +199,10 @@ def conta():
             else:
                 imagem_perfil_url = url_for('static', filename='img/perfil.png')
             
-            return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
+            if not user.is_admin:
+                return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
+            else:
+                return redirect(url_for('admin'))
     return redirect(url_for('login'))
 
 @app.route('/upload_perfil', methods=['POST'])
@@ -229,8 +294,12 @@ def login():
                 session['user_id'] = usuario.id
                 session['user_logado'] = usuario.nome
                 session['user_email'] = usuario.email
+                session['is_admin'] = usuario.is_admin
                 flash('Login realizado com sucesso!')
-                return redirect(url_for('conta'))
+                if usuario.is_admin:
+                    return redirect(url_for('admin'))
+                else:
+                    return redirect(url_for('conta'))
         flash('Verifique suas credenciais!')
     return render_template('login.html', nav='active', title='LOGIN')  
 
@@ -270,4 +339,3 @@ def logout():
     session['user_logado'] = None
     session['user_email'] = None
     return redirect(url_for('login'))
-
