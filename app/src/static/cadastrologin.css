@@ -191,3 +191,73 @@ input::placeholder {
     80% {margin-top: 0px; opacity:1}
     to {margin-top: -200px; opacity:0}
 }
+
+@media only screen and (max-width: 1200px) {
+    main{
+        margin: 0;
+    }
+    .tela_full{
+        overflow: hidden;
+    }
+    .titulo_login{
+        margin: 5% 0;
+        
+    }
+    .login-img{
+        display: none;
+    }
+    .container{
+        max-height: 100%;
+        padding: 5%;
+    }
+    .login{
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        background-color: white;
+        width: 80%;
+        border-radius: 25px;
+    }
+    .login button {
+        margin: 5% auto;
+    }
+    .cadastre {
+        margin-bottom: 1px;
+    }
+    form {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        width: 320px;
+    }
+    .login input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .login label{
+        margin: 0;
+        margin-bottom: -20px;
+    }
+
+   .linha{
+    width: 280px;
+    margin: 1%;
+   }
+    .cadastre {
+        margin-bottom: 1px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 768px) {
+    form {
+        width: 80vw;
+    }
+    .linha{
+        width: 60vw;
+        
+       }
+
+}
