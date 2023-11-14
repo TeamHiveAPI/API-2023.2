@@ -24,6 +24,7 @@ main {
 .cadastro-img {
     width: 650px;
     height: 1050px;
+    border-radius: 50px 0px 0px 50px;
 }
 
 .cadastro {
@@ -37,12 +38,13 @@ main {
     background-color: white;
     width: 500px;
     height: 550px;
-    border-radius: 0 50px 50px 0px;
+    border-radius: 0px 50px 50px 0px;
 }
 
 .login-img {
     width: 500px;
     height: 550px;
+    border-radius: 50px 0px 0px 50px;
 }
 
 .titulo_cadastro, .titulo_login {
@@ -192,7 +194,7 @@ input::placeholder {
     to {margin-top: -200px; opacity:0}
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
     main{
         margin: 0;
     }
@@ -203,10 +205,20 @@ input::placeholder {
         margin: 5% 0;
         
     }
-    .login-img, .cadastro-img{
-        display: none;
+
+    .login, .cadastro {
+        border-radius: 0px 0px 50px 50px;
+        height: auto;
+    } 
+
+    .login-img, .cadastro-img {
+        border-radius: 50px 50px 0px 0px;
+        height: 180px;
+        object-fit: cover;
     }
+
     .container{
+        flex-direction: column;
         max-height: 100%;
         padding: 5%;
     }
@@ -215,8 +227,6 @@ input::placeholder {
         flex-direction: column;
         display: flex;
         background-color: white;
-        width: 80%;
-        border-radius: 25px;
     }
     .cadastro{
         height: auto;
@@ -224,17 +234,15 @@ input::placeholder {
     .login button, .cadastro button {
         margin: 5% auto;
     }
-    .cadastre {
-        margin-bottom: 1px;
+    .cadastre, .botao {
+        margin-bottom: 32px;
     }
     form {
         display: flex;
         margin: 0 auto;
         flex-direction: column;
-        width: 320px;
     }
     .login input, .cadastro input {
-        width: 100%;
         margin: 0;
     }
 
@@ -243,13 +251,11 @@ input::placeholder {
         margin-bottom: -20px;
     }
 
-   .linha{
+   .linha {
     width: 280px;
     margin: 1%;
    }
-    .cadastre {
-        margin-bottom: 1px;
-    }
+
     select{
         margin: 10px 0;
     }
@@ -260,11 +266,19 @@ input::placeholder {
 
 @media only screen and (max-width: 768px) {
     form {
-        width: 80vw;
+        width: 320px;
     }
-    .linha{
+    .linha {
         width: 60vw;
         
-       }
+    }
+
+    .login input, .cadastro input {
+    width: 100%;
+    }
+
+    .login, .cadastro, .login-img, .cadastro-img {
+        width: 80%;
+    }
 
 }
