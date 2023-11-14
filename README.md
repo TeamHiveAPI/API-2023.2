@@ -120,9 +120,9 @@ O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método á
 <h3>Clone o Repositório no terminal</h3>
 <pre><code>git clone https://github.com/TeamHiveAPI/API-2023.2.git</code></pre>
 
-<h3>Entre na Pasta app e depois na pasta scr</h3>
+<h3>Entre na Pasta app e depois na pasta src</h3>
 <pre><code>cd app</code></pre>
-<pre><code>cd scr</code></pre>
+<pre><code>cd src</code></pre>
 
 <h3>Crie o Ambiente Virtual</h3>
 <pre><code>python -m venv venv</code></pre>
