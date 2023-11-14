@@ -7,7 +7,7 @@
 }
 
 .navbar_imagem {
-    width: 125px;
+    width: 150px;
     margin-left: 48px;
 }
 
@@ -42,7 +42,7 @@
 
 .navbar_hamburguer_linha {
     width: 48px;
-    height: 3px;
+    height: 4px;
     border-radius: 4px;
     background-color: #03045E;
 }

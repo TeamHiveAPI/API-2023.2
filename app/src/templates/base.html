@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
     {% block estilo %} {% endblock %}
     <title>{% block titulo %} {% endblock %}</title>
 </head>
 <body>
 <header class="navbar">
-    <img class="navbar_imagem" src="{{ url_for('static', filename='img/wireframe.png') }}">
+    <img class="navbar_imagem" src="{{ url_for('static', filename='img/logo_site.png') }}">
     <div class="navbar_hamburguer">
         <div class="navbar_hamburguer_linha">
         </div>
