@@ -52,6 +52,8 @@ hr {
 .minha_conta {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 96px;
 }
 
@@ -65,7 +67,7 @@ hr {
 }
 
 .info_paragrafo {
-    margin: 16px 0px 16px 0px;
+    margin: 16px 0px;
     width: 400px;
     padding: 16px;
     background-color: #f0f0f0;
@@ -110,7 +112,7 @@ hr {
 .modal_conteudo {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 700px;
     margin: 200px auto;
     justify-content: center;
     background-color: white;
@@ -228,6 +230,7 @@ input {
 .centralizar_screen {
     display: flex;
     justify-content: center;
+    background-color: #8a530c;
 }
 
 .flash-messages {
@@ -259,5 +262,39 @@ input {
 .minha_conta_info {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 32px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+ .minha_conta{
+    gap: 18px;
+ }
+
+.minha_conta_info{
+    gap: 0;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+ .minha_conta_botao button{
+    margin: 20px auto;
+ }
+ .info_paragrafo{
+    width: 90vw;
+ }
+ .minha_conta_info h1{
+    margin-left: 4%;
+    margin-bottom: -10px;
+ }
+ .modal_conteudo{
+    width: 90%;
+ }
+ .modal_conteudo h1{
+    font-size: 1.6em;
+ }
 }
