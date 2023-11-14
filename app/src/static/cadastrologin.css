@@ -199,18 +199,18 @@ input::placeholder {
     .tela_full{
         overflow: hidden;
     }
-    .titulo_login{
+    .titulo_login, .titulo_cadastro{
         margin: 5% 0;
         
     }
-    .login-img{
+    .login-img, .cadastro-img{
         display: none;
     }
     .container{
         max-height: 100%;
         padding: 5%;
     }
-    .login{
+    .login, .cadastro{
         align-items: center;
         flex-direction: column;
         display: flex;
@@ -218,7 +218,10 @@ input::placeholder {
         width: 80%;
         border-radius: 25px;
     }
-    .login button {
+    .cadastro{
+        height: auto;
+    }
+    .login button, .cadastro button {
         margin: 5% auto;
     }
     .cadastre {
@@ -230,12 +233,12 @@ input::placeholder {
         flex-direction: column;
         width: 320px;
     }
-    .login input {
+    .login input, .cadastro input {
         width: 100%;
         margin: 0;
     }
 
-    .login label{
+    .login label, .cadastro label{
         margin: 0;
         margin-bottom: -20px;
     }
@@ -247,6 +250,10 @@ input::placeholder {
     .cadastre {
         margin-bottom: 1px;
     }
+    select{
+        margin: 10px 0;
+    }
+    
 
     
 }
