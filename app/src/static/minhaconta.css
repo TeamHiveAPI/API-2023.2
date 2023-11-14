@@ -83,15 +83,33 @@ hr {
     font-size: 24px;
     font-weight: 700;
     flex-direction: row;
-    background-color: #a7156d;
     color: white;
     border-radius: 24px;
     margin-top: 32px;
     cursor: pointer;
 }
 
-.minha_conta_botao button:hover {
-    background-color:#8a0c58;
+.minha_conta_botao_azul {
+    background-color: #03045E
+}
+
+.minha_conta_botao_azul:hover {
+    background-color: #010331;
+}
+
+.minha_conta_botao_verde {
+    background-color: #1d7d0d;
+}
+
+.minha_conta_botao_verde:hover {
+    background-color: #156008;
+}
+
+.botao_vermelho {
+    background-color: #a7156d;
+}
+.botao_vermelho:hover {
+    background-color: #6a0743;
 }
 
 /* Modal */
@@ -268,15 +286,27 @@ input {
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
 
  .minha_conta{
     gap: 18px;
  }
 
-.minha_conta_info{
-    gap: 0;
+.minha_conta_info {
+    margin-top: 48px;
+    gap: 32px;
 }
+
+.minha_conta_botao {
+    margin-top: 48px;
+    gap: 16px;
+}
+
+
+ .minha_conta_info_direita h1, .minha_conta_info_esquerda h1 {
+    display: flex;
+    justify-content: center;
+ }
 
 }
 
@@ -287,10 +317,7 @@ input {
  .info_paragrafo{
     width: 90vw;
  }
- .minha_conta_info h1{
-    margin-left: 4%;
-    margin-bottom: -10px;
- }
+
  .modal_conteudo{
     width: 90%;
  }
