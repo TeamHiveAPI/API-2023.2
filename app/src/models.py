@@ -30,6 +30,31 @@ class Usuario(db.Model):
         self.is_admin = is_admin
 
 
+
+class Esquecisenha(db.Model):
+    __tablename__ = "esquecisenha"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    email = db.Column(db.String(80), unique=False, nullable=False)
+    chave = db.Column(db.String(200), nullable=False)
+    utilizado = db.Column(db.Boolean, nullable=False, default=False)
+
+    def __init__(self, email, chave, utilizado=False):
+        self.email = email
+        self.chave = chave
+        self.utilizado = utilizado
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Criação de uma tabela para as imagens, associada aos posts
 class Imagem(db.Model):
     __tablename__ = 'imagem'

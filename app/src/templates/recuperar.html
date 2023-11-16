@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %} Recuperar senha | Rim do Amor {% endblock %}
+
+{% block title %} 
+RECUPERAR
+{% endblock %}
+
+{% block estilo %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='cadastrologin.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
+
+{% block nav %}
+    <a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
+    <a class="navbar_menu_item " href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
+    <a class="navbar_menu_item {{ nav }}" href="{{ url_for('login') }}">LOGIN</a>
+{% endblock %}
+
+{% block conteudo %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="centralizar_screen">
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    <main>
+        <section class="tela_full">
+            <div class="container">
+                <img class="login-img" src="{{ url_for('static', filename='img/login.png') }}" alt="">
+                <div class="login">
+                    <h1 class="titulo_login">Recuperar senha</h1>
+                        <form action="{{ url_for('recuperar') }} " method="post">
+                            <label for="nome">E-mail</label> <br>
+                            <input type="email" placeholder="Informe seu E-mail" id="email" name="email" required> <br>
+                            <label for="nome">Nova Senha </label> <br>   <input type="password" placeholder="Informe a nova senha" id="novasenha" name="novasenha" required> <br>
+                            <label for="nome">Confirmacao da nova senha</label> <br><input type="password" placeholder="Confirme a nova senha" id="confnovasenha" name="confnovasenha" required> <br>
+                            <button type="submit">Salvar</button>
+                        </form>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
