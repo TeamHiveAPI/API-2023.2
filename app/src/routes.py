@@ -412,7 +412,7 @@ def esquecisenha():
                 flash("Acesse o link enviado no seu e-mail")
 
             except Exception as e:
-                flash("Erro:", e)
+                flash("Erro: {}".format(e))
 
 
     return render_template('esquecisenha.html', nav='active', title='ESQUECISENHA')
