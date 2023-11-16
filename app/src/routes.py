@@ -144,27 +144,27 @@ def admin():
     if session.get('user_logado') and session.get('is_admin'):
         return render_template('admin.html', title='ADMIN', nav='active')
 
-@app.route('/aprovar-post/<int:post_id>')
+@app.route('/aprovar-post/<int:post_id>', methods=['POST'])
 def approve_post(post_id):
     if request.method == 'POST':
         post = Post.query.get(post_id)
         post.status = 'aprovado'
         db.session.commit()
         flash('Post aprovado')
-        return redirect(url_for('admin'))
+        return redirect(url_for('admin-painel'))
 
 
-@app.route('/rejeitar-post/<int:post_id>')
+@app.route('/rejeitar-post/<int:post_id>', methods=['POST'])
 def reject_post(post_id):
     if request.method == 'POST':
         post = Post.query.get(post_id)
         post.status = 'rejeitado'
         db.session.commit()
         flash('Post rejeitado')
-        return redirect(url_for('admin'))
+        return redirect(url_for('admin-painel'))
 
 
-@app.route('/admin-painel')
+@app.route('/admin-painel', methods=['GET', 'POST'])
 def painel_admin():
     if session.get('user_logado'):
         posts = Post.query.filter_by(status='pendente').all()
@@ -197,6 +197,8 @@ def painel_admin():
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
         return render_template('painel.html', posts=posts_info, title='ADMIN', nav='active', approve_post=approve_post, reject_post=reject_post)
+    return "Você não tem permissão para acessar esta página."
+
 
 
 #Rota de perfil
