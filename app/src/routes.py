@@ -354,6 +354,7 @@ def logout():
     session['user_email'] = None
     return redirect(url_for('login'))
 
+# Rota para o Esqueci Minha Senha
 @app.route('/esquecisenha', methods=['GET', 'POST'])
 def esquecisenha():
     if request.method =='POST':
@@ -406,7 +407,7 @@ def esquecisenha():
 
     return render_template('esquecisenha.html', nav='active', title='ESQUECISENHA')
 
-
+# Rota para Recuperar Senha
 @app.route('/recuperar', methods=['GET', 'POST'])
 def recuperar():
     if request.method =='POST':
