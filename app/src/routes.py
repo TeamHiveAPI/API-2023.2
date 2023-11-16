@@ -141,8 +141,26 @@ def dados():
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    if session.get('user_logado'):
+    if session.get('user_logado') and session.get('is_admin'):
         return render_template('admin.html', title='ADMIN', nav='active')
+
+@app.route('/aprovar-post/<int:post_id>')
+def approve_post(post_id):
+    post = Post.query.get(post_id)
+    post.status = 'aprovado'
+    db.session.commit()
+    flash('Post aprovado')
+    return redirect(url_for('admin'))
+
+
+@app.route('/rejeitar-post/<int:post_id>')
+def reject_post(post_id):
+    post = Post.query.get(post_id)
+    post.status = 'rejeitado'
+    db.session.commit()
+    flash('Post rejeitado')
+    return redirect(url_for('admin'))
+
 
 @app.route('/admin-painel')
 def painel_admin():
@@ -163,6 +181,7 @@ def painel_admin():
             if usuario:
                 data_formatada = post.data_postagem.strftime("%d-%m-%Y")
                 post_info = {
+                    'id' : post.id,
                     'nome_parente': usuario.nome,
                     'parentesco': usuario.parentesco,
                     'nome_filho': post.nome_filho,
@@ -175,22 +194,8 @@ def painel_admin():
                 posts_info.append(post_info)
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
-    return render_template('paineladmin.html', posts=posts, title='ADMIN', nav='active')
+        return render_template('painel.html', posts=posts_info, title='ADMIN', nav='active', approve_post=approve_post, reject_post=reject_post)
 
-
-@app.route('/aprovar-post/<int:post_id>')
-def approve_post(post_id):
-    post = Post.query.get(post_id)
-    post.status = 'aprovado'
-    db.session.commit()
-    flash('Post aprovado')
-
-@app.route('/rejeitar-post/<int:post_id>')
-def reject_post(post_id):
-    post = Post.query.get(post_id)
-    post.status = 'rejeitado'
-    db.session.commit()
-    flash('Post rejeitado')
 
 #Rota de perfil
 @app.route('/minhaconta', methods=['GET', 'POST'])
@@ -207,7 +212,7 @@ def conta():
             if not user.is_admin:
                 return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
             else:
-                return redirect(url_for('admin'))
+                return redirect(url_for('painel_admin'))
     return redirect(url_for('login'))
 
 @app.route('/upload_perfil', methods=['POST'])

@@ -14,46 +14,46 @@ HOME
 
 {% block conteudo %}
 <hr>
-
 <main>
     <section>
-        
-
         <article>
             <h1 class="titulo">Painel de administrador</h1>
             <hr class="linha-titulo">
         </article>
-
         <article>
                 <h2 class="solicitacoes">Solicitações Pendentes</h2>
                 <p class="sem-post">Não há nenhum post pendente</p>
-                {% for post in posts %}
-    <article>
-        <div class="container2">
-            <div class="coluna">
-                <img class="imagem_usuario" src="{{ post.imagem_perfil_url }}" alt="Imagem de perfil">
-                <div class="nome_e_mae">
-                    <p class="nome">{{ post.nome_parente }}</p>
-                    <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
+            {% for x in posts %}
+            <article>
+            <div class="container2">
+                <div class="coluna">
+                <img class="imagem_usuario" src="{{ x.imagem_perfil_url }}" alt="Imagem de perfil">
+                    <div class="nome_e_mae">
+                        <p class="nome">{{ x.nome_parente }}</p>
+                        <p class="mae">{{ x.parentesco }} de {{ x.nome_filho }}</p>
+                    </div>
                 </div>
+                <p class="postagem">Data de Postagem: {{ x.data_postagem }}</p>
             </div>
-            <p class="postagem">Data de Postagem: {{ post.data_postagem }}</p>
-        </div>
-        <hr class="linha">
-        <p class="postContent" data-post-id="{{ loop.index }}"> {{ post.conteudo | safe }} </p>
-        <div class="botao">
-            <p class="readMore ler" data-post-id="{{ loop.index }}">Ler mais</p>
-        </div>
-        <p class="anexo">Anexos</p>
-        <div class="fotos">
-            {% for img in post.caminho_das_imagens %}
-            <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
+                <hr class="linha">
+                <p class="postContent" data-post-id="{{ loop.index }}"> {{ x.conteudo | safe }} </p>
+                <div class="botao">
+                    <p class="readMore ler" data-post-id="{{ loop.index }}">Ler mais</p>
+                </div>
+                <p class="anexo">Anexos</p>
+                <div class="fotos">
+                {% for img in x.caminho_das_imagens %}
+                    <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
+                {% endfor %}
+                </div>
+            </article>
+            <form method="post" action="{{ url_for(approve_post(x.id)) }}">
+                <button class="aceitar" type="submit">Aceitar Post</button>
+            </form>
+            <form method="post" action="{{ url_for(reject_post(x.id)) }}">
+                <button class="recusar" type="submit">Recusar Post</button>
+            </form>
             {% endfor %}
-        </div>
-    </article>
-    {% endfor %}
-                    <button class="aceitar">Aceitar Post</button>
-                    <button class="recusar">Recusar Post</button>
                 </div>
             </article>
         </section>
