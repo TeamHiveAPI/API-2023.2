@@ -146,20 +146,22 @@ def admin():
 
 @app.route('/aprovar-post/<int:post_id>')
 def approve_post(post_id):
-    post = Post.query.get(post_id)
-    post.status = 'aprovado'
-    db.session.commit()
-    flash('Post aprovado')
-    return redirect(url_for('admin'))
+    if request.method == 'POST':
+        post = Post.query.get(post_id)
+        post.status = 'aprovado'
+        db.session.commit()
+        flash('Post aprovado')
+        return redirect(url_for('admin'))
 
 
 @app.route('/rejeitar-post/<int:post_id>')
 def reject_post(post_id):
-    post = Post.query.get(post_id)
-    post.status = 'rejeitado'
-    db.session.commit()
-    flash('Post rejeitado')
-    return redirect(url_for('admin'))
+    if request.method == 'POST':
+        post = Post.query.get(post_id)
+        post.status = 'rejeitado'
+        db.session.commit()
+        flash('Post rejeitado')
+        return redirect(url_for('admin'))
 
 
 @app.route('/admin-painel')
