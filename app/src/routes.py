@@ -6,7 +6,10 @@ from models import Imagem, Usuario, Post,Esquecisenha, db
 import os
 from os.path import join
 import secrets
-#import win32com.client as win32
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 #Rota pagina inicial
 @app.route('/')
@@ -360,34 +363,37 @@ def esquecisenha():
 
             
 
-            #msg = email.message_from_string('warning')
-            #msg['From'] = "apiteamhive@hotmail.com"
-            #msg['To'] = email
-            #msg['Subject'] = "Recuperar senha"
-            #s = smtplib.SMTP("smtp.live.com",587)
-            #s.ehlo() # Hostname to send for this command defaults to the fully qualified domain name of the local host.
-            #s.starttls() #Puts connection to SMTP server in TLS mode
-            #s.ehlo()
-            #s.login('apiteamhive@hotmail.com', 'hivefatec2023')
-            #s.sendmail("apiteamhive@hotmail.com", email, msg.as_string())
 
-            #app.config.update(
-            #    MAIL_SERVER = 'smtp.live.com',
-             #   MAIL_PORT = 587,
-             #   MAIL_USE_SSL = True,
-             #   MAIL_USERNAME = 'apiteamhive@hotmail.com',
-             #   MAIL_PASSWORD = 'hivefatec2023'
-            #)
 
-            #mail = Mail(app)
+            # Configurações
+            email_de = 'apiteamhive@hotmail.com'
+            senha = 'hivefatec2023'
+            email_para = email
+            assunto = 'Recuperação de senha'
+            mensagem = "Entre no link para recuperar sua senha: http://127.0.0.1:5000/recuperar?chave="+chave+""
+            # Configuração do servidor SMTP do Hotmail
+            smtp_server = 'smtp.office365.com'
+            porta = 587  # Porta para conexão TLS
+            # Criação do objeto Multipart
+            msg = MIMEMultipart()
+            msg['From'] = email_de
+            msg['To'] = email_para
+            msg['Subject'] = assunto
+            # Adicionando a mensagem ao corpo do e-mail
+            msg.attach(MIMEText(mensagem, 'plain'))
+            # Conexão com o servidor SMTP
+            try:
+                server = smtplib.SMTP(smtp_server, porta)
+                server.starttls()
+                server.login(email_de, senha)
+                texto = msg.as_string()
+                server.sendmail(email_de, email_para, texto)
+                server.quit()
+                flash("Acesse o link enviado no seu e-mail")
 
-            #msg = mail.send_message(
-             #   'Recuperacao de email do sistema',
-             #   sender='apiteamhive@hotmail.com',
-             #   recipients=email,
-             #   body="Para definir uma nova senha clique no link abaico: <br/> <a href='http://127.0.0.1:5000/recuperar?chave="+chave+"'>http://127.0.0.1:5000/recuperar?chave="+chave+"</a>"           )
+            except Exception as e:
+                flash("Erro:", e)
 
-            flash('http://127.0.0.1:5000/recuperar?chave='+chave)
 
     return render_template('esquecisenha.html', nav='active', title='ESQUECISENHA')
 
@@ -396,15 +402,19 @@ def esquecisenha():
 def recuperar():
     if request.method =='POST':
         email = request.form['email']
+        cpf = request.form['cpf']
         novasenha = request.form['novasenha']
         confnovasenha = request.form['confnovasenha']
-        if novasenha != confnovasenha:
+        usuario = Usuario.query.filter_by(email=email).first()
+        if usuario.cpf != cpf:
+            flash('cpf invalido')
+        elif novasenha != confnovasenha:
             flash ('Confirmação incorreta')
         else:
             #confirmacao ok
             chave = session["chave"]
             x = Esquecisenha.query.filter_by(chave=chave).first()
-            flash(chave)
+            #flash(chave)
             if x == None:
                 flash('Chave invalida')
             else:

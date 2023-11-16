@@ -39,8 +39,12 @@ RECUPERAR
                         <form action="{{ url_for('recuperar') }} " method="post">
                             <label for="nome">E-mail</label> <br>
                             <input type="email" placeholder="Informe seu E-mail" id="email" name="email" required> <br>
-                            <label for="nome">Nova Senha </label> <br>   <input type="password" placeholder="Informe a nova senha" id="novasenha" name="novasenha" required> <br>
-                            <label for="nome">Confirmacao da nova senha</label> <br><input type="password" placeholder="Confirme a nova senha" id="confnovasenha" name="confnovasenha" required> <br>
+                            <label for="nome">CPF</label> <br>
+                            <input type="text" placeholder="Informe seu CPF" id="cpf" name="cpf" required> <br>
+                            <label for="nome">Nova Senha </label> <br>
+                            <input type="password" placeholder="Informe a nova senha" id="novasenha" name="novasenha" required> <br>
+                            <label for="nome">Confirmacao da nova senha</label> <br>
+                            <input type="password" placeholder="Confirme a nova senha" id="confnovasenha" name="confnovasenha" required> <br>
                             <button type="submit">Salvar</button>
                         </form>
                 </div>
