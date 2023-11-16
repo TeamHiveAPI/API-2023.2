@@ -151,10 +151,30 @@ def dados():
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    if session.get('user_logado'):
+    if session.get('user_logado') and session.get('is_admin'):
         return render_template('admin.html', title='ADMIN', nav='active')
 
-@app.route('/admin-painel')
+@app.route('/aprovar-post/<int:post_id>', methods=['POST'])
+def approve_post(post_id):
+    if request.method == 'POST':
+        post = Post.query.get(post_id)
+        post.status = 'aprovado'
+        db.session.commit()
+        flash('Post aprovado')
+        return redirect(url_for('admin-painel'))
+
+
+@app.route('/rejeitar-post/<int:post_id>', methods=['POST'])
+def reject_post(post_id):
+    if request.method == 'POST':
+        post = Post.query.get(post_id)
+        post.status = 'rejeitado'
+        db.session.commit()
+        flash('Post rejeitado')
+        return redirect(url_for('admin-painel'))
+
+
+@app.route('/admin-painel', methods=['GET', 'POST'])
 def painel_admin():
     if session.get('user_logado'):
         posts = Post.query.filter_by(status='pendente').all()
@@ -173,6 +193,7 @@ def painel_admin():
             if usuario:
                 data_formatada = post.data_postagem.strftime("%d-%m-%Y")
                 post_info = {
+                    'id' : post.id,
                     'nome_parente': usuario.nome,
                     'parentesco': usuario.parentesco,
                     'nome_filho': post.nome_filho,
@@ -185,22 +206,10 @@ def painel_admin():
                 posts_info.append(post_info)
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
-    return render_template('paineladmin.html', posts=posts, title='ADMIN', nav='active')
+        return render_template('painel.html', posts=posts_info, title='ADMIN', nav='active', approve_post=approve_post, reject_post=reject_post)
+    return "Você não tem permissão para acessar esta página."
 
 
-@app.route('/aprovar-post/<int:post_id>')
-def approve_post(post_id):
-    post = Post.query.get(post_id)
-    post.status = 'aprovado'
-    db.session.commit()
-    flash('Post aprovado')
-
-@app.route('/rejeitar-post/<int:post_id>')
-def reject_post(post_id):
-    post = Post.query.get(post_id)
-    post.status = 'rejeitado'
-    db.session.commit()
-    flash('Post rejeitado')
 
 #Rota de perfil
 @app.route('/minhaconta', methods=['GET', 'POST'])
@@ -217,7 +226,7 @@ def conta():
             if not user.is_admin:
                 return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
             else:
-                return redirect(url_for('admin'))
+                return redirect(url_for('painel_admin'))
     return redirect(url_for('login'))
 
 @app.route('/upload_perfil', methods=['POST'])
@@ -355,6 +364,7 @@ def logout():
     session['user_email'] = None
     return redirect(url_for('login'))
 
+# Rota para o Esqueci Minha Senha
 @app.route('/esquecisenha', methods=['GET', 'POST'])
 def esquecisenha():
     if request.method =='POST':
@@ -407,7 +417,7 @@ def esquecisenha():
 
     return render_template('esquecisenha.html', nav='active', title='ESQUECISENHA')
 
-
+# Rota para Recuperar Senha
 @app.route('/recuperar', methods=['GET', 'POST'])
 def recuperar():
     if request.method =='POST':
@@ -426,14 +436,14 @@ def recuperar():
             x = Esquecisenha.query.filter_by(chave=chave).first()
             #flash(chave)
             if x == None:
-                flash('Chave invalida')
+                flash('Chave inválida')
             else:
                 #existe a chave
 
 
                 if x.utilizado:
                     #chave ja utilizada
-                    flash('Chave ja utilizada para recuperacao de senha')
+                    flash('Chave ja utilizada para recuperação de senha')
             
                 else:
                     #chave nunca utilizada
@@ -451,7 +461,7 @@ def recuperar():
 
 
 
-                flash('Senha alterada com suceso')
+                flash('Senha alterada com sucesso!')
     else:
         #get
         #salvo a chave na sessao
