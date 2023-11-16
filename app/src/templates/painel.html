@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block estilo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='painel.css') }}">
+{% endblock %}
+{% block title %} 
+HOME
+{% endblock %}
+{% block nav %}
+    <a class="navbar_menu_item" href="{{ url_for('index') }}">HOME</a>
+    <a class="navbar_menu_item" href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
+    <a class="navbar_menu_item {{ nav }}" href="{{ url_for('login') }}">{{ title }}</a>
+{% endblock %}
+
+{% block conteudo %}
+<hr>
+
+<main>
+    <section>
+        
+
+        <article>
+            <h1 class="titulo">Painel de administrador</h1>
+            <hr class="linha-titulo">
+        </article>
+
+        <article>
+                <h2 class="solicitacoes">Solicitações Pendentes</h2>
+                <p class="sem-post">Não há nenhum post pendente</p>
+                {% for post in posts %}
+    <article>
+        <div class="container2">
+            <div class="coluna">
+                <img class="imagem_usuario" src="{{ post.imagem_perfil_url }}" alt="Imagem de perfil">
+                <div class="nome_e_mae">
+                    <p class="nome">{{ post.nome_parente }}</p>
+                    <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
+                </div>
+            </div>
+            <p class="postagem">Data de Postagem: {{ post.data_postagem }}</p>
+        </div>
+        <hr class="linha">
+        <p class="postContent" data-post-id="{{ loop.index }}"> {{ post.conteudo | safe }} </p>
+        <div class="botao">
+            <p class="readMore ler" data-post-id="{{ loop.index }}">Ler mais</p>
+        </div>
+        <p class="anexo">Anexos</p>
+        <div class="fotos">
+            {% for img in post.caminho_das_imagens %}
+            <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
+            {% endfor %}
+        </div>
+    </article>
+    {% endfor %}
+                    <button class="aceitar">Aceitar Post</button>
+                    <button class="recusar">Recusar Post</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
+{% endblock %}
