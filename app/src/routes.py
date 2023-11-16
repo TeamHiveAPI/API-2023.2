@@ -21,6 +21,16 @@ def index():
             return render_template('index.html', title='ADMIN', nav='active')
     return render_template('index.html', nav='active', title='LOGIN')
 
+#Rota pagina inicial
+@app.route('/quemsomos')
+def quemsomos():
+    if session.get('user_logado'):
+        if session.get('is_admin') is False:
+            return render_template('quemsomos.html', title='MINHA CONTA', nav='active')
+        else:
+            return render_template('index.html', title='ADMIN', nav='active')
+    return render_template('quemsomos.html', nav='active', title='LOGIN')
+
 # Rota blog
 @app.route('/blog', methods=['GET', 'POST'])
 def blog():

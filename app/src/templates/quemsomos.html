@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block titulo %} Quem Somos | Rim do Amor {% endblock %}
+{% block estilo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='quemsomos.css') }}">
+{% endblock %}
+{% block title %} 
+HOME
+{% endblock %}
+{% block nav %}
+    <a class="navbar_menu_item " href="{{ url_for('index') }}">HOME</a>
+    <a class="navbar_menu_item {{ nav }} " href="{{ url_for('quemsomos') }}">QUEM SOMOS</a>
+    <a class="navbar_menu_item" href="{{ url_for('blog') }}">BLOG</a>
+    <a class="navbar_menu_item" href="{{ url_for('dados') }}">DADOS</a>
+    <a class="navbar_menu_item" href="{{ url_for('login') }}">{{ title }}</a>
+    
+{% endblock %}
+
+{% block conteudo %}
+<main>
+
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <section class="hero_banner">
+        <div class="conteudo_escrito">
+            <h1 class="conteudo_escrito_titulo">QUEM SOMOS</h1>
+            <h2 class="conteudo_escrito_subtitulo">Conheça as mães por trás da realização deste site</h2>
+        </div>
+    </section>
+
+    <div class="nossamissao">
+        <h1 class="titulo-nossamissao">Nossa missão</h1>
+        <p class="p1-nossamissao">
+            Nós somos um grupo de mães atípicas com filhos que possuem DRC (Doença Renal Crônica) pediátrica. Lutamos pelos direitos de nossos filhos e de todas as famílias em situações semelhantes de terem um tratamento digno, buscando melhores políticas de saúde, mais pesquisas e conscientização sobre a DRC.
+        </p>
+        <p class="p2-nossamissao">
+            Embora a jornada possa ser difícil, nós a enfrentamos juntas, com coragem, determinação e amor inabalável por nossos filhos.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class=maes_wrapper>
+        
+        <div>
+            <h1 class="titulo-sbreaequipe">Sobre a equipe</h1>
+        </div>
+
+        <div class="maes">
+            <div class=mae_esquerda>
+                <img class="michelesoares" src="../static/img/michelesoares.png">
+                <p class="textomaes">Olá, meu nome é Micielle Soares tenho 32 anos, casada, natural de São Paulo. Sou mãe do Romeo de 7 anos que tem doença renal crônica decorrente de Nefrite Intersticial diagnosticado com 1 ano e meio de vida. Sou enfermeira, porém me encontro fora do mercado de trabalho devido ao acompanhamento e cuidados diários do Romeo que atualmente está em Hemodiálise, porém em fila para transplante a espera de um SIM.<p>
+            </div>
+    
+            <div class=mae_direita>
+                <p class="textomaes">Olá, meu nome é Silviane Moraes, tenho 37 anos, casada, natural de São Luís – MA, atualmente há 7 anos residindo em São Paulo devido ao tratamento de hemodiálise da minha filha caçula Ana Clara de 11 anos diagnosticada com Displasia Renal Bilateral com 8 meses de vida e também mãe de Amanda Cristina de 18 anos. Estou fora do mercado de trabalho devido ao acompanhamento e cuidados diários com Ana Clara que atualmente está em hemodiálise.<p>
+                    <img src="../static/img/silviane.png">
+            </div>
+    
+            <div class=mae_esquerda>
+                <img class="michelesoares" src="../static/img/shirgilo.png">
+                <p class="textomaes">Olá, meu nome é Shirlene Giló tenho 40 anos, sou mãe da Isabel de 12 anos, Davi de 8 e Daniel de 5 aninhos, somos naturais de Alagoas, atualmente em São Paulo há 2 anos. Meu filho Davi é doente renal crônico, no momento encontra-se em hemodiálise diária, aguardando em lista de transplante renal, a espera que alguém DIGA SIM para doação de órgãos. Sou professora, Mãe atípica e típica, esposa, amiga e defensora de que acesso a saúde NÃO deve ser privilégio e SIM um direito TODOS!<p>
+            </div>
+    
+            <div class=mae_direita>
+                <p class="textomaes">Olá, meu nome é Vandressa tenho 33 anos e sou natural de Mauá-SP porém moro em Alagoas desde 2005, onde tive três filhos: Kauana 15 anos, Ágatha 13 anos e Mateus 8 anos. Atualmente trabalho de maneira informal com empreendedorismo devido ao grande fluxo de exames, consultas e terapias no meu dia a dia, sendo mãe duplamente atípica (além da doença renal Agatha tem autismo) e ainda me divido aos cuidados das outras duas crianças, escola e afazeres domésticos.<p>
+                    <img  src="../static/img/vandressa.png">
+            </div>
+        </div>
+    </div>
+    
+    <hr class="hr2">
+
+    <div class="contato">
+        <h1>
+            <h1 class="titulo-contato">Contato</h1>
+            <p class="p1-contato">
+                Para dúvidas, sugestões ou uma simples conversa, envie um e-mail para:
+            </p>
+            <p class="p2-contato">
+                criancarenal23@gmail.com
+            </p>
+        </h1>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+main {
+    margin: 0 10%;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #000350; 
+}
+
+
+/* Hero Banner da página Quem Somos */
+
+.hero_banner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: radial-gradient(150% 64% at 80% 40%, rgba(0, 3, 80, 0.7) 0%, #000350 100%);
+    margin: 0 -12.5%;
+}
+
+.conteudo_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 10%;
+}
+
+.conteudo_escrito_titulo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    color: white;
+    margin-top: 128px;
+}
+
+.conteudo_escrito_subtitulo {
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 128px;
+}
+
+/* Conteúdo da página Quem Somos */
+
+.maes_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 64px; 
+}
+
+.mae_esquerda, .mae_direita {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 32px 
+}
+
+.mae_direita img {
+    width: 350px;
+}
+
+.mae_esquerda img , .mae_direita img{
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* corpo da página */
+
+.titulo-nossamissao{
+    font-weight: 700;
+    font-size: 48px;
+    margin-top: 80px;
+    color: #000350;
+}
+
+.p1-nossamissao{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.p2-nossamissao{
+    margin-bottom: 40px;
+    
+}
+
+
+.titulo-sbreaequipe{
+    font-weight: 700;
+    font-size: 48px;
+    margin-top: 70px;
+    color: #000350;
+}
+
+.maes{
+    margin: 0 2%;
+}
+
+.textomaes{
+    font-size: 20px;
+    margin: 0 2%;
+}
+.hr2{
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+
+.titulo-contato{
+    font-weight: 700;
+    font-size: 48px;
+    color: #000350;
+}
+
+.p1-contato{
+    margin-top: 40px;
+}
+
+.p2-contato{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
