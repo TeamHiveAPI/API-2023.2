@@ -35,8 +35,10 @@ ESQUECISENHA
         <section class="tela_full">
             <div class="container">
                 <img class="login-img" src="{{ url_for('static', filename='img/login.png') }}" alt="">
-                <div class="login">
+                <div class="login esqueci_senha_p">
                     <h1 class="titulo_login">Recuperar senha</h1>
+                    <p>Insira seu e-mail abaixo para receber um e-mail de redefinição de senha.</p>
+                    <p>Não se esqueça de olhar na pasta de Spam.</p>
                         <form action="{{ url_for('esquecisenha') }} " method="post">
                             <input type="email" placeholder="Informe seu E-mail" id="email" name="email" required> <br>
                             <button type="submit">Recuperar</button>

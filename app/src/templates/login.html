@@ -39,8 +39,9 @@ LOGIN
                             <label for="nome">Usuário</label> <br>
                             <input type="email" placeholder="Digite seu E-mail" id="email" name="email" required> <br>
                             <label for="senha">Senha</label> <br>
-                            <input type="password" placeholder="Digite sua Senha" id="senha" name="senha" required> <br>
-                            <button type="submit">Login</button>
+                            <input class="margin_bottom_senha" type="password" placeholder="Digite sua Senha" id="senha" name="senha" required> <br>
+                            <a class="esqueci_senha" href="{{ url_for('esquecisenha') }}">Esqueci minha senha</a>
+                            <button class="margin_top_login" type="submit">Login</button>
                         </form>
                     <div class="linha">
                         <hr>
@@ -54,9 +55,6 @@ LOGIN
                     </div>
                     <br>
                     <div class ="cadastre">
-                        <button type="submit">
-                            <a href="{{ url_for('esquecisenha') }}">Esqueci minha senha</a>
-                        </button>
                     </div>
                 </div>
             </div>

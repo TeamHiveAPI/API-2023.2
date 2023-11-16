@@ -79,6 +79,24 @@ label {
     outline: none;
     letter-spacing: 1px;
 }
+.esqueci_senha {
+    margin: 0px 90px 32px;
+    margin-bottom: 32px;
+    color: #000120;
+    font-size: 0.85rem;
+}
+
+.esqueci_senha:hover {
+    text-decoration: underline;
+}
+
+.margin_bottom_senha {
+    margin-bottom: 8px!important;
+}
+
+.margin_top_login {
+    margin-top: 32px!important;
+}
 
 .cadastro button {
     background-color: #000350;
@@ -281,4 +299,9 @@ input::placeholder {
         width: 80%;
     }
 
+}
+
+.esqueci_senha_p p {
+    margin: 0px 80px;
+    margin-bottom: 32px;
 }
