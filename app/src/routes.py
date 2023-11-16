@@ -423,14 +423,14 @@ def recuperar():
             x = Esquecisenha.query.filter_by(chave=chave).first()
             #flash(chave)
             if x == None:
-                flash('Chave invalida')
+                flash('Chave inválida')
             else:
                 #existe a chave
 
 
                 if x.utilizado:
                     #chave ja utilizada
-                    flash('Chave ja utilizada para recuperacao de senha')
+                    flash('Chave ja utilizada para recuperação de senha')
             
                 else:
                     #chave nunca utilizada
@@ -448,7 +448,7 @@ def recuperar():
 
 
 
-                flash('Senha alterada com suceso')
+                flash('Senha alterada com sucesso!')
     else:
         #get
         #salvo a chave na sessao
