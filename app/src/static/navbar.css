@@ -20,7 +20,7 @@
 
 .navbar_menu_item {
     color: #000350;
-    padding: 8px 28px 8px 28px;
+    padding: 8px 28px;
     border-radius: 20px;
     border-style: solid;
     border-width: 2px;
@@ -47,10 +47,13 @@
     background-color: #03045E;
 }
 
-@media only screen and (max-width: 1000px) {
-    
+@media only screen and (max-width: 1070px) {
+
     .navbar_menu {
        gap: 6px;
+    }
+    .navbar_menu_item{
+        padding: 8px 16px;
     }
 
 }
