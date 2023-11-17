@@ -291,7 +291,7 @@ input::placeholder {
 
 @media only screen and (max-width: 768px) {
     form {
-        width: 320px;
+        width: 300px;
     }
     .linha {
         width: 60vw;
