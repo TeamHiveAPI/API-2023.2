@@ -47,7 +47,7 @@ main {
     border-radius: 50px 0px 0px 50px;
 }
 
-.titulo_cadastro, .titulo_login {
+.titulo_cadastro, .titulo_login, .titulo_recuperar {
     margin: 56px 260px 28px 90px;
     font-size: 60px;
     color: #000350;
@@ -212,6 +212,10 @@ input::placeholder {
     to {margin-top: -200px; opacity:0}
 }
 
+.esqueci_senha_p p {
+    margin: 0px 80px 32px;
+}
+
 @media only screen and (max-width: 1300px) {
     main{
         margin: 0;
@@ -219,7 +223,7 @@ input::placeholder {
     .tela_full{
         overflow: hidden;
     }
-    .titulo_login, .titulo_cadastro{
+    .titulo_login, .titulo_cadastro, .titulo_recuperar{
         margin: 5% 0;
         
     }
@@ -277,6 +281,9 @@ input::placeholder {
     select{
         margin: 10px 0;
     }
+    .titulo_recuperar{
+        font-size: 52px;
+    }
     
 
     
@@ -298,10 +305,11 @@ input::placeholder {
     .login, .cadastro, .login-img, .cadastro-img {
         width: 80%;
     }
-
+    .esqueci_senha_p p {
+        margin: 0px 32px 22px;
+    }
+    .titulo_recuperar{
+        font-size: 36px;
+    }
 }
 
-.esqueci_senha_p p {
-    margin: 0px 80px;
-    margin-bottom: 32px;
-}
