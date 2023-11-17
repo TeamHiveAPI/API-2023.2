@@ -47,6 +47,15 @@
     background-color: #03045E;
 }
 
+@media only screen and (max-width: 1000px) {
+    
+    .navbar_menu {
+       gap: 6px;
+    }
+
+}
+
+
 @media only screen and (max-width: 860px) {
 
     .navbar_menu {
