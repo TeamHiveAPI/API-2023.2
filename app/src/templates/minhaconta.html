@@ -70,9 +70,11 @@ MINHA-CONTA
                 <h1>CPF:</h1>
                 <p class="info_paragrafo">{{ user.cpf }}</p>
                 <div class="minha_conta_botao">
+                    {% if user.is_admin==True %}
                     <form method="post" action="{{ url_for('painel_admin') }}">
-                        <button class="botao_normal minha_conta_botao_verde type="submit">Painel de Administrador</button>
+                        <button class="botao_normal minha_conta_botao_verde" type="submit">Painel de Administrador</button>
                     </form>
+                    {% endif %}
                 </div>
             </div>
 

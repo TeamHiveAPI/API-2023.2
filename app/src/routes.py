@@ -223,10 +223,10 @@ def conta():
             else:
                 imagem_perfil_url = url_for('static', filename='img/perfil.png')
             
-            if not user.is_admin:
-                return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
-            else:
-                return redirect(url_for('painel_admin'))
+            #if not user.is_admin:
+            return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
+            #else:
+             #   return redirect(url_for('minhaconta'))
     return redirect(url_for('login'))
 
 @app.route('/upload_perfil', methods=['POST'])
