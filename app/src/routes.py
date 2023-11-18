@@ -433,11 +433,11 @@ def recuperar():
                 return redirect(url_for('recuperar'))
                 
             elif novasenha != confnovasenha:
-                flash ('Confirmação de senha incorreta! Digite novamente.')
+                flash ('Confirmação de senha incorreta! Digite novamente a nova senha.')
                 return redirect(url_for('recuperar'))
             
             elif usuario.senha == novasenha:
-                    flash('Senha já utilizada!')
+                    flash('Senha já utilizada! Digite outra senha.')
                     return redirect(url_for('recuperar'))
             
             else:
