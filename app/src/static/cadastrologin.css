@@ -38,12 +38,23 @@ main {
     background-color: white;
     width: 500px;
     height: 550px;
+    padding-bottom: 56px;
     border-radius: 0px 50px 50px 0px;
 }
 
 .login-img {
     width: 500px;
     height: 550px;
+    border-radius: 50px 0px 0px 50px;
+}
+
+.auto_height {
+    height: auto;
+}
+
+.recuperar_img {
+    width: 650px;
+    height: 670.5px;
     border-radius: 50px 0px 0px 50px;
 }
 

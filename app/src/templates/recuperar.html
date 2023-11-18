@@ -35,8 +35,8 @@ RECUPERAR
     <main>
         <section class="tela_full">
             <div class="container">
-                <img class="login-img" src="{{ url_for('static', filename='img/login.png') }}" alt="">
-                <div class="login">
+                <img class="recuperar_img" src="{{ url_for('static', filename='img/login.png') }}" alt="">
+                <div class="login auto_height">
                     <h1 class="titulo_recuperar">Recuperar senha</h1>
                         <form action="{{ url_for('recuperar') }} " method="post">
                             <label for="nome">E-mail</label> <br>
