@@ -67,6 +67,10 @@ hr {
 	gap: 32px 
 }
 
+.mae_direita {
+    text-align: right;
+}
+
 .mae_direita img {
     width: 350px;
 }
