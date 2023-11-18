@@ -212,7 +212,7 @@ hr {
 .minha_conta_baixo {
     display: flex;
     border: none;
-    padding: 16px 32px 16px 32px;
+    padding: 16px 32px;
     align-items: center;
     gap: 24px;
     font-size: 24px;
@@ -305,9 +305,12 @@ input {
 
  .minha_conta_info_direita h1, .minha_conta_info_esquerda h1 {
     display: flex;
-    justify-content: center;
+    margin-left: 10px;
  }
-
+ .parte_esquerda {
+    gap: 8px;
+    
+ }
 }
 
 @media only screen and (max-width: 768px) {
@@ -323,5 +326,21 @@ input {
  }
  .modal_conteudo h1{
     font-size: 1.6em;
+ }
+ .minha_conta_imagem{
+    width: 250px;
+    height: 250px;
+ }
+ .minha_conta_baixo{
+    gap: 12px;
+    font-size: 22px;
+ }
+ .minha_conta_info {
+    margin-top: 12px;
+    gap: 12px;
+}
+.parte_esquerda {
+    gap: 32px;
+    align-items: start;
  }
 }
