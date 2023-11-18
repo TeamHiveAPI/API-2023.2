@@ -133,13 +133,13 @@ main {
 
 #chart_div {
     width: 100%;
+    min-width: 100px;
     margin-top: 32px;
 }
 
 .margem_grafico {
     margin-top: 96px;
 }
-/* eber's version */
 
 .titulo-prog-prev {
     margin-top: 96px;
@@ -178,7 +178,7 @@ main {
 }
 
 .p2-principais-medidas{
-    margin-top: 26px;
+    margin-top: 32px;
 }
 /* Footer */
 
@@ -219,7 +219,6 @@ footer {
 /* dropdown livia */
 
 select {
-    appearance: none;
     width: 420px;
     padding: 12px;
     border: 1px solid #303030;
@@ -247,14 +246,6 @@ option {
     gap: 64px;
 }
 
-.setinha {
-    position: absolute;
-    z-index: 1;
-    margin-left: 390px;
-    margin-top: 18px;
-    width: 15px;
-}
-
 #progress {
     display: none;
     position: fixed;
@@ -278,4 +269,21 @@ option {
     background-color: white;
     border-radius: 50%;
     font-size: 36px;
+}
+
+.itens-da-listinha {
+    font-style: normal;
+}
+
+li {
+    margin-bottom: 16px;
+}
+
+.search_link {
+    color: #3337a3;
+}
+
+.search_link:hover {
+    color: #0f1268;
+    text-decoration: underline;
 }

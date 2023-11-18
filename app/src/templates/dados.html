@@ -39,7 +39,6 @@ DADOS
             <h1>Centros transportadores de crianças (clínicas que fazem transplante):</h1>
             <div class="dropdown">
                 <label for="tema1">Região:</label>
-                <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
                 <select name="estado" class="estados" id="dropdown_centros">
                     <option value="norte">Selecionar Estado</option>
                     <option value="norte">Norte</option>
@@ -103,7 +102,6 @@ DADOS
             <h1 class="margem_cima_dropdown">Clínicas e hospitais que oferecem diálise e hemodiálise:</h1>
             <div class="dropdown">
                 <label for="tema1">Região:</label>
-                <img class="setinha" src="{{ url_for('static', filename='img/setinha.png' ) }}">
                 <select name="estado" class="estados" id="dropdown_centros_dialise">
                     <option value="norte">Selecionar Estado</option>
                     <option value="norte">Norte</option>
@@ -246,27 +244,27 @@ DADOS
             <h2 class="titulo-maneiras-prev">Quais são as maneiras de prevenção?</h2>
             <div>
                 <p class="p1-maneiras-prev">
-                    Conhecer e lidar com os fatores de risco da Doença Renal é essencial para prevenir seu desenvolvimento. Hipertensão, diabetes, histórico familiar, obesidade, tabagismo, medicações nefrotóxicas e outros elementos podem comprometer a função dos rins. Evitar ou tratar esses fatores é crucial na prevenção da doença renal, e algumas formas de prevenção são as seguintes: 
+                    Existem várias maneiras:
                 </p>
 
                 <ul class="lista-maneiras-prev">
-                    <li><i class="itens-da-listinha"></i> Exercícios físicos regulares devem ser praticados. </li>
-                    <li><i class="itens-da-listinha"></i> O excesso de sal, carne vermelha e gorduras deve ser evitado.</li>
-                    <li><i class="itens-da-listinha"></i> O peso corporal deve ser controlado.</li>
-                    <li><i class="itens-da-listinha"></i> O colesterol e a glicose devem ser controlados.</li>
-                    <li><i class="itens-da-listinha"></i> O fumo deve ser evitado.</li>
-                    <li><i class="itens-da-listinha"></i> O consumo excessivo de bebida alcoólica deve ser evitado.</li>
-                    <li><i class="itens-da-listinha"></i> Anti-inflamatórios não hormonais devem ser evitados.</li>
-                    <li><i class="itens-da-listinha"></i> Cuidados devem ser tomados para evitar a desidratação.</li>
-                    <li><i class="itens-da-listinha"></i> Exames laboratoriais anuais para avaliar a saúde dos rins devem ser realizados: dosagem de creatinina no sangue e análise de urina.</li>
-                    <li><i class="itens-da-listinha"></i> Consultas regulares devem ser feitas com o clínico.</li>
-                    <li><i class="itens-da-listinha"></i> Medicamentos não devem ser utilizados sem prescrição médica.</li>
+                    <li><p class="itens-da-listinha"></i>Verificar se você possui <strong>fatores de risco, </strong>como hipertensão, diabetes, histórico familiar, obesidade, tabagismo e <a class="search_link" target=_blank href=https://www.google.com/search?q=medica%C3%A7%C3%B5es+nefrot%C3%B3xicas>Medicações nefrotóxicas.</a></p></p></li>
+                    <li><p class="itens-da-listinha"></i>Praticar <strong>exercícios físicos</strong> regulares.</p></li>
+                    <li><p class="itens-da-listinha"></i><strong>Evitar excesso de sal, </strong>carne vermelha, gorduras, bebida alcoólica e anti-inflamatórios não hormonais.</p></li>
+                    <li><p class="itens-da-listinha"></i><strong>Controlar peso corporal, </strong>colesterol e glicose, além de reduzir o fumo.</p></li>
+                    <li><p class="itens-da-listinha"></i>Evitar <strong>desidratação.</strong></p></li>
+                    <li><p class="itens-da-listinha"></i><strong>Realizar exames </strong>laboratoriais anuais para avaliar a saúde dos rins: dosagem de creatinina no sangue e análise de urina.</p></li>
+                    <li><p class="itens-da-listinha"></i>Consultar regularmente o <strong>clínico.</strong></p></li>
+                    <li><p class="itens-da-listinha"></i><strong>Não utilizar </strong>medicamentos sem prescrição médica.</p></li>
                 </ul>
             </div>
             <div>
-                <h2 class="titulo-principais-infos">Quais são as principais informações sobre o tratamento conservador?</h2>
+                <h2 class="titulo-principais-infos">Mais informações sobre o tratamento conservador:</h2>
                 <p class="p-principais-infos">
-                    O tratamento conservador abrange medidas clínicas, medicamentos, mudanças na dieta e estilo de vida. Ele visa retardar a piora da função renal, reduzir sintomas e prevenir complicações da doença renal crônica. Embora a doença seja progressiva e atualmente irreversível, o tratamento conservador pode desacelerar ou estabilizar essa progressão. Iniciado no diagnóstico, seu impacto positivo na sobrevida e qualidade de vida é significativo a longo prazo. Começar o tratamento cedo aumenta as chances de preservar a função dos rins por mais tempo. Em estágios avançados, se a doença progride apesar do tratamento conservador, prepara-se o paciente para diálise ou transplante renal.
+                    Este tratamento inclui medidas clínicas, medicamentos e mudanças no estilo de vida para retardar a 
+                    deterioração renal, reduzir sintomas e prevenir complicações. <br> Apesar da progressão da doença, o tratamento pode 
+                    desacelerar essa progressão e tem impacto positivo na sobrevida e qualidade de vida. O início precoce do tratamento 
+                    preserva a função renal. <br> Em estágios avançados, o paciente é preparado para diálise ou transplante renal.
                 </p>
             </div>
             <div>
@@ -275,24 +273,21 @@ DADOS
                     O tratamento conservador abrange medidas clínicas, medicamentos, mudanças na dieta e estilo de vida. Ele visa retardar a piora da função renal, reduzir sintomas e prevenir complicações da doença renal crônica. Embora a doença seja progressiva e atualmente irreversível, o tratamento conservador pode desacelerar ou estabilizar essa progressão. Iniciado no diagnóstico, seu impacto positivo na sobrevida e qualidade de vida é significativo a longo prazo. Começar o tratamento cedo aumenta as chances de preservar a função dos rins por mais tempo. Em estágios avançados, se a doença progride apesar do tratamento conservador, prepara-se o paciente para diálise ou transplante renal.
                 </p>
                 <ul class="lista-principais-medidas">
-                    <li><i class="itens-da-listinha"></i>Controle da pressão arterial: Manter a pressão abaixo de 130 x 80 mmHg e evitar o consumo de alimentos ricos em sal. </li>
-                    <li><i class="itens-da-listinha"></i>Controle da glicemia: Manter a hemoglobina glicada abaixo de 7% e reduzir a glicose no sangue, especialmente para pacientes diabéticos, através de dieta e preferência por alimentos integrais. </li>
-                    <li><i class="itens-da-listinha">Parar de fumar: Parar de fumar traz benefícios para os rins e o sistema circulatório, com tratamentos disponíveis para ajudar a interromper o tabagismo.</i> </li>
-                    <li><i class="itens-da-listinha"></i>Tratamento da dislipidemia: Reduzir o colesterol com uma dieta adequada e evitando alimentos gordurosos.
-                    </li>
-                    <li><i class="itens-da-listinha"></i>Redução da perda de proteínas pelos rins: Medicamentos podem ajudar a reduzir a perda de proteínas na urina, crucial para desacelerar a progressão da doença.
-                    </li>
-                    <li><i class="itens-da-listinha"></i>Uso de medicamentos para tratar sintomas: Como o inchaço, com restrição de sal e diuréticos prescritos pelo médico. </li>
-                    <li><i class="itens-da-listinha"></i>Tratamento da anemia: Avaliação e reposição de eritropoetina e ferro, importantes para a produção de glóbulos vermelhos. </li>
-                    <li><i class="itens-da-listinha"></i>Tratamento de distúrbios ósseos e minerais: Normalização dos níveis de cálcio, vitamina D e fósforo com tratamentos específicos. </li>
-                    <li><i class="itens-da-listinha"></i>Tratamento da acidose e aumento do potássio no sangue: Correção da acidez sanguínea e regulação do potássio através de dieta e medicamentos. </li>
-                    <li><i class="itens-da-listinha"></i>Dieta individualizada: Restrições alimentares específicas conforme a progressão da doença, como redução de sal, água, potássio e fósforo, mas com atenção para evitar desnutrição.
-                    </li>
-                    <li><i class="itens-da-listinha"></i>Preparo para diálise ou transplante: Preparação do paciente para procedimentos de substituição renal quando a função dos rins está reduzida, visando minimizar complicações. </li>
-                    <p class="p2-principais-medidas">
-                        É essencial uma abordagem personalizada, guiada pelo médico e nutricionista, para encontrar a melhor solução para cada caso de doença renal crônica.
-                    </p>
+                    <li><p class="itens-da-listinha"><strong>Controle da pressão arterial:</strong> Mantenha a pressão abaixo de 130 x 80 mmHg e evite alimentos muito salgados.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Controle da glicemia:</strong> Mantenha a hemoglobina glicada abaixo de 7%. Reduza-a com dietas e alimentos integrais, especialmente se você for diabético.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Parar de fumar:</strong> Benefícios para os rins e circulação, com tratamentos para interromper o tabagismo.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Tratamento da dislipidemia:</strong> Reduzir o colesterol com dieta e evitar alimentos gordurosos.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Redução da perda de proteínas pelos rins:</strong> Medicamentos para reduzir a perda de proteínas na urina.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Uso de medicamentos para tratar sintomas:</strong> Tratar inchaço com restrição de sal e diuréticos.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Tratamento da anemia:</strong> Avaliação e reposição de eritropoetina e ferro.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Tratamento de distúrbios ósseos e minerais:</strong> Normalizar cálcio, vitamina D e fósforo.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Tratamento da acidose e aumento do potássio no sangue</strong>: Corrigir acidez sanguínea e regular potássio.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Dieta individualizada:</strong> Restrições alimentares específicas, evitando desnutrição.</p></li>
+                    <li><p class="itens-da-listinha"><strong>Preparo para diálise ou transplante:</strong> Preparação para substituição renal quando a função renal está reduzida.</p></li>
                 </ul>
+                <p class="p2-principais-medidas">
+                É essencial uma abordagem personalizada, guiada pelo médico e nutricionista, para encontrar a melhor solução para cada caso de doença renal crônica.
+                </p>
             </div>
         </div>
 
