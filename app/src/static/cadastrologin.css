@@ -322,5 +322,8 @@ input::placeholder {
     .titulo_recuperar{
         font-size: 36px;
     }
+    .esqueci_senha{
+        margin: 0 auto;
+    }
 }
 

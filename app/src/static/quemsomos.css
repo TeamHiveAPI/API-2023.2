@@ -135,3 +135,46 @@ hr {
     margin-top: 20px;
     margin-bottom: 40px;
 }
+
+
+@media only screen and (max-width: 1300px) {
+    
+    
+}
+
+@media only screen and (max-width: 768px) {
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+     section{
+        height: 90vh;
+     }
+    .conteudo_escrito{
+        gap: 32px;
+    }
+    .conteudo_escrito_titulo{
+        font-size: 32px;
+        margin-top: 20%;
+    }
+    .conteudo_escrito_subtitulo{
+        margin-bottom: 20%;
+    }
+    .titulo-nossamissao, .titulo-sbreaequipe, .titulo-contato{
+        font-size: 32px;
+        margin-top: 32px;
+    }
+    .nossamissao{
+      
+    }
+    .p1-nossamissao{
+        margin-top: 6%;
+        margin-bottom: 20px;
+    }
+    
+    .p2-nossamissao{
+        margin-bottom: 6%;
+        
+    }
+}
+
