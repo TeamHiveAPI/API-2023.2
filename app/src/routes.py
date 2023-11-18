@@ -169,7 +169,7 @@ def reject_post(post_id):
         return redirect(url_for('painel_admin'))
 
 
-@app.route('/admin_painel', methods=['GET', 'POST'])
+@app.route('/painel_admin', methods=['GET', 'POST'])
 def painel_admin():
     if session.get('user_logado'):
         posts = Post.query.filter_by(status='pendente').all()
@@ -317,7 +317,7 @@ def login():
                 session['is_admin'] = usuario.is_admin
                 flash('Login realizado com sucesso!')
                 if usuario.is_admin:
-                    return redirect(url_for('admin'))
+                    return redirect(url_for('painel_admin'))
                 else:
                     return redirect(url_for('conta'))
         flash('Verifique suas credenciais!')
