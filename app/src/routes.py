@@ -426,42 +426,60 @@ def recuperar():
         novasenha = request.form['novasenha']
         confnovasenha = request.form['confnovasenha']
         usuario = Usuario.query.filter_by(email=email).first()
-        if usuario.cpf != cpf:
-            flash('cpf invalido')
-        elif novasenha != confnovasenha:
-            flash ('Confirmação incorreta')
-        else:
-            #confirmacao ok
-            chave = session["chave"]
-            x = Esquecisenha.query.filter_by(chave=chave).first()
-            #flash(chave)
-            if x == None:
-                flash('Chave inválida')
-            else:
-                #existe a chave
 
-
-                if x.utilizado:
-                    #chave ja utilizada
-                    flash('Chave ja utilizada para recuperação de senha')
+        if usuario:
+            if usuario.cpf != cpf:
+                flash('CPF invalido')
+                return redirect(url_for('recuperar'))
+                
+            elif novasenha != confnovasenha:
+                flash ('Confirmação de senha incorreta! Digite novamente.')
+                return redirect(url_for('recuperar'))
             
+            elif usuario.senha == novasenha:
+                    flash('Senha já utilizada!')
+                    return redirect(url_for('recuperar'))
+            
+            else:
+                #confirmacao ok
+                chave = session["chave"]
+                x = Esquecisenha.query.filter_by(chave=chave).first()
+                #flash(chave)
+                if x == None:
+                    flash('Chave inválida! Informe seu e-mail para recuperação de senha novamente. ')
+                    return redirect(url_for('esquecisenha'))
                 else:
-                    #chave nunca utilizada
-                    
-                    x.utilizado = 1
-
-                    usu = Usuario.query.filter_by(email=email).first()
-                    usu.senha = novasenha
-                    
-                    db.session.add(x)
-
-                    db.session.add(usu)
-
-                    db.session.commit()
+                    #existe a chave
 
 
+                    if x.utilizado:
+                        #chave ja utilizada
+                        flash('Link para recuperação de senha já utilizado.')
+                
+                    else:
+                        #chave nunca utilizada
+                        
+                        x.utilizado = 1
 
-                flash('Senha alterada com sucesso!')
+                        usu = Usuario.query.filter_by(email=email).first()
+
+                        if usu.senha == novasenha:
+                            flash('Senha já utilizada!')
+                            return redirect(url_for('recuperar'))
+                        usu.senha = novasenha
+                        
+                        db.session.add(x)
+
+                        db.session.add(usu)
+
+                        db.session.commit()
+
+
+
+                    flash('Senha alterada com sucesso!')
+                    return redirect(url_for('login'))
+        flash('E-mail incorreto!')    
+        return redirect(url_for('recuperar'))    
     else:
         #get
         #salvo a chave na sessao
