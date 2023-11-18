@@ -18,7 +18,7 @@ def index():
         if session.get('is_admin') is False:
             return render_template('index.html', title='MINHA CONTA', nav='active')
         else:
-            return render_template('index.html', title='ADMIN', nav='active')
+            return render_template('index.html', title='MINHA CONTA', nav='active')
     return render_template('index.html', nav='active', title='LOGIN')
 
 #Rota pagina inicial
@@ -28,7 +28,7 @@ def quemsomos():
         if session.get('is_admin') is False:
             return render_template('quemsomos.html', title='MINHA CONTA', nav='active')
         else:
-            return render_template('index.html', title='ADMIN', nav='active')
+            return render_template('index.html', title='MINHA CONTA', nav='active')
     return render_template('quemsomos.html', nav='active', title='LOGIN')
 
 # Rota blog
@@ -119,7 +119,7 @@ def blog():
         if session.get('is_admin') is False:
             return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
         else:
-            return render_template('blog.html', title='ADMIN', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
+            return render_template('blog.html', title='MINHA CONTA', nav='active', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
     return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
@@ -146,13 +146,8 @@ def dados():
         if session.get('is_admin') is False:
             return render_template('dados.html', title='MINHA CONTA', nav='active')
         else:
-            return render_template('dados.html', title='ADMIN', nav='active')
+            return render_template('dados.html', title='MINHA CONTA', nav='active')
     return render_template('dados.html', title='LOGIN', nav='active')
-
-@app.route('/admin', methods=['GET', 'POST'])
-def admin():
-    if session.get('user_logado') and session.get('is_admin'):
-        return render_template('admin.html', title='ADMIN', nav='active')
 
 @app.route('/aprovar-post/<int:post_id>', methods=['POST'])
 def approve_post(post_id):
@@ -206,7 +201,7 @@ def painel_admin():
                 posts_info.append(post_info)
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
-        return render_template('painel.html', posts=posts_info, title='ADMIN', nav='active', approve_post=approve_post, reject_post=reject_post)
+        return render_template('painel.html', posts=posts_info, title='PAINEL', nav='active', approve_post=approve_post, reject_post=reject_post)
     return "Você não tem permissão para acessar esta página."
 
 
