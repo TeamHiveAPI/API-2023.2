@@ -23,7 +23,9 @@ HOME
         </article>
         <article>
                 <h2 class="solicitacoes">Solicitações Pendentes</h2>
+                {% if posts == [] %}
                 <p class="sem-post">Não há nenhum post pendente</p>
+                {% endif %}
             {% for x in posts %}
             <article>
             <div class="container2">
@@ -48,10 +50,10 @@ HOME
                 {% endfor %}
                 </div>
             </article>
-            <form method="post" action="{{ url_for(approve_post(x.id)) }}">
+            <form method="post" action="{{ url_for('approve_post', post_id=x.id) }}">
                 <button class="aceitar" type="submit">Aceitar Post</button>
             </form>
-            <form method="post" action="{{ url_for(reject_post(x.id)) }}">
+            <form method="post" action="{{ url_for('reject_post', post_id=x.id) }}">
                 <button class="recusar" type="submit">Recusar Post</button>
             </form>
             {% endfor %}

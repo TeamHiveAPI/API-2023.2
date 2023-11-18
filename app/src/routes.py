@@ -2,7 +2,7 @@ from controller import app
 from datetime import datetime
 from flask import render_template, redirect, url_for, request, session, flash, jsonify
 from werkzeug.utils import secure_filename
-from models import Imagem, Usuario, Post,Esquecisenha, db
+from models import Imagem, Usuario, Post, Esquecisenha, db
 import os
 from os.path import join
 import secrets
@@ -149,30 +149,31 @@ def dados():
             return render_template('dados.html', title='MINHA CONTA', nav='active')
     return render_template('dados.html', title='LOGIN', nav='active')
 
-@app.route('/aprovar-post/<int:post_id>', methods=['POST'])
+@app.route('/aprovar_post/<int:post_id>', methods=['POST'])
 def approve_post(post_id):
     if request.method == 'POST':
         post = Post.query.get(post_id)
         post.status = 'aprovado'
         db.session.commit()
         flash('Post aprovado')
-        return redirect(url_for('admin-painel'))
+        return redirect(url_for('painel_admin'))
 
 
-@app.route('/rejeitar-post/<int:post_id>', methods=['POST'])
+@app.route('/rejeitar_post/<int:post_id>', methods=['POST'])
 def reject_post(post_id):
     if request.method == 'POST':
         post = Post.query.get(post_id)
         post.status = 'rejeitado'
         db.session.commit()
         flash('Post rejeitado')
-        return redirect(url_for('admin-painel'))
+        return redirect(url_for('painel_admin'))
 
 
-@app.route('/admin-painel', methods=['GET', 'POST'])
+@app.route('/admin_painel', methods=['GET', 'POST'])
 def painel_admin():
     if session.get('user_logado'):
         posts = Post.query.filter_by(status='pendente').all()
+        
         posts_info = []
 
         imagem_perfil_url = url_for('static', filename='img/perfil.png')
@@ -201,7 +202,7 @@ def painel_admin():
                 posts_info.append(post_info)
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
-        return render_template('painel.html', posts=posts_info, title='PAINEL', nav='active', approve_post=approve_post, reject_post=reject_post)
+        return render_template('painel.html', posts=posts_info, title='PAINEL', nav='active')
     return "Você não tem permissão para acessar esta página."
 
 
