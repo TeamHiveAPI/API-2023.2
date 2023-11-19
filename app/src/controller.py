@@ -16,9 +16,9 @@ def inicializando_app():
     with app.app_context():
         db.create_all()
         # Verifica se o usuário administrador já existe antes de adicioná-lo
-        admin_user = Usuario.query.filter_by(email='admrimdoamor2023@timehive.com').first()
+        admin_user = Usuario.query.filter_by(email='admin@teamhive.com').first()
         if admin_user is None:
-            adm = Usuario(nome='Adm-Rim do Amor', dn='2023-09-01', cpf='00000000011', endereco='@rimdoamor', email='admrimdoamor2023@timehive.com', parentesco='outro', senha='rimdoamor2023', profissao='Administrador', comochegou='outro', is_admin=1)
+            adm = Usuario(nome='Admin', dn='2023-09-01', cpf='00000000011', endereco='@rimdoamor', email='admin@teamhive.com', parentesco='outro', senha='rim#doamor570', profissao='Administrador', comochegou='outro', is_admin=1)
             db.session.add(adm)
             db.session.commit()
 
