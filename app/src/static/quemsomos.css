@@ -64,6 +64,7 @@ hr {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+    /* flex-wrap: wrap; */
 	gap: 32px 
 }
 
@@ -71,14 +72,10 @@ hr {
     text-align: right;
 }
 
-.mae_direita img {
-    width: 350px;
-}
-
-.mae_esquerda img , .mae_direita img{
+.foto{
     border-radius: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
+    width: 350px;
 }
 
 /* corpo da página */
@@ -164,9 +161,6 @@ hr {
         font-size: 32px;
         margin-top: 32px;
     }
-    .nossamissao{
-      
-    }
     .p1-nossamissao{
         margin-top: 6%;
         margin-bottom: 20px;
@@ -176,5 +170,30 @@ hr {
         margin-bottom: 6%;
         
     }
+    .textomaes{
+        order: 2;
+        margin: 0;
+        margin-bottom: 12px;
+    }
+    .foto{
+        order: 1;
+        width: 250px;
+        height: 300px;
+    }
+
+    .mae_esquerda, .mae_direita {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 100vh;
+
+    }
+
+    .maes_wrapper {
+        align-items: center;
+        gap: 0; 
+    }
+
 }
 
