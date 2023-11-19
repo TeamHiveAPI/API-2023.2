@@ -11,6 +11,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+
+
 #Rota pagina inicial
 @app.route('/')
 def index():
@@ -76,6 +78,7 @@ def blog():
 
         else:
             flash('Faça login para postar!')
+            return redirect(url_for('login'))
     else:
         page = request.args.get('page', default=1, type=int)
         posts_per_page = 5
@@ -203,7 +206,8 @@ def painel_admin():
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
         return render_template('painel.html', posts=posts_info, title='PAINEL', nav='active')
-    return "Você não tem permissão para acessar esta página."
+    flash('Você não tem permissão para acessar esta página.')
+    return redirect(url_for('login'))
 
 
 
@@ -275,12 +279,12 @@ def cadastro():
 
         usuario2 = Usuario.query.filter_by(cpf=cpf).first()
         usuario = Usuario.query.filter_by(email=email).first()
-
+    
         if usuario and usuario2:
-            flash('Email e CPF existentes, realize seu login.')
+            flash('E-mail e CPF existentes, realize seu login.')
             return redirect(url_for('login'))
         elif usuario:
-            flash('Email existente!')
+            flash('E-mail existente!')
             return redirect(url_for('login'))
         elif usuario2:
             flash('CPF já existente!')
@@ -315,10 +319,11 @@ def login():
                 session['user_logado'] = usuario.nome
                 session['user_email'] = usuario.email
                 session['is_admin'] = usuario.is_admin
-                flash('Login realizado com sucesso!')
                 if usuario.is_admin:
+                    flash('Login realizado com sucesso!')
                     return redirect(url_for('painel_admin'))
                 else:
+                    flash('Login realizado com sucesso!')
                     return redirect(url_for('conta'))
         flash('Verifique suas credenciais!')
     return render_template('login.html', nav='active', title='LOGIN')  
@@ -342,7 +347,8 @@ def deletar_conta():
                 db.session.commit()
                 flash('Conta excluída com sucesso!')
                 return redirect(url_for('logout'))
-    return "Acesso inválido a esta página."
+    flash('Acesso inválido a esta página.')
+    return redirect(url_for('login'))
 
 #Rota para sair da conta do usuario
 @app.route('/logout', methods=['GET', 'POST'])
@@ -406,6 +412,7 @@ def esquecisenha():
                 server.sendmail(email_de, email_para, texto)
                 server.quit()
                 flash("Acesse o link enviado no seu e-mail")
+                return redirect(url_for('login'))
 
             except Exception as e:
                 flash("Erro: {}".format(e))
@@ -442,7 +449,7 @@ def recuperar():
                 x = Esquecisenha.query.filter_by(chave=chave).first()
                 #flash(chave)
                 if x == None:
-                    flash('Chave inválida! Informe seu e-mail para recuperação de senha novamente. ')
+                    flash('Link inválido! Informe seu e-mail para recuperação de senha novamente. ')
                     return redirect(url_for('esquecisenha'))
                 else:
                     #existe a chave
@@ -450,8 +457,8 @@ def recuperar():
 
                     if x.utilizado:
                         #chave ja utilizada
-                        flash('Link para recuperação de senha já utilizado.')
-                
+                        flash('Link já utilizado!Informe seu e-mail para a recuperação de senha novamente.')
+                        return redirect(url_for('esquecisenha'))
                     else:
                         #chave nunca utilizada
                         
