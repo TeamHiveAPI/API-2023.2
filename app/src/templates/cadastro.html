@@ -20,6 +20,17 @@ CADASTRO
 {% block conteudo %}
 
     <main>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="centralizar_screen">
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
         <section class="tela_full">
             <div class="container">
                 <img class="cadastro-img" src="{{ url_for('static', filename='img/cadastro.png') }}" alt="">
