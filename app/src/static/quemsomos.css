@@ -134,8 +134,20 @@ hr {
 }
 
 
-@media only screen and (max-width: 1300px) {
-    
+@media only screen and (max-width: 1000px) {
+    .textomaes{
+        order: 2;
+    }
+    .foto{
+        order: 1;
+    }
+
+    .mae_esquerda, .mae_direita {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
     
 }
 
@@ -144,9 +156,6 @@ hr {
         display: flex;
         flex-direction: column;
     }
-     section{
-        height: 90vh;
-     }
     .conteudo_escrito{
         gap: 32px;
     }
@@ -171,25 +180,13 @@ hr {
         
     }
     .textomaes{
-        order: 2;
         margin: 0;
         margin-bottom: 12px;
     }
     .foto{
-        order: 1;
         width: 250px;
         height: 300px;
     }
-
-    .mae_esquerda, .mae_direita {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        height: 100vh;
-
-    }
-
     .maes_wrapper {
         align-items: center;
         gap: 0; 
