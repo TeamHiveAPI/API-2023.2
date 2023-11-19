@@ -1,5 +1,6 @@
 from controller import db
 from sqlalchemy import BINARY
+from controller import db, app
 
 # Conexão com as tabelas
 class Usuario(db.Model):
@@ -42,18 +43,6 @@ class Esquecisenha(db.Model):
         self.email = email
         self.chave = chave
         self.utilizado = utilizado
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Criação de uma tabela para as imagens, associada aos posts
 class Imagem(db.Model):
