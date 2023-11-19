@@ -528,3 +528,70 @@ form {
 .img-jinja:last-child {
     margin-right: 0px;
 }
+
+.post_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 16px;
+    cursor: pointer;
+    ;
+}
+
+.summary:hover {
+    background-color: #dadada;
+}
+
+.summary_centralizar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 32px;
+    background-color: #efefef;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.details h1 {
+    margin-bottom: 16px;
+}
+
+.search_link {
+    color: #3337a3;
+}
+
+.search_link:hover {
+    color: #0f1268;
+    text-decoration: underline;
+}
+
+details {
+    display: flex;
+    justify-content: center;
+}
+
+.diretriz {
+    display: none!important;
+}
+
+.desativado {
+    background-color: #969696!important;
+    cursor: auto!important;
+}

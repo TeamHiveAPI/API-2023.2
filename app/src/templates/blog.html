@@ -41,7 +41,13 @@ BLOG
             <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome da criança">
             <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
-                <button type="submit">
+
+                <div class="icone_novo_enviar desativado" id="enviar_desativado"> <!-- Não aceitou a diretriz ainda -->
+                    <img class="icone_novo_enviar" src="{{ url_for('static', filename='img/icone_enviar.png') }}" alt="">
+                    Enviar
+                </div>
+
+                <button type="submit" class="diretriz" id="enviar_ativado">
                     <img class="icone_novo_enviar" src="{{ url_for('static', filename='img/icone_enviar.png') }}" alt="">
                     Enviar
                 </button>
@@ -56,8 +62,52 @@ BLOG
                 </button>
             </div>
             <p class="centralizar_aviso">Selecione até 3 imagens</p>
+            <details>
+                <summary class="summary">
+                    <div class="summary_centralizar">
+                        <p>Antes de postar, revise e concorde com as Diretrizes de Comunidade.</p>
+                        <p><strong>Clique para expandir.</strong></p>
+                    </div>
+                </summary>
+                <div class="details">
+                    <h1>Diretrizes para Texto:</h1>
+                    <p>1. Ao redigir seu texto, certifique-se de não discriminar nenhum grupo, independente de sua raça, etnia,
+                    sexo, gênero, orientação sexual, cultura, etc.</p>
+                    <p>2. Não use palavras de baixo calão (palavrões).</p>
+                    <br>
+                    <h1>Diretrizes para Imagens:</h1>
+                    <p><strong>1. NÃO </strong>carregue imagens sensíveis ou chocantes. <br> Antes de carregar, pense: "Eu ficaria chocado(a)
+                    ou surpreso(a) se esta imagem aparecesse em minhas redes sociais sem aviso prévio?"</p>
+                    <p><strong>2. EVITE </strong>carregar imagens que tenham elementos que possam dar dicas sobre a vida pessoal de uma criança. <br>
+                        Exemplo: Uniformes escolares, placas de endereço ao fundo.</p>
+                    <p><strong>3. SE POSSÍVEL, </strong>tampe o rosto das crianças na foto, por motivos de segurança.
+                    Para se situar melhor, leia sobre <a class="search_link" target=_blank href=https://www.google.com/search?q=sharenting>sharenting.</a></p>
+                    <div class="post_checkbox">
+                        <input type="checkbox" name="concordo" id="checkbox">
+                        <label for="concordo">Eu concordo com as Diretrizes de Comunidade e estou ciente de que, se eu cometer
+                        uma infração considerada grave, o site poderá tomar medidas legais cabíveis.
+                    </div>    
+                </div>
+                </label>
+            </details>
         </form>
     </article>
+
+    <script>
+        checkbox = document.getElementById("checkbox");
+
+        checkbox.onclick = function() {
+            if (checkbox.checked) {
+                document.getElementById("enviar_desativado").style.display = "none";
+                document.getElementById("enviar_ativado").classList.remove("diretriz");
+            }
+            else {
+                document.getElementById("enviar_desativado").style.display = "flex";
+                document.getElementById("enviar_ativado").classList.add("diretriz");
+            }
+    }   
+    </script>
+
     {% else %}
     <!-- Se o usuário não estiver logado, exibe o link para a página de login -->
     <div class="container">
