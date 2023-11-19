@@ -16,6 +16,17 @@ ADMINISTRADOR
 {% block conteudo %}
 <hr>
 <main>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="centralizar_screen">
+        <ul class="flash-messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
     <section>
         <article>
             <h1 class="titulo">Painel de administrador</h1>
