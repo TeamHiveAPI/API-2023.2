@@ -12,7 +12,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-
 #Rota pagina inicial
 @app.route('/')
 def index():
@@ -84,7 +83,6 @@ def blog():
         posts_per_page = 5
         Post.query.filter_by(status='aprovado').order_by(Post.id.desc()).paginate(page=page, per_page=posts_per_page, error_out=False)
 
-
     posts = Post.query.filter_by(status='aprovado').order_by(Post.id.desc()).all()
     posts_info = []
 
@@ -113,8 +111,6 @@ def blog():
         else:
             print(f"Usuário não encontrado para o post com ID: {post.id}")
 
-
-
     if 'application/json' in request.headers.get('Accept'):
                 return jsonify(posts_info)
     
@@ -126,7 +122,7 @@ def blog():
 
     return render_template('blog.html', nav='active', title='LOGIN', posts=posts_info, imagem_perfil_url=imagem_perfil_url)
 
-
+#Roata de salvar imagem
 @app.route('/salvar_imagem', methods=['POST'])
 def salvar_imagem():
     imagem = request.files['imagem']
@@ -140,7 +136,6 @@ def salvar_imagem():
     nova_imagem = Imagem(nome=nome_arquivo, dados_imagem=dados_imagem)
     db.session.add(nova_imagem)
     db.session.commit()
-
 
 #Rota pagina dados 
 @app.route('/dados')
@@ -161,7 +156,6 @@ def approve_post(post_id):
         flash('Post aprovado')
         return redirect(url_for('painel_admin'))
 
-
 @app.route('/rejeitar_post/<int:post_id>', methods=['POST'])
 def reject_post(post_id):
     if request.method == 'POST':
@@ -171,14 +165,11 @@ def reject_post(post_id):
         flash('Post rejeitado')
         return redirect(url_for('painel_admin'))
 
-
 @app.route('/painel_admin', methods=['GET', 'POST'])
 def painel_admin():
     if session.get('user_logado'):
         posts = Post.query.filter_by(status='pendente').all()
-        
         posts_info = []
-
         imagem_perfil_url = url_for('static', filename='img/perfil.png')
 
         for post in posts:
@@ -188,7 +179,7 @@ def painel_admin():
             if usuario:
                 if usuario.imagem_perfil:
                     imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + usuario.imagem_perfil)
-                                    
+
             if usuario:
                 data_formatada = post.data_postagem.strftime("%d-%m-%Y")
                 post_info = {
@@ -209,8 +200,6 @@ def painel_admin():
     flash('Você não tem permissão para acessar esta página.')
     return redirect(url_for('login'))
 
-
-
 #Rota de perfil
 @app.route('/minhaconta', methods=['GET', 'POST'])
 def conta():
@@ -222,7 +211,6 @@ def conta():
                 imagem_perfil_url = url_for('static', filename='img/uploads_perfil/' + user.imagem_perfil)
             else:
                 imagem_perfil_url = url_for('static', filename='img/perfil.png')
-            
             #if not user.is_admin:
             return render_template('minhaconta.html', title='MINHA CONTA', nav='active', user=user, imagem_perfil_url=imagem_perfil_url)
             #else:
@@ -375,18 +363,11 @@ def esquecisenha():
         if usuario == None:
             flash('E-mail não cadastrado')
         else:
-                      
             chave = secrets.token_hex(16)
-
             utilizado = False
             novo_esqueci = Esquecisenha(email=email, chave=chave, utilizado=utilizado)
             db.session.add(novo_esqueci)
             db.session.commit()
-
-            
-
-
-
             # Configurações
             email_de = 'apiteamhive@hotmail.com'
             senha = 'hivefatec2023'
@@ -413,11 +394,8 @@ def esquecisenha():
                 server.quit()
                 flash("Acesse o link enviado no seu e-mail")
                 return redirect(url_for('login'))
-
             except Exception as e:
                 flash("Erro: {}".format(e))
-
-
     return render_template('esquecisenha.html', nav='active', title='ESQUECISENHA')
 
 # Rota para Recuperar Senha
@@ -429,20 +407,16 @@ def recuperar():
         novasenha = request.form['novasenha']
         confnovasenha = request.form['confnovasenha']
         usuario = Usuario.query.filter_by(email=email).first()
-
         if usuario:
             if usuario.cpf != cpf:
                 flash('CPF invalido')
                 return redirect(url_for('recuperar'))
-                
             elif novasenha != confnovasenha:
                 flash ('Confirmação de senha incorreta! Digite novamente a nova senha.')
                 return redirect(url_for('recuperar'))
-            
             elif usuario.senha == novasenha:
                     flash('Senha já utilizada! Digite outra senha.')
                     return redirect(url_for('recuperar'))
-            
             else:
                 #confirmacao ok
                 chave = session["chave"]
@@ -453,32 +427,21 @@ def recuperar():
                     return redirect(url_for('esquecisenha'))
                 else:
                     #existe a chave
-
-
                     if x.utilizado:
                         #chave ja utilizada
                         flash('Link já utilizado!Informe seu e-mail para a recuperação de senha novamente.')
                         return redirect(url_for('esquecisenha'))
                     else:
                         #chave nunca utilizada
-                        
                         x.utilizado = 1
-
                         usu = Usuario.query.filter_by(email=email).first()
-
                         if usu.senha == novasenha:
                             flash('Senha já utilizada!')
                             return redirect(url_for('recuperar'))
                         usu.senha = novasenha
-                        
                         db.session.add(x)
-
                         db.session.add(usu)
-
                         db.session.commit()
-
-
-
                     flash('Senha alterada com sucesso!')
                     return redirect(url_for('login'))
         flash('E-mail incorreto!')    
@@ -487,5 +450,4 @@ def recuperar():
         #get
         #salvo a chave na sessao
         session["chave"] = request.args.get('chave')
-    
     return render_template('recuperar.html', nav='active', title='RECUPERAR')
