@@ -19,7 +19,8 @@ button {
 
 hr {
     border: 1px solid #303030;;
-    margin-bottom: 64px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 /** Apartir daqui é o css de verdade **/
@@ -28,12 +29,6 @@ hr {
     font-size: 50px;
     color: #00059c;
 }
-
-.linha-titulo {
-    margin: 20px 0;
-    border: 2px solid #cccccc;
-}
-
 .solicitacoes {
     margin: 0 0 20px 0;
     font-size: 30px;
@@ -62,7 +57,6 @@ hr {
 }
 
 .aceitar {
-    margin: 50px 30px 0 80px;
     background-color: green;
 }
 
@@ -76,4 +70,103 @@ hr {
 
 .recusar:hover {
     background-color: rgb(209, 0, 0);
+}
+
+
+
+
+.cards_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.card_post {
+    background-color: #ebebeb;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.imagem_usuario {
+    width: 96px;
+}
+
+.coluna {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coluna_esquerda {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-end;
+}
+
+.nome {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.postagem {
+    display: flex;
+    align-self: flex-end;
+}
+
+.anexo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.fotos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.img-jinja {
+    max-width: 320px;
+    margin-bottom: 16px;
+}
+
+.admin_botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-top: 80px;
+}
+
+.centralizar_screen {
+    display: flex;
+    justify-content: center;
+}
+
+.flash-messages {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #1d7d0d;
+    color: white;
+    width: 320px;
+    padding: 32px;
+    border-radius: 32px;
+    top: 140px;
+    animation-name: popup;
+    animation-duration: 5s;
+    opacity: 0;
+}
+
+.flash-messages li {
+    align-items: center;
+}
+
+@keyframes popup {
+    from {margin-top: -200px; opacity:0}
+    20% {margin-top: 0px; opacity:1}
+    80% {margin-top: 0px; opacity:1}
+    to {margin-top: -200px; opacity:0}
 }

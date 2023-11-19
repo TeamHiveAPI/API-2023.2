@@ -27,50 +27,51 @@ ADMINISTRADOR
     </div>
     {% endif %}
     {% endwith %}
-    <section>
         <article>
             <h1 class="titulo">Painel de administrador</h1>
             <hr class="linha-titulo">
         </article>
-        <article>
-                <h2 class="solicitacoes">Solicitações Pendentes</h2>
-                {% if posts == [] %}
-                <p class="sem-post">Não há nenhum post pendente</p>
-                {% endif %}
-            {% for x in posts %}
-            <article>
-            <div class="container2">
-                <div class="coluna">
-                <img class="imagem_usuario" src="{{ x.imagem_perfil_url }}" alt="Imagem de perfil">
-                    <div class="nome_e_mae">
-                        <p class="nome">{{ x.nome_parente }}</p>
-                        <p class="mae">{{ x.parentesco }} de {{ x.nome_filho }}</p>
+            <h2 class="solicitacoes">Solicitações Pendentes</h2>
+            {% if posts == [] %}
+            <p class="sem-post">Não há nenhum post pendente</p>
+            {% endif %}
+
+            <section class="cards_wrapper">
+                {% for x in posts %}
+                <div class="card_post">
+                    <div class="container2">
+                        <div class="coluna">
+                            <div class="coluna_esquerda">
+                            <img class="imagem_usuario" src="{{ x.imagem_perfil_url }}" alt="Imagem de perfil">
+                                <div class="nome_e_mae">
+                                    <p class="nome">{{ x.nome_parente }}</p>
+                                    <p class="mae">{{ x.parentesco }} de {{ x.nome_filho }}</p>
+                                </div>
+                            </div>
+                            <p class="postagem">Data de Postagem: {{ x.data_postagem }}</p>
+                        </div>
+                    </div>
+                        <hr class="linha">
+                        <p class="postContent" data-post-id="{{ loop.index }}"> {{ x.conteudo | safe }} </p>
+                        <p class="anexo">Anexos</p>
+                        <div class="fotos">
+                        {% for img in x.caminho_das_imagens %}
+                            <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
+                        {% endfor %}
+                        </div>
+                    </article>
+            
+                    <div class="admin_botoes">
+                        <form method="post" action="{{ url_for('approve_post', post_id=x.id) }}">
+                            <button class="aceitar" type="submit">Aceitar Post</button>
+                        </form>
+                        <form method="post" action="{{ url_for('reject_post', post_id=x.id) }}">
+                            <button class="recusar" type="submit">Recusar Post</button>
+                        </form>
                     </div>
                 </div>
-                <p class="postagem">Data de Postagem: {{ x.data_postagem }}</p>
-            </div>
-                <hr class="linha">
-                <p class="postContent" data-post-id="{{ loop.index }}"> {{ x.conteudo | safe }} </p>
-                <div class="botao">
-                    <p class="readMore ler" data-post-id="{{ loop.index }}">Ler mais</p>
-                </div>
-                <p class="anexo">Anexos</p>
-                <div class="fotos">
-                {% for img in x.caminho_das_imagens %}
-                    <img class="img-jinja" src="{{ url_for('static', filename='img/uploads/' + img[0]) }}" alt="">
                 {% endfor %}
-                </div>
-            </article>
-            <form method="post" action="{{ url_for('approve_post', post_id=x.id) }}">
-                <button class="aceitar" type="submit">Aceitar Post</button>
-            </form>
-            <form method="post" action="{{ url_for('reject_post', post_id=x.id) }}">
-                <button class="recusar" type="submit">Recusar Post</button>
-            </form>
-            {% endfor %}
-                </div>
-            </article>
-        </section>
+            </section>
     </main>
 
 </body>
