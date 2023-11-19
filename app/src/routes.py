@@ -29,7 +29,7 @@ def quemsomos():
         if session.get('is_admin') is False:
             return render_template('quemsomos.html', title='MINHA CONTA', nav='active')
         else:
-            return render_template('index.html', title='MINHA CONTA', nav='active')
+            return render_template('quemsomos.html', title='MINHA CONTA', nav='active')
     return render_template('quemsomos.html', nav='active', title='LOGIN')
 
 # Rota blog
