@@ -54,7 +54,7 @@ main {
 
 .recuperar_img {
     width: 650px;
-    height: 670.5px;
+    height: 672px;
     border-radius: 50px 0px 0px 50px;
 }
 
@@ -244,10 +244,13 @@ input::placeholder {
         height: auto;
     } 
 
-    .login-img, .cadastro-img {
+    .login-img, .cadastro-img, .recuperar_img {
         border-radius: 50px 50px 0px 0px;
         height: 180px;
         object-fit: cover;
+    }
+    .recuperar_img {
+        width: 500px;
     }
 
     .container{
@@ -313,7 +316,7 @@ input::placeholder {
     width: 100%;
     }
 
-    .login, .cadastro, .login-img, .cadastro-img {
+    .login, .cadastro, .login-img, .cadastro-img, .recuperar_img {
         width: 80%;
     }
     .esqueci_senha_p p {
@@ -324,6 +327,9 @@ input::placeholder {
     }
     .esqueci_senha{
         margin: 0 auto;
+    }
+    .titulo_cadastro, .titulo_login, .titulo_recuperar {
+        font-size: 32px;
     }
 }
 
