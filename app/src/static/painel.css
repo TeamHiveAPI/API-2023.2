@@ -27,12 +27,12 @@ hr {
 
 .titulo {
     font-size: 50px;
-    color: #00059c;
+    color: #000350;
 }
 .solicitacoes {
     margin: 0 0 20px 0;
     font-size: 30px;
-    color: #00059c;
+    color: #000350;
 }
 
 .sem-post {
@@ -169,4 +169,49 @@ hr {
     20% {margin-top: 0px; opacity:1}
     80% {margin-top: 0px; opacity:1}
     to {margin-top: -200px; opacity:0}
+}
+
+
+@media only screen and (max-width: 768px) {
+    .titulo{
+        font-size: 32px;
+    }
+    .solicitacoes{
+        font-size: 22px;
+    }
+    .aceitar, .recusar {
+        border-radius: 16px;
+        width: 130px;
+        height: 50px;
+        font-size: 18px;
+
+    }
+    .admin_botoes{
+        justify-content: center;
+        gap: 26px;
+    }
+    .card_post{
+        padding: 0;
+    }
+    .coluna_esquerda{
+        gap: 5px;
+        align-items: center;
+    }
+    .nome_e_mae{
+        height: 100%;
+
+    }
+    .coluna{
+        flex-direction: column;
+    }
+    .linha{
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .nome{
+        font-size: 1rem;
+    }
+    .postagem{
+        margin: 12px auto;
+    }
 }
