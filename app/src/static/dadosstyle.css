@@ -129,11 +129,12 @@ main {
 
 .chart_wrapper {
     width: 100%;
+    overflow-x:auto;
+    overflow-y: hidden;
 }
 
 #chart_div {
     width: 100%;
-    min-width: 100px;
     margin-top: 32px;
 }
 
@@ -180,42 +181,6 @@ main {
 .p2-principais-medidas{
     margin-top: 32px;
 }
-/* Footer */
-
-footer {
-    padding: 64px 0;
-    margin-top: 64px;
-    background-color: #00022C;
-    color:white;
-}
-
-.footer_principal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10%;
-}
-
-.footer_parte_esquerdo {
-    max-width: 500px;
-}
-
-.footer_logo_time {
-    margin-top: 32px;
-    width: 200px;
-}
-
-.footer_logo_github {
-    margin-top: 32px;
-    width: 48px;
-    cursor: pointer;
-}
-
-.footer_direitos_autorais {
-    margin-top: 64px;
-    text-align: center;
-}
-
 /* dropdown livia */
 
 select {
@@ -286,4 +251,59 @@ li {
 .search_link:hover {
     color: #0f1268;
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px){
+    .conteudo_escrito{
+        gap: 32px;
+    }
+    .conteudo_escrito_titulo{
+        font-size: 32px;
+        margin-top: 20%;
+    }
+    .conteudo_escrito_subtitulo{
+        margin-bottom: 20%;
+    }
+    .porque_dados_escrito_titulo {
+        font-size: 32px;
+        margin-top: 10%;
+    }
+    .centros_trans{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    select {
+        width: auto;
+    }
+    .dropdown label{
+        margin-right: 6px;
+    }
+    .card_hospital_grupo, .card_hospital {
+        padding: 12px;
+        width: auto;
+        margin-bottom: 24px;
+        border-radius: 12px;
+    }
+    #chart_div{
+        width: 900px;
+        height: 250px;
+    }
+    .margem_grafico, .titulo-prog-prev, .titulo-principais-infos, .titulo-principais-medidas {
+        margin-top: 26px;
+    }
+
+}
+
+@media only screen and (max-width: 368px){
+    .dropdown{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .dropdown label{
+        width: 80px;
+        margin-bottom: 12px;
+    }
+
 }
