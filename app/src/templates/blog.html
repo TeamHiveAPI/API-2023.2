@@ -41,7 +41,7 @@ BLOG
             <input class="input1" type="text" name="nomefilho" id="nomefilho" placeholder="Insira o nome da criança">
             <textarea class="input2 resize" type="text" name="conteudo" id="conteudo" placeholder="Conte a sua história"></textarea>
             <div class="submit">
-
+                
                 <div class="icone_novo_enviar desativado" id="enviar_desativado"> <!-- Não aceitou a diretriz ainda -->
                     <img class="icone_novo_enviar" src="{{ url_for('static', filename='img/icone_enviar.png') }}" alt="">
                     Enviar
@@ -60,6 +60,7 @@ BLOG
                     <img class="icone_novo" src="{{ url_for('static', filename='img/icone_apagar.png') }}" alt="">
                     Apagar
                 </button>
+               
             </div>
             <p class="centralizar_aviso">Selecione até 3 imagens</p>
             <details>
