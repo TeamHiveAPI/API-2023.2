@@ -74,11 +74,18 @@
         box-shadow: 0px 5px 8px -5px rgba(0,0,0,0.36);
         animation-name: menutop;
         animation-duration: 0.6s;
+        padding-bottom: 32px;
+        gap: 16px;
     }
 
     @keyframes menutop {
         from {margin-top: -200px; opacity:0}
         to {margin-top: 0px; opacity:1}
+    }
+
+    .navbar_menu_item {
+        width: 150px;
+        text-align: center;
     }
 
     .navbar_menu_item:hover, .navbar_area_aluno:hover {
