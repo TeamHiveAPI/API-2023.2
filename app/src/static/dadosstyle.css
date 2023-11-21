@@ -244,11 +244,11 @@ li {
     margin-bottom: 16px;
 }
 
-.search_link {
+.search_link, .fontes {
     color: #3337a3;
 }
 
-.search_link:hover {
+.search_link:hover, .fontes:hover {
     color: #0f1268;
     text-decoration: underline;
 }
@@ -306,4 +306,34 @@ li {
         margin-bottom: 12px;
     }
 
+}
+
+hr {
+    border: 1px solid #303030;
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.fontes_titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000350;
+}
+
+.fontes_cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 32px;
+    background-color: aliceblue;
+    gap: 48px;
+    border-radius: 16px;
+}
+
+@media only screen and (max-width: 1250px) {
+    .fontes_cards {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
 }
