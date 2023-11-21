@@ -353,20 +353,24 @@ input {
     outline: none;
 }
 
-.selecionar_imagem_sem_borda {
-    border: none;
+.esconder_selecionar_imagem {
+    display: none;
+}
+
+.selecionar_imagem {
+    cursor: pointer;
+    padding: 16px;
+}
+
+.icone_novo {
+    width: 22px;
+    height: 28px;
 }
 
 .centralizar_aviso {
     display: flex;
     justify-content: center;
     margin-top: 16px;
-}
-
-
-.icone_novo {
-    width: 22px;
-    height: 28px;
 }
 
 .icone_novo_enviar {

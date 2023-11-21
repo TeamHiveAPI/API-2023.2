@@ -51,18 +51,29 @@ BLOG
                     <img class="icone_novo_enviar" src="{{ url_for('static', filename='img/icone_enviar.png') }}" alt="">
                     Enviar
                 </button>
-                <div id="botao_modal_1">
-                    <input class="selecionar_imagem_sem_borda" type="file" name="imagem" id="imagens_input" multiple onchange="limitarNumeroImagens(this)">
+                <div>
                     <img class="icone_novo" src="{{ url_for('static', filename='img/icone_selecionar_imagem.png') }}" alt="">
-                    Selecionar Imagem
+                    <label for="imagens_input" class="selecionar_imagem" id="selecionar_imagem">Selecione Até 3 Imagens</label>
+                    <input class="esconder_selecionar_imagem" type="file" name="imagem" id="imagens_input" multiple onchange="limitarNumeroImagens(this)">
                 </div>
                 <button type="reset" id="reset">
                     <img class="icone_novo" src="{{ url_for('static', filename='img/icone_apagar.png') }}" alt="">
                     Apagar
                 </button>
+
+                <!-- Mostrar quantos arquivos foram selecionados ao enviar -->
+
+                <script>
+                    selecionar_botao = document.getElementById("selecionar_imagem");
+                    imagens_input = document.getElementById("imagens_input");
+
+                    imagens_input.addEventListener('change', function(e) {
+                        var num_arquivos = e.target.files.length;
+                        selecionar_botao.textContent = num_arquivos + " Arquivo" + (num_arquivos > 1 ? "s" : "");
+                    });
+                </script>
                
             </div>
-            <p class="centralizar_aviso">Selecione até 3 imagens</p>
             <details>
                 <summary class="summary">
                     <div class="summary_centralizar">
