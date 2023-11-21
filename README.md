@@ -6,9 +6,8 @@
 <a href ="#-sobre-o-projeto"> Sobre o Projeto </a> | 
 <a href ="#-tecnologias-que-serão-utilizadas"> Tecnologias que serão utilizadas </a> |
 <a href ="#-visão-do-produto"> Visão do Produto </a> |
-<a href ="#-metodologia"> Metodologia </a> |
 <a href ="#-mvps"> MVPs </a> |
-<a href ="#-tutorial-de-execução-da-aplicação"> Tutorial de execução da Aplicação </a> |
+<a href ="#-executando-a-aplicação"> Executando a Aplicação </a> |
 <a href ="#-sprints"> Sprints </a> |
 <a href ="#-backlog-do-produto"> Backlog do Produto </a> |
 <a href ="#-time-de-desenvolvimento"> Time de Desenvolvimento </a>
@@ -24,19 +23,7 @@ O objetivo desse projeto é criar um site informativo que conscientize a popula�
 
 ## 💻 Tecnologias que serão utilizadas:
 
-<div align="center">
-<img src="https://img.shields.io/badge/Discord-000000?style=for-the-badge&logo=discord&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/Microsoft-000000?style=for-the-badge&logo=microsoft&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/Slack-000000?style=for-the-badge&logo=slack&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white&color=F2A630"/>
-<img src="https://img.shields.io/badge/MySQL-000000?style=for-the-badge&logo=mysql&logoColor=white&color=F2A630"/>
-
-</div>
+<img src="./documento/readme/card_tecnologias.png" alt="Card de Tecnologias" width=750px>
 
 <br>
 
@@ -51,18 +38,6 @@ Criação de um site com função de conscientizar a população sobre o sofrime
 <strong>Blog: </strong> Mostra histórias sobre os pais de crianças com IRC. Informa-se ao usuário que ele pode submeter sua história
 
 <strong>Dados: </strong> Mostra dados verídicos e pertinentes sobre o tema para o usuário
-
-<br>
-
-## 📋 Metodologia
-
-O framework de Metodologia Ágil utilizado no produto foi o Scrum: um método ágil adaptativo, iterativo, flexível e eficaz. No Scrum, divide-se a tarefa em Sprints, no qual define-se as seguintes coisas:
-
-<strong>1) MVPs: </strong> É a principal entrega de cada sprint. Prioriza-se as tarefas que trazem entrega de maior valor para o cliente.
-
-<strong>2) Backlog de Produto: </strong> A partir das tarefas, contrói-se o Backlog de Produto, que passa pela aprovação do cliente.
-
-<strong>3) Burndown Chart: </strong> Define-se a quantidade necessário de tempo para realizar cada tarefa, sendo divido, de maneira otimizada, aos desenvolvedores do Team H.I.V.E.
 
 <br>
 
@@ -211,10 +186,10 @@ SQLALCHEMY_DATABASE_URI = \
 | :---------: | :---------: | :---------------------: | :-----------------: | :-------: |
 | <img src="https://github.com/eberssj.png?size=50" width=50px> | Eber de Souza Silva Junior | Product Owner | <a href="https://github.com/eberssj"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/eber-junior-b2a4a3211/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://github.com/juliamariahr.png?size=50" width=50px> | Julia Maria Helbusto Rosado | Scrum Master | <a href="https://github.com/juliamariahr"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/j%C3%BAlia-rosado/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| <img src="https://github.com/maarantes.png?size=50" width=50px> | Marco Antonio Arantes | Desenvolvedor | <a href="https://github.com/maarantes"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/marco-antonio-arantes/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://github.com/ClaudioJaymeDiniz.png?size=50" width=50px> | Claudio Jayme Silva Diniz | Desenvolvedor | <a href="https://github.com/ClaudioJaymeDiniz"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/claudio-jayme"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| <img src="https://github.com/erikadias2004.png?size=50" width=50px> | Erika Dias Ribeiro | Desenvolvedor | <a href="https://github.com/erikadias2004"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/erika-dias-ribeiro-608359266"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://github.com/elisarachel.png?size=50" width=50px> | Elisa Rachel Beninca Martins | Desenvolvedor | <a href="https://github.com/elisarachel"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/elisa-beninca-704566292/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
-| <img src="https://github.com/joycesilvaaa.png?size=50" width=50px> | Joyce Aparecida Pereira Silva | Desenvolvedor | <a href="https://github.com/joycesilvaaa"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/joyce-silva-79a4b9287"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| <img src="https://github.com/erikadias2004.png?size=50" width=50px> | Erika Dias Ribeiro | Desenvolvedor | <a href="https://github.com/erikadias2004"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/erika-dias-ribeiro-608359266"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 | <img src="https://github.com/GuilhermeLGuimaraes.png?size=50" width=50px> | Guilherme Luz Guimarães | Desenvolvedor | <a href="https://github.com/GuilhermeLGuimaraes"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/guilherme-guimar%C3%A3es-0166a3294/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| <img src="https://github.com/joycesilvaaa.png?size=50" width=50px> | Joyce Aparecida Pereira Silva | Desenvolvedor | <a href="https://github.com/joycesilvaaa"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/joyce-silva-79a4b9287"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| <img src="https://github.com/maarantes.png?size=50" width=50px> | Marco Antonio Arantes | Desenvolvedor | <a href="https://github.com/maarantes"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/marco-antonio-arantes/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 
