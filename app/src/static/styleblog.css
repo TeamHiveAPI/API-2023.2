@@ -486,6 +486,7 @@ form {
     width: 20%;
     object-fit: contain;
     margin-right: 5%;
+    border-radius: 8px;
 }
 
 .postagem.expandido {
@@ -602,42 +603,16 @@ details {
 }
 
 @media only screen and (max-width: 768px) {
-    .conteudo_escrito{
-        gap: 32px;
+
+    .fundo {
+        font-size: 1.4rem;
     }
-    .conteudo_escrito_titulo{
-        font-size: 32px;
-        margin-top: 20%;
-    }
-    .conteudo_escrito_subtitulo{
-        margin-bottom: 20%;
-    }
-    .fundo{
-        font-size: 1.6rem;
-    }
-    .coluna{
-        align-items: center;
-        white-space: wrap;
-        gap: 12px;
-    }
-    .container2{
+    .container2 {
         flex-direction: column;
     }
-    .nome{
-        font-size: 1.1rem;
-    }
-    .postagem{
-        margin: 12px auto;
-    }
-    .linha{
-        margin-top: 0;
-        margin-bottom: 12px;
-    }
-    .anexo{
-        font-size: 1.6rem;
-    }
-    .submit{
-        gap: 12px;
+
+    .postagem {
+        margin-top: 32px;
     }
  
 }
