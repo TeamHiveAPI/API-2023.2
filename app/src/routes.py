@@ -196,7 +196,7 @@ def painel_admin():
                 posts_info.append(post_info)
             else:
                 print(f"Usuário não encontrado para o post com ID: {post.id}")
-        return render_template('painel.html', posts=posts_info, title='PAINEL', nav='active')
+        return render_template('painel.html', posts=posts_info, title='PAINEL', nav='active', total_pendente=len(posts))
     flash('Você não tem permissão para acessar esta página.')
     return redirect(url_for('login'))
 
