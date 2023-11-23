@@ -2,6 +2,8 @@
 {% block titulo %} Quem Somos | Criança Renal{% endblock %}
 {% block estilo %}
 <link rel="stylesheet" href="{{ url_for('static', filename='quemsomos.css') }}">
+<script src="{{ url_for('static', filename='script.js') }}" async></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 {% block title %} 
 QUEM SOMOS
@@ -88,6 +90,9 @@ QUEM SOMOS
                 criancarenal23@gmail.com
             </p>
         </h1>
+    </div>
+    <div id="progress">
+        <span id="progress_value">&#x1F815;</span>
     </div>
 </main>
 {% endblock %}
