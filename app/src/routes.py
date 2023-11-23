@@ -277,11 +277,6 @@ def cadastro():
         elif usuario2:
             flash('CPF já existente!')
             return redirect(url_for('login'))
-        try:
-            dn = datetime.strptime(dn, '%d/%m/%Y').strftime('%Y-%m-%d')
-        except ValueError:
-            flash('Formato de data inválido, siga a legenda!')
-            return redirect(url_for('cadastro'))
         
         novo_user = Usuario(nome=nome, dn=dn, cpf=cpf,endereco=endereco, email=email, parentesco=parentesco, senha=senha, profissao=profissao, comochegou=comochegou)
         db.session.add(novo_user)
