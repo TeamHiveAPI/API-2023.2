@@ -147,6 +147,9 @@ p {
     gap: 32px;
     margin-top: 80px;
 }
+.postContent{
+    word-break: break-word;
+}
 
 .centralizar_screen {
     display: flex;
@@ -179,12 +182,14 @@ p {
     to {margin-top: -200px; opacity:0}
 }
 
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
     .admin_botoes {
         flex-direction: column;
         align-items: center;
         margin-top: 32px;
+    }
+    .admin_botoes button{
+        width: 100%;
     }
 
     .coluna {
@@ -195,31 +200,39 @@ p {
         margin-top: 16px;
         align-self: center;
     }
+
+    .card_post{
+        padding: 12px;
+    }
+    .coluna_esquerda{
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+    .img-jinja{
+        max-width: 100%;
+        margin: 0;
+    }
+    .fotos{
+        justify-content: center;}
+
+}
+@media only screen and (max-width: 768px) {
+  
     .solicitacoes{
         font-size: 22px;
     }
     .titulo{
         font-size: 32px !important;
     }
-    .card_post{
-        padding: 12px;
-    }
-    .coluna_esquerda{
-        align-items: center;
-        gap: 12px;
-    }
+    
     .nome{
         font-size: 1rem;
     }
-    .postContent{
-        word-break: break-word;
-    }
+    
     .img-jinja{
         max-width: 100%;
         margin: 0;
-    }
-    .admin_botoes button{
-        width: 100%;
     }
 
 }
