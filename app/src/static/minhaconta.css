@@ -180,13 +180,14 @@ hr {
 
 .minha_conta_baixo {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     border: none;
     padding: 16px 32px;
     align-items: center;
     gap: 24px;
     font-size: 24px;
     font-weight: 700;
-    flex-direction: row;
     background-color: #03045E;
     color: white;
     border-radius: 24px;
@@ -292,6 +293,18 @@ input {
 
  .modal_conteudo{
     width: 90%;
+    padding: 12px;
+ }
+ .modal_baixo_botao_voltar{
+    font-size: 16px;
+    padding: 12px;
+ }
+ .modal_baixo{
+    gap: 12px;
+    flex-wrap: wrap;
+ }
+ .botao_modal_enviar{
+    margin-top: 12px;
  }
  .modal_conteudo h1{
     font-size: 1.6em;
