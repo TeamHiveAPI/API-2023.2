@@ -93,7 +93,10 @@ p {
 }
 
 .imagem_usuario {
-    width: 96px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
 }
 
 .coluna {
@@ -180,6 +183,8 @@ p {
 @media only screen and (max-width: 768px) {
     .admin_botoes {
         flex-direction: column;
+        align-items: center;
+        margin-top: 32px;
     }
 
     .coluna {
@@ -188,8 +193,33 @@ p {
 
     .postagem {
         margin-top: 16px;
-        align-self: flex-start;
+        align-self: center;
     }
-
+    .solicitacoes{
+        font-size: 22px;
+    }
+    .titulo{
+        font-size: 32px !important;
+    }
+    .card_post{
+        padding: 12px;
+    }
+    .coluna_esquerda{
+        align-items: center;
+        gap: 12px;
+    }
+    .nome{
+        font-size: 1rem;
+    }
+    .postContent{
+        word-break: break-word;
+    }
+    .img-jinja{
+        max-width: 100%;
+        margin: 0;
+    }
+    .admin_botoes button{
+        width: 100%;
+    }
 
 }
