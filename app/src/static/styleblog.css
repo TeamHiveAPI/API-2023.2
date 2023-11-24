@@ -118,6 +118,9 @@ button {
     width: 100px;
     object-fit: cover;
 }
+.postContent{
+    word-break: break-word;
+}
 
 .postagem {
     display: flex;
@@ -126,6 +129,7 @@ button {
     color: #969696;
     font-weight: 500;
     overflow: hidden;
+
 }
 
 .coluna {
@@ -601,18 +605,46 @@ details {
     background-color: #969696!important;
     cursor: auto!important;
 }
+.card_post{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
 
 @media only screen and (max-width: 768px) {
-
+    .fotos{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .anexo{
+        margin-top: 32px;
+    }
+    .nome{
+        font-size: 1rem;
+    }
     .fundo {
         font-size: 1.4rem;
     }
     .container2 {
         flex-direction: column;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+    .coluna{
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        /* flex-direction: row; */
+        /* justify-content: space-between; */
     }
 
     .postagem {
         margin-top: 32px;
+    }
+    .img-jinja{
+        width: 100%;
+        margin: 0;
     }
  
 }
