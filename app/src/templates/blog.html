@@ -154,10 +154,12 @@ BLOG
     <article class="card_post">
         <div class="container2">
             <div class="coluna">
-                <img class="imagem_usuario" src="{{ post.imagem_perfil_url }}" alt="Imagem de perfil">
-                <div class="nome_e_mae">
-                    <p class="nome">{{ post.nome_parente }}</p>
-                    <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
+                <div class="coluna_esquerda">
+                    <img class="imagem_usuario" src="{{ post.imagem_perfil_url }}" alt="Imagem de perfil">
+                    <div class="nome_e_mae">
+                        <p class="nome">{{ post.nome_parente }}</p>
+                        <p class="mae">{{ post.parentesco }} de {{ post.nome_filho }}</p>
+                    </div>
                 </div>
             </div>
             <p class="postagem">Data de Postagem: {{ post.data_postagem }}</p>

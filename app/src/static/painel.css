@@ -77,9 +77,6 @@ p {
     background-color: rgb(209, 0, 0)!important;
 }
 
-
-
-
 .cards_wrapper {
     display: flex;
     flex-direction: column;
@@ -139,6 +136,7 @@ p {
 .img-jinja {
     max-width: 320px;
     margin-bottom: 16px;
+    border-radius: 8px;
 }
 
 .admin_botoes {
@@ -210,7 +208,6 @@ p {
         gap: 12px;
     }
     .img-jinja{
-        max-width: 100%;
         margin: 0;
     }
     .fotos{
@@ -229,10 +226,8 @@ p {
     .nome{
         font-size: 1rem;
     }
-    
     .img-jinja{
-        max-width: 100%;
-        margin: 0;
+        max-width: 280px;
     }
 
 }
