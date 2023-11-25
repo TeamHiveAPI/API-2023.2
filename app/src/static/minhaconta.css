@@ -213,6 +213,15 @@ input {
     outline: none;
 }
 
+@media only screen and (max-width: 768px){
+    #selecionar_imagem {
+        width: 100%; 
+    }
+    
+    .modal_cima h1, .modal_cima p {
+        font-size: 14px; 
+    }
+}
 
 
 .centralizar_screen {
