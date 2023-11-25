@@ -246,11 +246,11 @@ li {
 
 .search_link, .fontes {
     color: #3337a3;
+    font-weight: 500;
 }
 
 .search_link:hover, .fontes:hover {
     color: #0f1268;
-    text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px){
