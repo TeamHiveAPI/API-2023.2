@@ -43,14 +43,30 @@ MINHA-CONTA
                 <p>Selecione apenas uma foto em formato .png</p>
             </div>
             <div class="modal_baixo">
-                <form id="selecionar_imagem_form" action="{{ url_for('upload_perfil') }}" method="post" enctype="multipart/form-data">
-                    <input type="file" id="selecionar_imagem" name="imagem_perfil" accept=".png, .jpg, .jpeg">
+                <form class="form_modal" id="selecionar_imagem_form" action="{{ url_for('upload_perfil') }}" method="post" enctype="multipart/form-data">
+                    <label for="imagens_input" class="selecionar_imagem" id="selecionar_imagem">Selecione 1 imagem</label>
+                    <input class="esconder_selecionar_imagem" type="file" id="imagens_input" name="imagem_perfil" accept=".png, .jpg, .jpeg">
                     <input class="botao_modal_enviar" type="submit" value="Enviar">
                 </form>
-                <button class="modal_baixo_botao_voltar">Voltar</button>
+                <button class="modal_baixo_botao_voltar" id="botao_voltar">Voltar</button>
             </div>
         </div>
     </div>
+
+    <script>
+        selecionar_botao = document.getElementById("selecionar_imagem");
+        imagens_input = document.getElementById("imagens_input");
+        botao_voltar = document.getElementById("botao_voltar");
+
+        imagens_input.addEventListener("change", function() {
+            selecionar_botao.textContent = "1 Arquivo";
+        });
+
+        botao_voltar.addEventListener('click', function() {
+            imagens_input.value = "";
+            selecionar_botao.textContent = "Selecionar arquivo";
+        });
+    </script>
     
     <section class="minha_conta">
         <div class="parte_esquerda">    

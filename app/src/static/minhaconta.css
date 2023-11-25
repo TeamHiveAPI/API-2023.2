@@ -302,11 +302,10 @@ input {
 
  .modal_conteudo{
     width: 90%;
-    padding: 12px;
+    padding: 20px;
  }
  .modal_baixo_botao_voltar{
-    font-size: 16px;
-    padding: 12px;
+    align-items: center;
  }
  .modal_baixo{
     gap: 12px;
@@ -343,4 +342,32 @@ input {
  .minha_conta_botao_azul{
     margin-bottom: 2%;
  }
+
 }
+
+.esconder_selecionar_imagem {
+    display: none;
+}
+
+.selecionar_imagem {
+    background-color: #000350;
+    color: white;
+    cursor: pointer;
+    padding: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+@media only screen and (max-width: 380px) {
+    .form_modal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .botao_modal_enviar {
+        width: 90px;
+    }
+
+}
+
