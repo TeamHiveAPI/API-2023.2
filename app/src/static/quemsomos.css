@@ -128,9 +128,24 @@ hr {
     margin-top: 40px;
 }
 
-.p2-contato{
+.botao_email {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
     margin-bottom: 40px;
+    background-color: #000350;
+    color: white;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+    border: none;
+}
+
+.botao_email:hover {
+    background-color: #02042e;
 }
 
 
