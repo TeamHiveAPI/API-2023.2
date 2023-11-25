@@ -388,6 +388,16 @@ hr {
     .hero_banner_imagem {
         width: 200px;
     }
+    .card_tratamento, .card_dialise, .card_transplante{
+        width: 360px;
+    }
+    .cards_info{
+        gap: 12px;
+    }
+    .card_tratamento h3, .card_dialise h3, .card_transplante h3 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
