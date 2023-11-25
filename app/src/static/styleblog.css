@@ -640,6 +640,9 @@ details {
     .fotos{
         justify-content: center;
     }
+    .submit{
+        gap: 12px;
+    }
 
 }
     
