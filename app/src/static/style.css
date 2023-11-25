@@ -145,7 +145,7 @@ hr {
 .card_tratamento, .card_dialise, .card_transplante {
     width: 350px;
     height: 300px;
-    border-radius: 50px;
+    border-radius: 24px;
     padding: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     color: white;
@@ -250,7 +250,7 @@ hr {
     color: #000350;
     background-color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 24px;
     font-weight: 700;
     cursor: pointer;
@@ -404,7 +404,7 @@ hr {
 
 .problematica_escrito_titulo, .problematica_escrito_paragrafo, .insuficiencia_escrito_titulo, .insuficiencia_escrito_paragrafo, 
 .insuficiencia_embaixo_escrito_titulo, .insuficiencia_embaixo_escrito_paragrafo, 
-.conclusao_escrito_titulo, .conclusao_escrito_paragrafo {
+.conclusao_escrito_titulo, .conclusao_escrito_paragrafo, .conclusao_escrito_subtitulo {
     text-align: center;
 }
 
