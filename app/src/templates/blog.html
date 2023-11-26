@@ -30,7 +30,7 @@ BLOG
             <h2 class="conteudo_escrito_subtitulo">Confira relatos de pais sobre suas lutas para garantir aos seus filhos com IRC um tratamento adequado</h2>
         </div>
     </section>
-    {% if session['user_id'] is not none %}
+    {% if session['user_id']%}
     <!-- Se o usuário estiver logado, exibe o formulário -->
     <article>
         <div class="container">
@@ -101,8 +101,9 @@ BLOG
                     Para se situar melhor, leia mais sobre <a class="search_link" target=_blank href=https://www.google.com/search?q=sharenting>sharenting.</a></p>
                     <div class="post_checkbox">
                         <input type="checkbox" name="concordo" id="checkbox">
-                        <label for="concordo">Eu concordo com as Diretrizes de Comunidade e estou ciente de que, se eu cometer
+                        <label for="checkbox">Eu concordo com as Diretrizes de Comunidade e estou ciente de que, se eu cometer
                         uma infração considerada grave, o site poderá tomar medidas legais cabíveis.
+                        </label>
                     </div>    
                 </div>
                 </label>
