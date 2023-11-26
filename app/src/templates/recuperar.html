@@ -42,7 +42,7 @@ RECUPERAR SENHA
                             <label for="nome">E-mail</label> <br>
                             <input type="email" placeholder="Informe seu E-mail" id="email" name="email" required> <br>
                             <label for="nome">CPF</label> <br>
-                            <input type="text" placeholder="Informe seu CPF" id="cpf" name="cpf" required> <br>
+                            <input type="text" id="cpf" name="cpf" required placeholder="Informe seu CPF" minlength="14" maxlength="14" OnKeyPress="formatar('###.###.###-##',this)"> <br>
                             <label for="nome">Nova Senha </label> <br>
                             <input type="password" placeholder="Informe a nova senha" id="novasenha" name="novasenha" required> <br>
                             <label for="nome">Confirmação da nova senha</label> <br>
@@ -53,4 +53,17 @@ RECUPERAR SENHA
             </div>
         </section>
     </main>
+
+    <script>
+        function formatar(mascara, documento) {
+          let i = documento.value.length
+          let saida = "#"
+          let texto = mascara.substring(i)
+          while (texto.substring(0, 1) != saida && texto.length) {
+            documento.value += texto.substring(0, 1)
+            i++
+            texto = mascara.substring(i)
+          }
+        }
+    </script>
 {% endblock %}
