@@ -63,8 +63,9 @@ Criação de um site com função de conscientizar a população sobre o sofrime
 
 <br>
 
-<strong>Sprint 4: </strong> Em andamento ⌛
+<strong>Sprint 4: </strong>
 
+https://github.com/TeamHiveAPI/API-2023.2/assets/142221388/f3024b02-84a0-40c2-a23f-70a3987134c8
 
 
 
@@ -152,7 +153,7 @@ SQLALCHEMY_DATABASE_URI = \
 | 1️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V1.0) | ✅ |
 | 2️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V2.0) | ✅ |   
 | 3️⃣ | [Clique aqui](https://github.com/TeamHiveAPI/API-2023.2/tree/V3.0) | ✅ |
-| 4️⃣ | ⌛ | ⌛ |
+| 4️⃣ | ⌛ | ✅ |
 
 <br>
 
@@ -175,8 +176,8 @@ SQLALCHEMY_DATABASE_URI = \
 | 2 | 04 | Página "Dados" | 40 | Eu, como visitante, quero poder visualizar os dados apresentados na página. | 5 horas | ✅ | 15/10 | Visualização dos dados na páginas de forma clara e organizada. |  Página “Dados”
 | 3 | 05 | Página "Login" | 35 | Eu, como visitante, quero poder fazer login ou efetuar meu cadastro no site. | 5 horas | ✅ | 05/11 | Efetuação do login ou se cadastrar no site, devendo solicitar informações relevantes para o cadastro, como e-mail e senha. | Página “Login”
 | 3 | 06 | Página "Minha Conta" | 30 | Eu, como visitante cadastrado, quero poder visualizar as informações da minha própria conta. | 5 horas | ✅ | 05/11 | Visualização das informações de sua própria conta, sendo elas nome, e-mail e outras detalhes relevantes, que devem ser exibidas de forma clara e legível. | Página “Minha conta”
-| 4 | 07 | Página "Quem somos" | 25 | Eu, como visitante, quero poder visualizar a página para entender melhor a motivação de quem está por trás da ideia principal do projeto, que nesse caso, são as mães com os filhos que possuem IRC. | 4 horas | ⌛ | 26/11 |  Deve oferecer um histórico detalhado sobre a motivação para a criação do site, incluindo experiências de mães com filhos com IRC. Deve conter perfis breves das mães que lideram o grupo, ressaltando suas experiências pessoais. | Página “Quem somos”
-| 4 | 08 | Conta de Administrador | 20 | Eu, como administrador, poderei excluir posts para monitorar tudo o que é postado na página “Blog”, para evitar posts indevidos ou que ferem a integridade do site. | 5 horas | ⌛ | 26/11 |  A funcionalidade de exclusão de posts por um administrador no site requer um login exclusivo para administradores, permitindo acesso à lista de posts para seleção e remoção eficiente. Deve haver confirmação antes da exclusão e restrição da capacidade de exclusão apenas ao administrador para garantir controle e segurança no processo de exclusão de conteúdo. |  Login exclusivo de administrador.
+| 4 | 07 | Página "Quem somos" | 25 | Eu, como visitante, quero poder visualizar a página para entender melhor a motivação de quem está por trás da ideia principal do projeto, que nesse caso, são as mães com os filhos que possuem IRC. | 4 horas | ✅ | 26/11 |  Deve oferecer um histórico detalhado sobre a motivação para a criação do site, incluindo experiências de mães com filhos com IRC. Deve conter perfis breves das mães que lideram o grupo, ressaltando suas experiências pessoais. | Página “Quem somos”
+| 4 | 08 | Conta de Administrador | 20 | Eu, como administrador, poderei excluir posts para monitorar tudo o que é postado na página “Blog”, para evitar posts indevidos ou que ferem a integridade do site. | 5 horas | ✅ | 26/11 |  A funcionalidade de exclusão de posts por um administrador no site requer um login exclusivo para administradores, permitindo acesso à lista de posts para seleção e remoção eficiente. Deve haver confirmação antes da exclusão e restrição da capacidade de exclusão apenas ao administrador para garantir controle e segurança no processo de exclusão de conteúdo. |  Login exclusivo de administrador.
 
 <br>
 
