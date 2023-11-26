@@ -8,7 +8,7 @@ class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(64), nullable=False)
     dn = db.Column(db.Date, nullable=False)
-    cpf = db.Column(db.String(11), unique=True, nullable=False)
+    cpf = db.Column(db.String(14), unique=True, nullable=False)
     endereco = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(80), unique=True, nullable=False)
     parentesco = db.Column(db.String(10), nullable=False)
